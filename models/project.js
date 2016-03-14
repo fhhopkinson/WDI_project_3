@@ -8,7 +8,9 @@ var projectSchema = mongoose.Schema({
    lng: String,
    desc: String,
    image: String,
-   gallery: []
+   gallery: [],
    attendees: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
    comments: []
 });
+
+module.exports = mongoose.model('Project', projectSchema);

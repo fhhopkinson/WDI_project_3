@@ -5,6 +5,8 @@ var uuid                     = require('uuid');
 var jwt                      = require('jsonwebtoken');
 
 var authenticationController = require('../../controllers/authentications');
+
+var projectsController = require('../../controllers/projects');
 var usersController = require('../../controllers/users');
 var secret          = require('../../config/tokens').secret;
 var s3Config        = require('../../config/s3');
@@ -58,5 +60,13 @@ router.route('/users')
 
 router.route('/users/:id')
   .get(usersController.show);
+
+  router.route('/projects')
+    .get(projectsController.index)
+    .post(secureRoute, projectsController.create)
+
+  router.route('/projects/:id') 
+  .get(projectsController.show)
+
 
 module.exports = router;
