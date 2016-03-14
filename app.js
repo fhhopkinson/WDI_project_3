@@ -1,11 +1,13 @@
-var express = require('express');
-var logger = require('morgan');
-var bodyParser = require('body-parser');
-var app = express();
-var morgan = require('morgan');
+var express        = require('express');
+var logger         = require('morgan');
+var bodyParser     = require('body-parser');
+var app            = express();
+var morgan         = require('morgan');
 var expressLayouts = require('express-ejs-layouts');
-var mongoose = require('mongoose');
-var router = require('./config/routes');
+var mongoose       = require('mongoose');
+var router         = require('./config/routes');
+var jwt            = require('jsonwebtoken');
+var secret         = require('./config/tokens').secret;
 
 mongoose.connect('mongodb://localhost/green-app');
 
