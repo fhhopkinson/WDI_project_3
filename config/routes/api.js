@@ -1,11 +1,13 @@
-var router = require('express').Router();
-var multer = require('multer');
-var s3 = require('multer-s3');
-var uuid = require('uuid');
-var authenticationController = require('../../controllers/authentication');
+var router                   = require('express').Router();
+var multer                   = require('multer');
+var s3                       = require('multer-s3');
+var uuid                     = require('uuid');
+var jwt                      = require('jsonwebtoken');
+
+var authenticationController = require('../../controllers/authentications');
 var usersController = require('../../controllers/users');
-var secret = require('../../config/tokens').secret;
-var s3Config = require('../../config/s3');
+var secret          = require('../../config/tokens').secret;
+var s3Config        = require('../../config/s3');
 
 function secureRoute(req, res, next) {
   if(!req.headers.authorization) return res.status(401).json({ message: 'Unauthorized' });
