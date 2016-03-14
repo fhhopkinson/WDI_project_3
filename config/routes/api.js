@@ -62,7 +62,7 @@ router.route('/users/:id')
   .get(usersController.show);
 
   router.route('/projects')
-    .get(projectsController.index)
+    .get(secureRoute, projectsController.index)
     .post(secureRoute, projectsController.create)
 
   router.route('/projects/:id') 
