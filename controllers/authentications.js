@@ -7,6 +7,8 @@ function register(req, res) {
   // add filename to user object before create
   req.body.user.avatar = s3Config.endpoint + s3Config.bucket + '/' + req.file.key;
 
+
+function register(req, res) {
   User.create(req.body.user, function(err, user) {
     // tidy up mongoose's awful error messages
     if(err) {
