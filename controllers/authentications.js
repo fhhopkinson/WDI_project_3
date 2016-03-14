@@ -5,9 +5,7 @@ var s3Config = require('../config/s3');
 
 function register(req, res) {
   // add filename to user object before create
-  if(req.file.key) {
-    req.body.user.avatar = s3Config.endpoint + s3Config.bucket + '/' + req.file.key;
-  }
+
 
   User.create(req.body.user, function(err, user) {
     // tidy up mongoose's awful error messages
