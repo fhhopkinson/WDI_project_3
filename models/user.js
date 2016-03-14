@@ -9,6 +9,14 @@ var userSchema = mongoose.Schema({
    passwordHash: String
 });
 
+userSchema.set('toJSON', {
+  transform: function(doc, ret) {
+    delete ret.passwordHash;
+    delete ret.__v;
+    return ret;
+  }
+});
+
 userSchema.virtual('password')
   .set(function(password) {
     this._password = password;

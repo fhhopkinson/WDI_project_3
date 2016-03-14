@@ -1,10 +1,14 @@
 var mongoose    = require('mongoose');
 
-var userSchema = mongoose.Schema({
-   name: String,
-   email: String,
-   postcode: Date,
-   avatar: String,
-   projects: [{ type: mongoose.Schema.ObjectId, ref: 'Projects' }],
-   passwordHash: String
+var projectSchema = mongoose.Schema({
+   title: String,
+   projectType: String,
+   projectDate: Date,
+   lat: String,
+   lng: String,
+   desc: String,
+   image: String,
+   gallery: []
+   attendees: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+   comments: []
 });
