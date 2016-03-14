@@ -34,6 +34,11 @@ function usersDelete(req, res){
 }
 
 function usersUpdate(req, res) {
+
+  if(req.file.key) {
+    req.body.user.avatar = s3Config.endpoint + s3Config.bucket + '/' + req.file.key;
+  }
+  
   User.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, user) {
     if(err) return res.status(500).json({ message: err });
     return res.status(200).json(user);
