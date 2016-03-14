@@ -7,9 +7,9 @@ var jwt                      = require('jsonwebtoken');
 var authenticationController = require('../../controllers/authentications');
 
 var projectsController = require('../../controllers/projects');
-var usersController = require('../../controllers/users');
-var secret          = require('../../config/tokens').secret;
-var s3Config        = require('../../config/s3');
+var usersController    = require('../../controllers/users');
+var secret             = require('../../config/tokens').secret;
+var s3Config           = require('../../config/s3');
 
 function secureRoute(req, res, next) {
   if(!req.headers.authorization) return res.status(401).json({ message: 'Unauthorized' });

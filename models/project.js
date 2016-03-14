@@ -1,4 +1,4 @@
-var mongoose    = require('mongoose');
+var mongoose      = require('mongoose');
 
 var projectSchema = mongoose.Schema({
    title: String,
