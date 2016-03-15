@@ -59,8 +59,8 @@ router.route('/users')
   .get(usersController.index);
 
 router.route('/users/:id')
-  .get(usersController.show);
-  .put(upload.single('avatar'), usersController.update)
+  .get(usersController.show)
+  .put(upload.single('avatar'), usersController.update);
 
   router.route('/projects')
     .get(secureRoute, projectsController.index)
