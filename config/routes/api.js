@@ -52,7 +52,7 @@ var upload = multer({
   })
 });
 
-router.post('/register', upload.single('avatar'), authenticationController.register);
+router.post('/register', authenticationController.register);
 router.post('/login', authenticationController.login);
 
 router.route('/users')
@@ -60,12 +60,13 @@ router.route('/users')
 
 router.route('/users/:id')
   .get(usersController.show);
+  .put(upload.single('avatar'), usersController.update)
 
   router.route('/projects')
     .get(secureRoute, projectsController.index)
     .post(secureRoute, projectsController.create)
 
-  router.route('/projects/:id') 
+  router.route('/projects/:id')
   .get(projectsController.show)
 
 
