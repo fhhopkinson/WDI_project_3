@@ -2,7 +2,10 @@ body {
   background: #F1FFFA;
 }
 
+img {
 
+max-width: 100%;
+}
 #map {
   height: 400px;
 
