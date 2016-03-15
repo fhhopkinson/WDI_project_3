@@ -66,7 +66,7 @@ router.route('/projects')
     .get(secureRoute, projectsController.index)
     .post(secureRoute, projectsController.create)
 
-  router.route('/projects/:id')
+router.route('/projects/:id')
   .get(projectsController.show)
 
 
