@@ -2,12 +2,24 @@ $(init);
 
 function init(){
   //post information subitted by form
-  $('form').on('submit', submitForm);
+  $('form').on('submit', submitForm, checkLoginState());
   $('.logout').on('click', logout);
-  // $('.login').on('click', )
-  checkLoginState();
+  $('pure-menu-item .pure-menu-link a').on('click', showPage);
 }
 
+function showPage() {
+  // hide all sections
+  // hide errors
+  // show the relevant section
+  $('section').hide();
+  var sectionId = '#' + $(this).text().toLowerCase()
+  $(sectionId).removeClass('hidden')
+
+  // $('.logged-in').show();
+  // $('#users').show();
+  // hideErrors();
+
+}
 
 
 function submitForm(){
@@ -88,7 +100,7 @@ function showPage() {
   // hide all sections
   // hide errors
   // show the relevant section
-  $('section').hide();
+  $('.pure-menu').hide();
   var sectionId = '#' + $(this).text().toLowerCase()
   $(sectionId).removeClass('hidden')
 
