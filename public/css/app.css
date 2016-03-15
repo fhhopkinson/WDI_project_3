@@ -12,9 +12,13 @@ body {
    -ms-transition: all 250ms ease-in-out;
    -o-transition: all 250ms ease-in-out;
    transition: all 250ms ease-in-out;
-   position: absolute;
-   top: 0;
-   left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+ul {
+    list-style-type: none;
 }
 
 #layout:hover {
@@ -26,9 +30,16 @@ body {
   color: transparent;
 }
 
+a.pure-menu-link:hover {
+  background: #307F54;
+}
+
+a.pure-menu-item:active  {
+  background: #307F54;
+}
+
 #layout:hover ul li a{
   color: #F1FFFA;
-  background: #307F54;
 }
 
 
