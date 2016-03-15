@@ -1,17 +1,21 @@
-<form class="pure-form pure-form-aligned" action="/login" method="POST">
-    <fieldset>
-        <div class="pure-control-group">
-            <label for="email">Email Address</label>
-            <input id="email" type="email" placeholder="Email Address">
-        </div>
+<section id="login">
+  <h2>Login</h2>
 
-        <div class="pure-control-group">
-            <label for="password">Password</label>
-            <input id="password" type="password" placeholder="Password">
-        </div>
+    <form class="pure-form pure-form-aligned" action="/login" method="POST">
+        <fieldset>
+            <div class="pure-control-group" class="login">
+                <label for="login-email">Email Address</label>
+                <input id="email" type="email" id="login-email" placeholder="Email Address">
+            </div>
 
-        <div class="pure-controls">
-            <button type="login" class="pure-button pure-button-primary">Login</button>
-        </div>
-    </fieldset>
-</form>
+            <div class="pure-control-group">
+                <label for="login-password">Password</label>
+                <input id="password" type="password" id="login-password" placeholder="Password">
+            </div>
+
+            <div class="pure-controls">
+            <button type="submit" class="pure-button pure-button-primary">Login</button>
+            </div>
+        </fieldset>
+    </form>
+</section>
