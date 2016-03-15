@@ -2,7 +2,10 @@ body {
   background: #F1FFFA;
 }
 
+img {
 
+max-width: 100%;
+}
 #map {
   height: 400px;
 
@@ -47,7 +50,6 @@ a.pure-menu-item:active  {
   color: #F1FFFA;
 }
 
-
 .menu-title {
   color: #F1FFFA;
 }
@@ -61,6 +63,8 @@ i {
 }
 
 /*section {
+
+section {
   float: right;
 }*/
 
