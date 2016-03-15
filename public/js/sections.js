@@ -50,7 +50,11 @@ function projectShow(project){
 
 function displayEventpage(data){
   $("main").hide()
+  $(".projectShow").show();
     $(data).each(function( index, project){
+      $("#showImage").html("<img src='" + project.gallery[0] + "'</img>");
+      $("#showTitle").text(project.title);
+      $("#showDesc").text(project.desc);
     console.log(project);
   });
 }
