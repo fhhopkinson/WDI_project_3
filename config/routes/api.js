@@ -52,8 +52,13 @@ var upload = multer({
   })
 });
 
-router.post('/register', authenticationsController.register);
-router.post('/login', authenticationsController.login);
+router.route('/register')
+  .get(authenticationsController.register)
+  .post(authenticationsController.register);
+
+router.route('/login')
+  .get(authenticationsController.login)
+  .post(authenticationsController.login);
 
 router.route('/users')
   .get(usersController.index);
