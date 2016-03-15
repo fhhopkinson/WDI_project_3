@@ -4,7 +4,6 @@ body {
 
 #layout {
   background-color: #296B47;
-  float: left;
   height: 100vw;
   width: 5%;
   -webkit-transition: all 250ms ease-in-out;
@@ -55,6 +54,10 @@ i {
   background-color: orange;
 }
 
-section {
+/*section {
   float: right;
+}*/
+
+.registerForm {
+  display: inline-block;
 }
