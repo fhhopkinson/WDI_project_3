@@ -4,7 +4,7 @@ var s3                       = require('multer-s3');
 var uuid                     = require('uuid');
 var jwt                      = require('jsonwebtoken');
 
-var authenticationController = require('../../controllers/authentications');
+var authenticationsController = require('../../controllers/authentications');
 
 var projectsController = require('../../controllers/projects');
 var usersController    = require('../../controllers/users');
@@ -52,17 +52,17 @@ var upload = multer({
   })
 });
 
-router.post('/register', authenticationController.register);
-router.post('/login', authenticationController.login);
+router.post('/register', authenticationsController.register);
+router.post('/login', authenticationsController.login);
 
 router.route('/users')
   .get(usersController.index);
 
 router.route('/users/:id')
   .get(usersController.show)
-  .put(upload.single('avatar'), usersController.update)
-
-  router.route('/projects')
+  .put(upload.single('avatar'), usersController.update);
+ 
+router.route('/projects')
     .get(secureRoute, projectsController.index)
     .post(secureRoute, projectsController.create)
 

@@ -1,50 +1,37 @@
 $(init);
 
-function init() {
-  $("form").on("submit", submitForm);
-  getUsers();
+function init(){
+  //post information subitted by form
+  $('form').on('submit', submitForm);
 }
 
-function submitForm() {
+function authenticationSuccessful(data) {
+  // set the token and call checkLoginState
+  if(data.token) setToken(data.token) && loggedInState();
+  // hideErrors();
+  console.log("authenticationSuccessful");
+  // displayUsers();
+
+}
+
+function submitForm(){
+  // get the data from the forms and make an ajaxRequest
+  // call authenticationSuccessful
   event.preventDefault();
 
-  var method = $(this).attr("method");
-  var url    = $(this).attr("action");
-  var data   = new FormData(this); // $(this).serialize();
+  var form    = this;
+  console.log(form);
 
-  // clear the form
-  this.reset();
 
-  return ajaxRequest(method, url, data, getUsers);
-}
+  var method  = $(this).attr('method');
+  var url     = "http://localhost:3000/api" + $(this).attr('action');
+  //serialize data not JSON name=Acacia&email=acacia@gmail.com
+  var data    = $(this).serialize();
+  console.log(data);
 
-function getUsers(){
-  // get the user data from the API and call displayUsers
-  event.preventDefault();
-  return ajaxRequest("get", "/api/users", null, displayUsers);
-}
-
-function displayUsers(data){
-  // take the user data and display all the users as <li>s in the <ul>, eg:
-  // <li class="list-group-item">mickyginger (mike.hayden@ga.co)</li>
-  var $users = $('ul.users');
-  $users.empty();
-  data.users.forEach(function(user) {
-    $users.append('<li class="col-sm-6 col-md-4">'+
-      '<div class="thumbnail">'+
-        '<img src="'+user.avatar +'">' +
-        '<div class="caption">' +
-          '<h3>'+user.username+'</h3>' +
-          '<p>'+user.email+'</p>' +
-        '</div>' +
-      '</div>' +
-    '</li>');
-  });
-}
-
-function setToken(token) {
-  // set the token into localStorage
-  return localStorage.setItem('token', token);
+  //method = request method ie. GET, PUT, PATCH etc.
+  form.reset();
+  ajaxRequest(method, url, data, authenticationSuccessful);
 }
 
 function getToken() {
@@ -52,25 +39,25 @@ function getToken() {
   return localStorage.getItem('token');
 }
 
-function removeToken() {
-  // remove the token from localStorage
-  return localStorage.clear();
+function setToken(token) {
+  // set the token into localStorage
+  // pass in the token itself and then it will be stored as a token
+  return localStorage.setItem('token', token);
 }
 
 function ajaxRequest(method, url, data, callback) {
+  // create a re-useable ajaxRequest function
   return $.ajax({
     method: method,
-    url: url,
+    url: url, 
     data: data,
-    contentType: false, // allow ajax to send file data
-    processData: false, // allow ajax to send file data
-    beforeSend: function(jqXHR) {
+    beforeSend: function(jqXHR, settings) {
       var token = getToken();
       if(token) return jqXHR.setRequestHeader('Authorization', 'Bearer ' + token);
     }
-  }).done(function(data){
-    if (callback) return callback(data);
-  }).fail(function(data) {
-    console.error(data.responseJSON);
-  });
+  })
+  .done(callback) 
+  .fail(function(err){
+    console.error(err)
+  }) 
 }

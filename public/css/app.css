@@ -1,5 +1,58 @@
-ul.users {
-  list-style: none;
-  padding: 0;
-  text-align: center;
+#layout {
+  background-color: blue;
+  float: left;
+  height: 100vw;
+  width: 5%;
+  -webkit-transition: all 250ms ease-in-out;
+   -moz-transition: all 250ms ease-in-out;
+   -ms-transition: all 250ms ease-in-out;
+   -o-transition: all 250ms ease-in-out;
+   transition: all 250ms ease-in-out;
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+#layout:hover {
+  width: 12%;
+}
+
+
+#layout ul li a{
+  color: transparent;
+}
+
+#layout:hover ul li a{
+  color: green;
+}
+
+.red {
+  background-color: red;
+  min-width: 100%;
+}
+
+.blue {
+  background-color: blue;
+  min-width: 100%;
+}
+
+.green {
+  background-color: green;
+  min-width: 100%;
+}
+
+.menu-title {
+  color: red;
+}
+
+i {
+  color: red;
+}
+
+.pure-menu-selected {
+  background-color: orange;
+}
+
+section {
+  float: right;
 }
