@@ -1,5 +1,9 @@
+body {
+  background: #F1FFFA;
+}
+
 #layout {
-  background-color: blue;
+  background-color: #296B47;
   float: left;
   height: 100vw;
   width: 5%;
@@ -23,7 +27,8 @@
 }
 
 #layout:hover ul li a{
-  color: green;
+  color: #F1FFFA;
+  background: #307F54;
 }
 
 .red {
@@ -42,11 +47,11 @@
 }
 
 .menu-title {
-  color: red;
+  color: #F1FFFA;
 }
 
 i {
-  color: red;
+  color: #F1FFFA;
 }
 
 .pure-menu-selected {
