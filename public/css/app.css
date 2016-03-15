@@ -12,9 +12,9 @@ body {
    -ms-transition: all 250ms ease-in-out;
    -o-transition: all 250ms ease-in-out;
    transition: all 250ms ease-in-out;
-   position: absolute;
-   top: 0;
-   left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 #layout:hover {
@@ -31,17 +31,12 @@ body {
   background: #307F54;
 }
 
-
 .menu-title {
   color: #F1FFFA;
 }
 
 i {
   color: #F1FFFA;
-}
-
-.pure-menu-selected {
-  background-color: orange;
 }
 
 section {
