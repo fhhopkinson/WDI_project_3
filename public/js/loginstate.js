@@ -21,8 +21,7 @@ function submitForm(){
 
   var form    = this;
   console.log(form);
-
-
+  
   var method  = $(this).attr('method');
   var url     = "http://localhost:3000/api" + $(this).attr('action');
   //serialize data not JSON name=Acacia&email=acacia@gmail.com
