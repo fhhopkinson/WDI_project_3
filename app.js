@@ -7,13 +7,15 @@ var expressLayouts = require('express-ejs-layouts');
 var mongoose       = require('mongoose');
 var jwt            = require('jsonwebtoken');
 var secret         = require('./config/tokens').secret;
+var PORT 					 = process.env.PORT || 3000;
 
 
 // 2 routes files, one for the API, one for the frontend
 var apiRoutes = require('./config/routes/api');
 var frontendRoutes = require('./config/routes/frontend');
 
-mongoose.connect('mongodb://localhost/green-app');
+var mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/green-app';
+mongoose.connect(mongoURI);
 
 // set up static views for index.html
 app.set("views", __dirname + "/views");
@@ -30,4 +32,6 @@ app.use('/api', apiRoutes);
 app.get('/', frontendRoutes);
 
 
-app.listen(3000);
+app.listen(PORT, function() {
+	console.log("Express is listening on port " + PORT);
+});
