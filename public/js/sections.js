@@ -11,7 +11,8 @@ function projectIndex(){
     $("#login").hide()
     $("#register").hide()
     $(".projectIndex").show()
-    getProjects();
+    initMap(); // create map
+    populateMap() // marker map
   }
    
 
