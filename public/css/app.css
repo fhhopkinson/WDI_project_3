@@ -2,6 +2,12 @@ body {
   background: #F1FFFA;
 }
 
+
+#map {
+  height: 400px;
+
+}
+
 #layout {
   background-color: #296B47;
   height: 100vw;
