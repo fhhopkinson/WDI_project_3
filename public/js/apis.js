@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 $(function(){
 
@@ -58,5 +58,4 @@ $(function(){
 
 
 }); // end of js
-=======
->>>>>>> origin/navbarlinks
+
