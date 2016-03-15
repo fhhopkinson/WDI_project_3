@@ -3,6 +3,8 @@ $(init);
 function init(){
   //post information subitted by form
   $('form').on('submit', submitForm);
+  $('.logout').on('click', logout);
+  // $('.login').on('click', )
   checkLoginState();
 }
 
@@ -38,6 +40,7 @@ var token = getToken();
     console.log("logged-in")
   } else {
     loggedOutState();
+    console.log("logged-out")
   }
 }
 
@@ -52,10 +55,11 @@ function authenticationSuccessful(data) {
 
 function loggedInState(){
   // hide the login / register forms and links
-  // show the users section and link
-  // display the users
-  $(".logged-out", "#login", "#register").hide();
-  $(".user-link", "#users").show();
+  $(".logged-out").hide();
+  // show hubs, logout, and users links
+  // $(".pure-menu-item").hide()
+  
+  $(".logged-in").show();
   // displayUsers();
  // $('section').hide(); 
  // $('#users').show();
@@ -106,7 +110,6 @@ function logout(){
 function loggedOutState(){
   // show the login / register links, and the login form
   // hide the users section and links
-  $('section').hide();
   $('.logged-out').show();
   $('.logged-in').hide();
 }
