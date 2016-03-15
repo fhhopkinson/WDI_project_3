@@ -67,3 +67,7 @@ i {
 .registerForm {
   display: inline-block;
 }
+
+#register {
+  text-align: center;
+}
