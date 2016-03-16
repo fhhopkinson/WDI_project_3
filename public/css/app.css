@@ -1,5 +1,6 @@
 body {
   background: #F1FFFA;
+  font-family: disco;
 }
 
 #showImage img{
@@ -77,7 +78,7 @@ a.pure-menu-link:hover {
   background: #307F54;
 }
 
-a.pure-menu-item:active  {
+link:active  {
   background: #307F54;
 }
 
@@ -111,3 +112,6 @@ section {
   text-align: center;
 }
 
+.pure-menu-active>.pure-menu-link, .pure-menu-link:hover, .pure-menu-link:focus {
+  background: #307F54;
+}
