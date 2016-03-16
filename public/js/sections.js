@@ -57,6 +57,8 @@ function displayEventpage(data){
       $("#showDesc").text(project.desc);
     console.log(project);
   });
+  $("#attendeesList").append(data.attendees[1].name);
+
 }
 
 

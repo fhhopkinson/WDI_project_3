@@ -18,7 +18,7 @@ function projectCreate(req, res){
 
 function projectsShow(req, res){
   var id = req.params.id;
-  Project.findById({ _id: id }, function(err, project) {
+  Project.findById({ _id: id }).populate('attendees').exec(function(err, project){
     if (err) return res.status(500).send(err);
     if (!project) return res.status(404).send(err);
     res.status(200).send(project);
