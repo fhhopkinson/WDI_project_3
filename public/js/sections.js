@@ -32,15 +32,16 @@ function projectShow(project){
     //////////////////////////////////
     $('section').attr("hidden", true);
     $("#projectShow").removeAttr('hidden');
-      $(data).each(function( index, project){
+      $(data.project).each(function( index, project){
         $("#showImage").html("<img src='" + project.gallery[0] + "'</img>");
         $("#showTitle").text(project.title);
         $("#showDesc").text(project.desc);
       console.log(project);
       //////////////////////////////
     });
+      $("#avatarBox").html("<img src='" + data.user.avatar + "' /><h4>" + data.user.name + "</h4>");
     var i = 0;
-    while (i < data.attendees.length){
+    while (i < data.project.attendees.length){
        $("#attendeesList").append("<li class='avatar'>" + "<img src='" + data.attendees[i].avatar +  "'/>" + data.attendees[i].name + "</li>");
        i++
       }
