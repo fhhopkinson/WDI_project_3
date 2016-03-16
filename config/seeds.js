@@ -1,10 +1,12 @@
 var mongoose = require('mongoose');
+var User = require('../models/user')
+var Project = require('../models/project')
 mongoose.connect('mongodb://localhost/green-app');
 
 function drop(){
 mongoose.connect('mongodb://localhost/green-app', function() {
-  mongoose.connection.db.dropDatabase(function(){
-  });
+  User.collection.drop();
+  Project.collection.drop();
  });
 }
 drop();
