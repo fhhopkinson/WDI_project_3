@@ -1,6 +1,13 @@
+@font-face{
+  font-family: 'MyWebFont';
+  src: url('myfont.woff') format('woff'), 
+       url('myfont.ttf') format('truetype'),
+       url("fonts/DISCO__.ttf") format("truetype");
+}
+
 body {
   background: #F1FFFA;
-  font-family: disco;
+  font-family: "customFont", DISCO !important;
 }
 
 img {
@@ -50,19 +57,23 @@ width: 120px;
 #layout {
   background-color: #296B47;
   height: 100vw;
-  width: 5%;
+  width: 6%;
   -webkit-transition: all 250ms ease-in-out;
    -moz-transition: all 250ms ease-in-out;
    -ms-transition: all 250ms ease-in-out;
    -o-transition: all 250ms ease-in-out;
    transition: all 250ms ease-in-out;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 }
 
 ul {
     list-style-type: none;
+}
+
+.pure-menu-list {
+  margin-top: 30vh;
 }
 
 #layout:hover {
@@ -98,11 +109,11 @@ i {
   background-color: orange;
 }
 
-/*section {
 
-section {
-  float: right;
-}*/
+
+.pure-g{
+  font-family: "customFont", DISCO !important;
+}
 
 .registerForm {
   display: inline-block;
@@ -115,3 +126,4 @@ section {
 .pure-menu-active>.pure-menu-link, .pure-menu-link:hover, .pure-menu-link:focus {
   background: #307F54;
 }
+
