@@ -47,7 +47,7 @@ function newForm(){
 
   //method = request method ie. GET, PUT, PATCH etc.
   form.reset();
-  ajaxRequest(method, url, data);
+  ajaxRequestWithImage(method, url, data);
 }
 
 function checkLoginState(data){
@@ -193,7 +193,7 @@ function ajaxRequest(method, url, data, callback) {
   })
 }
 
-function ajaxRequestWithImage(method, url, data) {
+function ajaxRequestWithImage(method, url, data, callback) {
   // create a re-useable ajaxRequest function
   return $.ajax({
     method: method,
@@ -206,7 +206,7 @@ function ajaxRequestWithImage(method, url, data) {
       if(token) return jqXHR.setRequestHeader('Authorization', 'Bearer ' + token);
     }
   })
-  .done(next())
+  .done(callback)
   .fail(function(err){
     console.error(err)
   })
