@@ -134,7 +134,7 @@ var project3 = new Project({
   lng: "-0.1286212",
   addresslineOne: "179 Haggerston Rd",
   addresslineTwo: "London E8 4JB",
-  desc: "Rainwater Harvesting Barrel Building Workshop. Although it takes 12 years to get "pay back" from them economically, they are the right thing to do environmentally, says Waterwise managing director Jacob Tompkins.",
+  desc: "Rainwater Harvesting Barrel Building Workshop. Although it takes 12 years to get 'pay back' from them economically, they are the right thing to do environmentally, says Waterwise managing director Jacob Tompkins.",
   image: "https://rekhadhyani.files.wordpress.com/2013/04/rain.jpg?w=636&h=508",
   gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
   attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
@@ -202,7 +202,7 @@ var project8 = new Project({
  projectDate: 5/31/2016,
  lat: "51.57677641121266",
  lng: "-0.012485262778113793",
- addresslineOne: "Bakers Avenue"
+ addresslineOne: "Bakers Avenue",
  addresslineTwo: "London E17 9AH",
  desc: "Volunteers have been at the heart of our work at FRP for 25 years and we still couldn’t operate without the contribution that they make today. We set out to provide volunteering opportunities that are rewarding for those who help us to achieve our aims. By volunteering for FRP you can: gain work experience and learn new skills; meet other members of the local community; and earn a sense of achievement, from contributing to a practical project with environmental and social aim",
  image: "https://upload.wikimedia.org/wikipedia/commons/5/53/Scrapyard_challenge_vw_beetle.jpg",
@@ -304,8 +304,10 @@ project2.save(function(err, users){
 
 
 
-
-});
+            });
+          });
+        });
+      });
     });
   });
 });
