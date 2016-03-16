@@ -9,13 +9,18 @@ mongoose.connect('mongodb://localhost/green-app', function() {
 }
 drop();
 
+
+
 var User = require('../models/user');
 var Project = require('../models/project');
 
 
 var user1 = new User({
+  name: "Enrico Rainsome",
   username:"admin",
   email: "admin@admin.com",
+  avatar: "http://www.eonline.com/eol_images/Entire_Site/2014913/rs_600x600-141013090723-600-jared-leto-tree-hugging-instagram.ls.101314.jpg",
+  postcode: "E1 5ED",
   password: "password",
   passwordConfirmation: "password"
 },function(err, user){
@@ -27,7 +32,7 @@ user1.save();
 var user2 = new User({
  name: "Henry Tallyho",
  email: "autovincelynch@gmail.com",
- postcode: "NW5 1UX",
+ postcode: "E2 7NS",
  avatar: "http://cdn.makeagif.com/media/5-17-2015/rmnODh.gif",
  // projects: project1._id,
  password: "password",
@@ -36,9 +41,9 @@ var user2 = new User({
 user2.save();
 
 var user3 = new User({
- name: "George",
+ name: "George Bigbucks",
  email: "george@gmail.com",
- postcode: "NW5 1UX",
+ postcode: "SW3 3DL",
  avatar: "http://cdn.makeagif.com/media/5-17-2015/rmnODh.gif",
  // projects: project1._id,
  password: "password",
@@ -46,9 +51,9 @@ var user3 = new User({
 });
 user3.save();
 var user4 = new User({
- name: "Steve",
+ name: "Steve Loveit",
  email: "steve@gmail.com",
- postcode: "NW5 1UX",
+ postcode: "E8 4QN",
  avatar: "http://cdn.makeagif.com/media/5-17-2015/rmnODh.gif",
  // projects: project1._id,
  password: "password",
@@ -56,9 +61,9 @@ var user4 = new User({
 });
 user4.save();
 var user5 = new User({
- name: "Bob",
+ name: "Bobbie Shocker",
  email: "bob@gmail.com",
- postcode: "NW5 1UX",
+ postcode: "SW11 3JR",
  avatar: "http://cdn.makeagif.com/media/5-17-2015/rmnODh.gif",
  // projects: project1._id,
  password: "password",

@@ -3,16 +3,14 @@ $( document ).ready(function() {
     console.log( "Sections file loaded" );
 
 // clicks
-$("#hubs").on('click',projectIndex)
-// Hide all pages (<MAINS>)
-$("main").hide()
+//$("#hubs").on('click',projectIndex)
 $(".hubslist").on('click', 'img', function(){
   //showProject(this.id);
   projectShow(this.id);
 });
 
 function projectIndex(){
-    $("main").hide()
+    $("section").hide()
     $("#login").hide()
     $("#register").hide()
     $(".projectIndex").show()
@@ -50,7 +48,7 @@ function projectShow(project){
 }
 
 function displayEventpage(data){
-  $("main").hide()
+  $("section").hide()
   $(".projectShow").show();
     $(data).each(function( index, project){
       $("#showImage").html("<img src='" + project.gallery[0] + "'</img>");
