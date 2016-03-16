@@ -4,7 +4,7 @@ function init(){
   //post information subitted by form
   $('form').on('submit', submitForm, checkLoginState());
   $('.logout').on('click', logout);
-  $('.pure-menu-link').on('click', showPage);
+  $('.pure-menu-item a').on('click', showPage);
   $('section').attr("hidden", true);
 }
 
@@ -23,18 +23,19 @@ function submitForm(){
   var url     = "http://localhost:3000/api" + $(this).attr('action');
   //serialize data not JSON name=Acacia&email=acacia@gmail.com
   var data    = $(this).serialize();
-  console.log(data);
+
 
   //method = request method ie. GET, PUT, PATCH etc.
   form.reset();
   ajaxRequest(method, url, data, authenticationSuccessful);
 }
 
-function checkLoginState(){
+function checkLoginState(data){
   // check for a token
   // if there is one, call loggedInState
   // otherwise, call loggedOutState
-var token = getToken();
+  showUser(data);
+  var token = getToken();
   
   if (token) { 
     loggedInState();
@@ -49,7 +50,8 @@ function authenticationSuccessful(data) {
   // set the token and call checkLoginState
   if(data.token) setToken(data.token) && loggedInState();
   // hideErrors();
-  checkLoginState();
+  showUser(data);
+  checkLoginState(data);
   console.log("authenticationSuccessful");
   // displayUsers();
 
@@ -58,11 +60,20 @@ function authenticationSuccessful(data) {
 function loggedInState(){
   // hide the login / register forms and links
   // show hubs, logout, and users links
-  
   $('.logged-in').removeAttr("hidden");
   $('.logged-out').attr("hidden", true);
+  setData();
 
 }
+
+function setData(token){
+  setToken(token);
+}
+
+function RemoveData(){
+
+}
+
 
 
 function setToken(token) {
@@ -74,6 +85,16 @@ function setToken(token) {
 function getToken() {
   // get the token from localStorage
   return localStorage.getItem('token');
+  getUser();
+}
+
+function getUser(){
+  // get the user data from the API and call displayUsers
+  event.preventDefault();
+  loggedInState();
+  return ajaxRequest('GET', 'http://localhost:3000/api/users', null, function(data) {
+      showUser(data);
+  });
 }
 
 
@@ -85,7 +106,6 @@ function showPage() {
   $('section').attr("hidden", true);
   var sectionId = $(this).text().toLowerCase()
   var sectionId = $.trim(sectionId)
-  console.log(sectionId)
   if (sectionId == "logout") {
     logout()
   }
@@ -122,6 +142,15 @@ function removeToken() {
 function showRegister() {
   $('section').attr("hidden", true);
   $('#register').removeAttr("hidden");
+}
+
+function showUser(data){
+  // take the user data and show the current user as <a> in the <li>, eg:
+  // <li class="pure-menu-link">Current User</li>
+  console.log("got here")
+  if(data)  { 
+    $('#user').empty().append("<li>" + "<a>" + "<i class='fa fa-user'>" + "</i>" + " " + data.user.name.toUpperCase() + "</a>" + "</li>");
+  };
 }
 
 function ajaxRequest(method, url, data, callback) {
