@@ -4,16 +4,16 @@ function init(){
   //post information subitted by form
   $('form').on('submit', submitForm, checkLoginState());
   $('.logout').on('click', logout);
-  $('pure-menu-item .pure-menu-link a').on('click', showPage);
+  $('ul li a').on('click', showPage);
 }
 
 function showPage() {
   // hide all sections
   // hide errors
   // show the relevant section
-  $('section').hide();
+  $('section').attr("hidden", true);
   var sectionId = '#' + $(this).text().toLowerCase()
-  $(sectionId).removeClass('hidden')
+  $(sectionId).removeAtrr('hidden');
 
   // $('.logged-in').show();
   // $('#users').show();
@@ -93,9 +93,12 @@ function showPage() {
   // hide all sections
   // hide errors
   // show the relevant section
-  $('.pure-menu').hide();
+  $('.pure-menu').attr("hidden");
   var sectionId = '#' + $(this).text().toLowerCase()
-  $(sectionId).removeClass('hidden')
+  if (sectionId == "logout") {
+    logout()
+  }
+  $(sectionId).removeAttr('hidden')
 
   // $('.logged-in').show();
   // $('#users').show();
@@ -126,8 +129,8 @@ function removeToken() {
 }
 
 function showRegister() {
-  $('section').hide();
-  $('#register').show();
+  $('section').attr("hidden", true);
+  $('#register').removeAttr("hidden");
 }
 
 function ajaxRequest(method, url, data, callback) {
