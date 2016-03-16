@@ -225,7 +225,7 @@ var project8 = new Project({
 });
 
 var projectowner1 = new User({
-  name: "project_owner1",
+  name: "Albert Herring",
   projects: [project1._id],
   email: "project_owner1@gmail.com",
   postcode: "SE1 3SD",
@@ -253,7 +253,7 @@ projectowner2.save(function(err, user){
 });
 
 var projectowner3 = new User({
-  name: "project_owner3",
+  name: "Charlie Brown",
   projects: [project3._id],
   email: "project_owner3@gmail.com",
   postcode: "S2 3SD",
@@ -281,7 +281,7 @@ projectowner4.save(function(err, user){
 });
 
 var projectowner5 = new User({
-  name: "project_owner5",
+  name: "Albert Herring",
   projects: [project5._id,project0._id],
   email: "project_owner5@gmail.com",
   postcode: "SW2 3SD",
