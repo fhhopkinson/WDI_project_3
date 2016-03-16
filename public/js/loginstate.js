@@ -2,7 +2,7 @@ $(init);
 
 function init(){
   //post information subitted by form
-  $('form').on('submit', submitForm, checkLoginState());
+  $('form').on('submit', submitForm);
   $('.logout').on('click', logout);
   $('.pure-menu-item a').on('click', showPage);
   $('section').attr("hidden", true);
@@ -18,11 +18,11 @@ function submitForm(){
 
   var form    = this;
   console.log(form);
-  
+
   var method  = $(this).attr('method');
   var url     = "http://localhost:3000/api" + $(this).attr('action');
   //serialize data not JSON name=Acacia&email=acacia@gmail.com
-  var data    = $(this).serialize();
+  var data    = new FormData(this);
 
 
   //method = request method ie. GET, PUT, PATCH etc.
@@ -36,8 +36,8 @@ function checkLoginState(data){
   // otherwise, call loggedOutState
   showUser(data);
   var token = getToken();
-  
-  if (token) { 
+
+  if (token) {
     loggedInState();
     console.log("logged-in")
   } else {
@@ -151,7 +151,7 @@ function showUser(data){
   // take the user data and show the current user as <a> in the <li>, eg:
   // <li class="pure-menu-link">Current User</li>
   console.log("got here")
-  if(data)  { 
+  if(data)  {
     $('#user').empty().append("<li>" + "<a>" + "<i class='fa fa-user'>" + "</i>" + " " + data.user.name.toUpperCase() + "</a>" + "</li>");
   };
 }
@@ -160,15 +160,33 @@ function ajaxRequest(method, url, data, callback) {
   // create a re-useable ajaxRequest function
   return $.ajax({
     method: method,
-    url: url, 
+    url: url,
     data: data,
     beforeSend: function(jqXHR, settings) {
       var token = getToken();
       if(token) return jqXHR.setRequestHeader('Authorization', 'Bearer ' + token);
     }
   })
-  .done(callback) 
+  .done(callback)
   .fail(function(err){
     console.error(err)
-  }) 
+  })
+
+function ajaxRequestWithImage(method, url, data, callback) {
+  // create a re-useable ajaxRequest function
+  return $.ajax({
+    method: method,
+    url: url,
+    data: data,
+    contentType: false,
+    processData: false,
+    beforeSend: function(jqXHR, settings) {
+      var token = getToken();
+      if(token) return jqXHR.setRequestHeader('Authorization', 'Bearer ' + token);
+    }
+  })
+  .done(callback)
+  .fail(function(err){
+    console.error(err)
+  })
 }

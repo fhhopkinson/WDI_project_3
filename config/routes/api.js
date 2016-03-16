@@ -69,7 +69,7 @@ router.route('/users/:id')
 
 router.route('/projects')
     .get(projectsController.index)
-    .post(upload.single('image'), secureRoute, projectsController.create)
+    .post(upload.single('image'), projectsController.create)
 
 router.route('/projects/:id')
   .get(projectsController.show)

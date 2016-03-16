@@ -1,5 +1,6 @@
 var Project = require("../models/project");
 var User = require('../models/user');
+var s3Config = require('../config/s3');
 
 function projectIndex(req, res){
   Project.find(function(err, projects){
@@ -10,12 +11,12 @@ function projectIndex(req, res){
 
 function projectCreate(req, res){
 
-  if(req.file.key) {
+  if(req.file) {
     req.body.image = s3Config.endpoint + s3Config.bucket + '/' + req.file.key;
   }
 
    var project = new Project(req.body);
-   project.save(function(err,project){
+   project.save(function(err, project){
     if(err) return res.status(500).send(err);
 
     res.status(201).send(project)
