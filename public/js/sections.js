@@ -1,7 +1,7 @@
 
 $( document ).ready(function() {
     console.log( "Sections file loaded" );
-
+$("#front").removeAttr('hidden');
 $(".hubslist").on('click', '.projectItemBox', function(){
   projectShow(this.id);
 });
