@@ -35,7 +35,7 @@ var user2 = new User({
  name: "Henry Tallyho",
  email: "autovincelynch@gmail.com",
  postcode: "E2 7NS",
- avatar: "http://cdn.makeagif.com/media/5-17-2015/rmnODh.gif",
+ avatar: "http://i2.cdn.turner.com/cnnnext/dam/assets/140926165711-john-sutter-profile-image-large-169.jpg",
  // projects: project1._id,
  password: "password",
  passwordConfirmation: "password"
@@ -46,7 +46,7 @@ var user3 = new User({
  name: "George Bigbucks",
  email: "george@gmail.com",
  postcode: "SW3 3DL",
- avatar: "http://cdn.makeagif.com/media/5-17-2015/rmnODh.gif",
+ avatar: "https://lh3.googleusercontent.com/-wysvRmf4xz4/AAAAAAAAAAI/AAAAAAAAAAA/GluI72KIjv0/photo.jpg",
  // projects: project1._id,
  password: "password",
  passwordConfirmation: "password"
@@ -56,7 +56,7 @@ var user4 = new User({
  name: "Steve Loveit",
  email: "steve@gmail.com",
  postcode: "E8 4QN",
- avatar: "http://cdn.makeagif.com/media/5-17-2015/rmnODh.gif",
+ avatar: "http://www.lawyersweekly.com.au/images/LW_Media_Library/594partner-profile-pic-An.jpg",
  // projects: project1._id,
  password: "password",
  passwordConfirmation: "password"
@@ -66,7 +66,7 @@ var user5 = new User({
  name: "Bobbie Shocker",
  email: "bob@gmail.com",
  postcode: "SW11 3JR",
- avatar: "http://cdn.makeagif.com/media/5-17-2015/rmnODh.gif",
+ avatar: "http://zblogged.com/wp-content/uploads/2015/11/17.jpg",
  // projects: project1._id,
  password: "password",
  passwordConfirmation: "password"
