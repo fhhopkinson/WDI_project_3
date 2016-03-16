@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 431f502fd5f2e2eb173fcd0cd94d0a34badb6dd4
 $(function(){
 
  helloWorld = "Ok World, whats the beef?";

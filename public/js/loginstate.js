@@ -39,7 +39,6 @@ function submitForm(){
   //method = request method ie. GET, PUT, PATCH etc.
   form.reset();
   ajaxRequest(method, url, data, authenticationSuccessful);
-  checkLoginState();
 }
 
 function checkLoginState(){
@@ -68,18 +67,11 @@ function authenticationSuccessful(data) {
 
 function loggedInState(){
   // hide the login / register forms and links
-  $(".logged-out").hide();
   // show hubs, logout, and users links
-  // $(".pure-menu-item").hide()
   
-  $(".logged-in").show();
-  // displayUsers();
- // $('section').hide(); 
- // $('#users').show();
- // $('.logged-out').hide();
- // $('.logged-in').show();
- // getUsers();
- // showpage();
+  $('.logged-in').removeAttr("hidden");
+  $('.logged-out').attr("hidden", true);
+
 
 }
 
@@ -123,8 +115,9 @@ function logout(){
 function loggedOutState(){
   // show the login / register links, and the login form
   // hide the users section and links
-  $('.logged-out').show();
-  $('.logged-in').hide();
+  $('.logged-out').removeAttr("hidden");
+  $('.logged-in').attr("hidden", true);
+  console.log("loggedOutState")
 }
 
 function removeToken() {
