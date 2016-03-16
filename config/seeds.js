@@ -23,8 +23,7 @@ var user1 = new User({
   email: "admin@admin.com",
   avatar: "http://www.eonline.com/eol_images/Entire_Site/2014913/rs_600x600-141013090723-600-jared-leto-tree-hugging-instagram.ls.101314.jpg",
   postcode: "E1 5ED",
-  password: "password",
-  passwordConfirmation: "password"
+  password: "password"
 },function(err, user){
   if(err) console.error(err);
   else console.log(user);
@@ -37,8 +36,7 @@ var user2 = new User({
  postcode: "E2 7NS",
  avatar: "http://i2.cdn.turner.com/cnnnext/dam/assets/140926165711-john-sutter-profile-image-large-169.jpg",
  // projects: project1._id,
- password: "password",
- passwordConfirmation: "password"
+ password: "password"
 });
 user2.save();
 
@@ -48,8 +46,7 @@ var user3 = new User({
  postcode: "SW3 3DL",
  avatar: "https://lh3.googleusercontent.com/-wysvRmf4xz4/AAAAAAAAAAI/AAAAAAAAAAA/GluI72KIjv0/photo.jpg",
  // projects: project1._id,
- password: "password",
- passwordConfirmation: "password"
+ password: "password"
 });
 user3.save();
 var user4 = new User({
@@ -58,8 +55,7 @@ var user4 = new User({
  postcode: "E8 4QN",
  avatar: "http://www.lawyersweekly.com.au/images/LW_Media_Library/594partner-profile-pic-An.jpg",
  // projects: project1._id,
- password: "password",
- passwordConfirmation: "password"
+ password: "password"
 });
 user4.save();
 var user5 = new User({
@@ -68,8 +64,7 @@ var user5 = new User({
  postcode: "SW11 3JR",
  avatar: "http://zblogged.com/wp-content/uploads/2015/11/17.jpg",
  // projects: project1._id,
- password: "password",
- passwordConfirmation: "password"
+ password: "password"
 });
 user5.save();
 
@@ -80,7 +75,6 @@ var user6 = new User({
   avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
 //projects: [{ type: mongoose.Schema.ObjectIt, ref: 'Projects'}],
 password: "fred"
-passwordConfirmation: "fred"
 });
 user6.save();
 
@@ -104,7 +98,7 @@ var project1 = new Project({
   title:  "Rain on Me",
   projectType: "Environmental",
   projectDate: 5/15/2016,
-  lat: "51.69849", 
+  lat: "51.69849",
   lng: "-0.117187",
   addresslineOne: "Brixton",
   addresslineTwo: "London",
@@ -192,7 +186,7 @@ var project7 = new Project({
  title:  "scrapheap challenge",
  projectType: "Other",
  projectDate: 5/31/2016,
- lat: "51.531295", 
+ lat: "51.531295",
  lng: "-0.097089",
  addresslineOne: "City Road Basin",
  addresslineTwo: "London N1 7TB",
@@ -237,7 +231,6 @@ var projectowner2 = new User({
   postcode: "SE2 3SD",
   avatar:"https://www.morganstanley.com/assets/images/people/tiles/adam-parker-large.jpg",
   password: "fred",
-  passwordConfirmation: "fred"
 });
 projectowner2.save(function(err, user){
   if(err) console.error(err);
@@ -251,7 +244,6 @@ var projectowner3 = new User({
   postcode: "S2 3SD",
   avatar:"https://www.morganstanley.com/assets/images/people/tiles/karlene-quigley-large.jpg",
   password: "fred",
-  passwordConfirmation: "fred"
 });
 projectowner3.save(function(err, user){
   if(err) console.error(err);
@@ -265,7 +257,6 @@ var projectowner4 = new User({
   postcode: "E2 3SD",
   avatar:"https://www2.mmu.ac.uk/media/mmuacuk/content/images/social-care-and-social-work/scsw-student-profile-mariola-mak.jpg",
   password: "fred",
-  passwordConfirmation: "fred"
 });
 projectowner4.save(function(err, user){
   if(err) console.error(err);
@@ -279,7 +270,6 @@ var projectowner5 = new User({
   postcode: "SW2 3SD",
   avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
   password: "fred",
-  passwordConfirmation: "fred"
 });
 projectowner5.save(function(err, user){
   if(err) console.error(err);
