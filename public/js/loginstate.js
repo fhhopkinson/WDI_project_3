@@ -2,12 +2,24 @@ $(init);
 
 function init(){
   //post information subitted by form
-  $('form').on('submit', submitForm);
+  $('form').on('submit', submitForm, checkLoginState());
   $('.logout').on('click', logout);
-  // $('.login').on('click', )
-  checkLoginState();
+  $('ul li a').on('click', showPage);
 }
 
+function showPage() {
+  // hide all sections
+  // hide errors
+  // show the relevant section
+  $('section').attr("hidden", true);
+  var sectionId = '#' + $(this).text().toLowerCase()
+  $(sectionId).removeAtrr('hidden');
+
+  // $('.logged-in').show();
+  // $('#users').show();
+  // hideErrors();
+
+}
 
 
 function submitForm(){
@@ -55,18 +67,11 @@ function authenticationSuccessful(data) {
 
 function loggedInState(){
   // hide the login / register forms and links
-  $(".logged-out").hide();
   // show hubs, logout, and users links
-  // $(".pure-menu-item").hide()
   
-  $(".logged-in").show();
-  // displayUsers();
- // $('section').hide(); 
- // $('#users').show();
- // $('.logged-out').hide();
- // $('.logged-in').show();
- // getUsers();
- // showpage();
+  $('.logged-in').removeAttr("hidden");
+  $('.logged-out').attr("hidden", true);
+
 
 }
 
@@ -88,9 +93,12 @@ function showPage() {
   // hide all sections
   // hide errors
   // show the relevant section
-  $('section').hide();
+  $('.pure-menu').attr("hidden");
   var sectionId = '#' + $(this).text().toLowerCase()
-  $(sectionId).removeClass('hidden')
+  if (sectionId == "logout") {
+    logout()
+  }
+  $(sectionId).removeAttr('hidden')
 
   // $('.logged-in').show();
   // $('#users').show();
@@ -110,8 +118,9 @@ function logout(){
 function loggedOutState(){
   // show the login / register links, and the login form
   // hide the users section and links
-  $('.logged-out').show();
-  $('.logged-in').hide();
+  $('.logged-out').removeAttr("hidden");
+  $('.logged-in').attr("hidden", true);
+  console.log("loggedOutState")
 }
 
 function removeToken() {
@@ -120,8 +129,8 @@ function removeToken() {
 }
 
 function showRegister() {
-  $('section').hide();
-  $('#register').show();
+  $('section').attr("hidden", true);
+  $('#register').removeAttr("hidden");
 }
 
 function ajaxRequest(method, url, data, callback) {
