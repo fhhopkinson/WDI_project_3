@@ -34,10 +34,25 @@ function projectsShow(req, res){
   })
 }
 
+function projectsUpdate(req, res) { 
+  console.log("we just arrived in the projectsUpdate controller function");
+  console.log(req.body.commenter);
+  console.log(req.body.comment);
+  //Project.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, project) {
+    Project.findOneAndUpdate({_id:req.params.id}, {comments:req.body}, function (err, project) {
+    if(err) return res.status(500).json({ message: err });
+    return res.status(200).json(project);
+  });
+}
+
+
+
+
 
 
 module.exports = {
   index: projectIndex,
   show: projectsShow,
-  create: projectCreate
+  create: projectCreate,
+  update: projectsUpdate
 };

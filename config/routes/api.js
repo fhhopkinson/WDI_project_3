@@ -8,6 +8,7 @@ var authenticationsController = require('../../controllers/authentications');
 
 var projectsController = require('../../controllers/projects');
 var usersController    = require('../../controllers/users');
+var commentsController    = require('../../controllers/comments');
 var secret             = require('../../config/tokens').secret;
 var s3Config           = require('../../config/s3');
 
@@ -69,10 +70,15 @@ router.route('/users/:id')
 
 router.route('/projects')
     .get(projectsController.index)
-    .post(upload.single('image'), projectsController.create)
+    .post(upload.single('image'), projectsController.create);
 
 router.route('/projects/:id')
   .get(projectsController.show)
+  .put(projectsController.update);
+
+  router.route('/comments')
+      .get(commentsController.index)
+      .post(commentsController.create);
 
 
 module.exports = router;

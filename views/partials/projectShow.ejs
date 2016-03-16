@@ -48,21 +48,20 @@ gap
 
 
 
-<p>Comments:
-
- <form class="pure-form pure-form-stacked" id="submit" action="/comments" method="POST">
+ <form class="pure-form pure-form-stacked" id="comment" action="/projects" method="PUT">
 <fieldset>
 <legend>Add a new comment</legend>
 <br>
-<label for="name">Name</label>
-<input id="name" name="name" type="text"></br>
+<label for="commenter">Name</label>
+<input id="name" name="commenter" type="text"></br>
 <label for="comment">Comment</label>
-<input id="comment" name="comment" type="text">
+<textarea id="comment" name="comment" placeholder="Your comment here"> </textarea>
 <button type="submit" class="pure-button pure-button-primary">Add Comment</button>
     </fieldset>
-
 </form>
-
+Comments:
+  <ul id="commentsList">
+  </ul>
 
   </div>
   <div class="pure-u-2-24">
