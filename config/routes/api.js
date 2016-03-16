@@ -53,13 +53,10 @@ var upload = multer({
   })
 });
 
-router.route('/register')
-  .get(authenticationsController.register)
-  .post(authenticationsController.register);
+router.post('/register', authenticationsController.register);
+router.post('/login', authenticationsController.login);
 
-router.route('/login')
-  .get(authenticationsController.login)
-  .post(authenticationsController.login);
+
 
 router.route('/users')
   .get(usersController.index);
@@ -67,6 +64,9 @@ router.route('/users')
 router.route('/users/:id')
   .get(usersController.show)
   .put(upload.single('avatar'), usersController.update);
+
+  router.route('/attending/:eventid/:userid')
+    .get(projectsController.attending);
 
 router.route('/projects')
     .get(projectsController.index)
