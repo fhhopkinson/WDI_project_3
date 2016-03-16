@@ -152,7 +152,10 @@ function showPage() {
     logout()
   }
   if (sectionId == "hubs") {
-    projectIndex();
+    viewListProjects();
+  }
+  if (sectionId == "front") {
+    generateMap();
   }
 
   // $('.logged-in').show();
