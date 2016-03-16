@@ -116,9 +116,6 @@ project1.save(function(err, users){
   if(err) console.error(err);
   });//
 
-
-
-
 var project2 = new Project({
  title: "Spiny pals",
  projectType: "Animals",
@@ -148,8 +145,6 @@ var project3 = new Project({
   attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
 });
 
-
-
 var project4 = new Project({
   title: "Brixton Energy Solar 4",
   projectType: "Energy",
@@ -163,8 +158,6 @@ var project4 = new Project({
   gallery: ["http://d3d7rtxd5tie6q.cloudfront.net/assets/about-us/syed.png", "http://static.standard.co.uk/s3fs-public/styles/story_large/public/thumbnails/image/2012/07/09/10/blackfriars-solar-.jpg" ],
   attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
 });
-
-
 
 var project5 = new Project({
  title:  "I Can't Stand the Rain…Against my Window",
@@ -194,6 +187,34 @@ var project6 = new Project({
  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
 });
 
+var project7 = new Project({
+ title:  "scrapheap challenge",
+ projectType: "Other",
+ projectDate: 5/31/2016,
+ lat: "51.531295", 
+ lng: "-0.097089",
+ addresslineOne: "City Road Basin",
+ addresslineTwo: "London N1 7TB",
+ desc: "There is a pile of scrap metal and broken sofas and things that are polluting the river system and it is the aim of this project to clean this up and clean the water to and ensure that there will be no more problems like this.",
+ image: "https://upload.wikimedia.org/wikipedia/commons/5/53/Scrapyard_challenge_vw_beetle.jpg",
+ gallery: ["http://previews.123rf.com/images/ljupco/ljupco0606/ljupco060600111/430569-Scrapheap-in-Skopje-Stock-Photo.jpg", "http://c7.alamy.com/comp/AB5H91/rubbish-dump-pile-landfill-waste-produce-products-man-made-AB5H91.jpg"],
+ attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
+});
+
+var project8 = new Project({
+ title:  "Recycle This!",
+ projectType: "Recycling",
+ projectDate: 5/31/2016,
+ lat: "51.57677641121266",
+ lng: "-0.012485262778113793",
+ addresslineOne: "Bakers Avenue"
+ addresslineTwo: "London E17 9AH",
+ desc: "Volunteers have been at the heart of our work at FRP for 25 years and we still couldn’t operate without the contribution that they make today. We set out to provide volunteering opportunities that are rewarding for those who help us to achieve our aims. By volunteering for FRP you can: gain work experience and learn new skills; meet other members of the local community; and earn a sense of achievement, from contributing to a practical project with environmental and social aim",
+ image: "https://upload.wikimedia.org/wikipedia/commons/5/53/Scrapyard_challenge_vw_beetle.jpg",
+ gallery: ["http://previews.123rf.com/images/ljupco/ljupco0606/ljupco060600111/430569-Scrapheap-in-Skopje-Stock-Photo.jpg", "http://c7.alamy.com/comp/AB5H91/rubbish-dump-pile-landfill-waste-produce-products-man-made-AB5H91.jpg"],
+ attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
+});
+
 var projectowner1 = new User({
   name: "project_owner1",
   projects: [project1._id],
@@ -207,6 +228,7 @@ projectowner1.save(function(err, user){
   if(err) console.error(err);
   else console.log(user);
 });
+
 var projectowner2 = new User({
   name: "project_owner2",
   projects: [project2._id],
