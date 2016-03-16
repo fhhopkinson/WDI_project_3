@@ -17,6 +17,15 @@ max-width: 100%;
   width: 150px;
 }
 
+.projectItemBox{
+  color:white;
+  width:200px;
+  height:120px;
+}
+.projectItemBox h3{
+  background:rgba(0,0,0,0.5);
+}
+
 .topbar-projectindex{
 border-bottom: 2px black solid;
 text-align: center;
@@ -69,7 +78,7 @@ a.pure-menu-link:hover {
   background: #307F54;
 }
 
-a.pure-menu-item:active  {
+link:active  {
   background: #307F54;
 }
 
@@ -101,4 +110,8 @@ section {
 
 #register {
   text-align: center;
+}
+
+.pure-menu-active>.pure-menu-link, .pure-menu-link:hover, .pure-menu-link:focus {
+  background: #307F54;
 }

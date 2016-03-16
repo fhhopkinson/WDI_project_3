@@ -7,6 +7,7 @@ function init(){
   $('.logout').on('click', logout);
   $('.pure-menu-item a').on('click', showPage);
   $('section').attr("hidden", true);
+  changeColor();
 }
 
 
@@ -90,8 +91,8 @@ function setData(token){
   setToken(token);
 }
 
-function RemoveData(){
-
+function changeColor(){
+  $('.pure-menu-link a').css('background-color','#307F54');
 }
 
 
@@ -126,14 +127,15 @@ function showPage() {
   $('section').attr("hidden", true);
   var sectionId = $(this).text().toLowerCase()
   var sectionId = $.trim(sectionId)
+  console.log(sectionId)
+  $('#' + sectionId).removeAttr('hidden');
+
   if (sectionId == "logout") {
     logout()
   }
   if (sectionId == "hubs") {
     projectIndex();
   }
-$('#' + sectionId).removeAttr('hidden');
-
   // $('.logged-in').show();
   // $('#users').show();
   // hideErrors();
