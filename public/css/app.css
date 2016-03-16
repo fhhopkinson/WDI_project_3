@@ -16,6 +16,11 @@ max-width: 100%;
   width: 150px;
 }
 
+.topbar-projectindex{
+border-bottom: 2px black solid;
+text-align: center;
+}
+
 .topbar-showproject {
 border-bottom: 2px black solid;
 text-align: center;
