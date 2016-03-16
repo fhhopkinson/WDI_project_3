@@ -1,8 +1,9 @@
 $(function(){
 console.log( "Apis & Google Stuff loaded" );
 
- var googleMap;
+
  var smallGmap;
+ var geocoder;
 
 initSmallMap = function(lat,lng) {
   console.log(lat + ":" + lng);
@@ -63,7 +64,19 @@ googleMap =  new google.maps.Map(map, {
      }); // end of the foreach (I think)
    });
  }
-
+ placesCardFetch = function(address, lat, lng){
+  console.log(address + lat + lng );
+ var latlng = new google.maps.LatLng(lat,lng);
+   // Search nearby places
+ placesService = new google.maps.places.PlacesService(map);
+ placesService.nearbySearch({ keyword: address, location: latlng, radius: 15000 }, function(results, status) {  //map.getCenter()
+   console.log(results);
+   imageFound = results[0].photos[0].getUrl({
+    maxWidth: 400
+         });
+   $("#imageFound").html("<img src='" + imageFound + "' />");
+ });
+}
 
 }); // end of js
 

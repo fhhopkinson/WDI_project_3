@@ -23,8 +23,9 @@ var user1 = new User({
   email: "admin@admin.com",
   avatar: "http://www.eonline.com/eol_images/Entire_Site/2014913/rs_600x600-141013090723-600-jared-leto-tree-hugging-instagram.ls.101314.jpg",
   postcode: "E1 5ED",
-  password: "password",
-  passwordConfirmation: "password"
+  password: "qw",
+  passwordConfirmation: "qw"
+
 },function(err, user){
   if(err) console.error(err);
   else console.log(user);
@@ -36,9 +37,10 @@ var user2 = new User({
  email: "autovincelynch@gmail.com",
  postcode: "E2 7NS",
  avatar: "http://i2.cdn.turner.com/cnnnext/dam/assets/140926165711-john-sutter-profile-image-large-169.jpg",
+ password: "qw",
+ passwordConfirmation: "qw"
  // projects: project1._id,
- password: "password",
- passwordConfirmation: "password"
+
 });
 user2.save();
 
@@ -47,9 +49,10 @@ var user3 = new User({
  email: "george@gmail.com",
  postcode: "SW3 3DL",
  avatar: "https://lh3.googleusercontent.com/-wysvRmf4xz4/AAAAAAAAAAI/AAAAAAAAAAA/GluI72KIjv0/photo.jpg",
+ password: "qw",
+ passwordConfirmation: "qw"
  // projects: project1._id,
- password: "password",
- passwordConfirmation: "password"
+
 });
 user3.save();
 var user4 = new User({
@@ -57,9 +60,10 @@ var user4 = new User({
  email: "steve@gmail.com",
  postcode: "E8 4QN",
  avatar: "http://www.lawyersweekly.com.au/images/LW_Media_Library/594partner-profile-pic-An.jpg",
+ password: "qw",
+ passwordConfirmation: "qw"
  // projects: project1._id,
- password: "password",
- passwordConfirmation: "password"
+
 });
 user4.save();
 var user5 = new User({
@@ -67,9 +71,10 @@ var user5 = new User({
  email: "bob@gmail.com",
  postcode: "SW11 3JR",
  avatar: "http://zblogged.com/wp-content/uploads/2015/11/17.jpg",
+ password: "qw",
+ passwordConfirmation: "qw"
  // projects: project1._id,
- password: "password",
- passwordConfirmation: "password"
+
 });
 user5.save();
 
@@ -78,9 +83,9 @@ var user6 = new User({
   email: "hopkins@gmail.com",
   postcode: "SE2 3SD",
   avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
+  password: "qw",
+  passwordConfirmation: "qw"
 //projects: [{ type: mongoose.Schema.ObjectIt, ref: 'Projects'}],
-password: "fred"
-passwordConfirmation: "fred"
 });
 user6.save();
 
@@ -104,7 +109,7 @@ var project1 = new Project({
   title:  "Rain on Me",
   projectType: "Environmental",
   projectDate: 5/15/2016,
-  lat: "51.69849", 
+  lat: "51.69849",
   lng: "-0.117187",
   addresslineOne: "Brixton",
   addresslineTwo: "London",
@@ -139,8 +144,9 @@ var project3 = new Project({
   lat: "51.5154863",
   lng: "-0.1286212",
   addresslineOne: "179 Haggerston Rd",
-  addresslineTwo: "London E8 4JB",
-  desc: "Rainwater Harvesting Barrel Building Workshop. Although it takes 12 years to get "pay back" from them economically, they are the right thing to do environmentally, says Waterwise managing director Jacob Tompkins.",
+  addresslineTwo: "London",
+  postcode: "E8 4JB",
+  desc: "Rainwater Harvesting Barrel Building Workshop. Although it takes 12 years to get pay back from them economically, they are the right thing to do environmentally, says Waterwise managing director Jacob Tompkins.",
   image: "https://rekhadhyani.files.wordpress.com/2013/04/rain.jpg?w=636&h=508",
   gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
   attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
@@ -154,8 +160,9 @@ var project4 = new Project({
   lng: "-0.115064",
   addresslineOne: "Community Centre",
   addresslineTwo: "Brixton",
+  postcode: "SW2 1AS",
   desc: "Brixton Energy Solar 4 is a new co-operative set up to enable local people to invest in renewable energy generation in Brixton and raise funds for energy efficiency initiatives. Brixton Energy Solar 4 is currently in planning, but you can use the pledge support button on this page to be kept informed, get involved or show your support.",
-  image: "http://d3d7rtxd5tie6q.cloudfront.net/assets/about-us/syed.png",
+  image: "https://upload.wikimedia.org/wikipedia/commons/0/05/BedZED_2007.jpg",
   gallery: ["http://d3d7rtxd5tie6q.cloudfront.net/assets/about-us/syed.png", "http://static.standard.co.uk/s3fs-public/styles/story_large/public/thumbnails/image/2012/07/09/10/blackfriars-solar-.jpg" ],
   attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
 });
@@ -181,7 +188,8 @@ var project6 = new Project({
  lat: "151.528471",
  lng: "-0.0846979",
  addresslineOne: "Buttersland Street",
- addresslineTwo: "London N1 6BY",
+ addresslineTwo: "London",
+ postcode: "N1 6BY",
  desc: "Old and environmentally damaging industries often lobby effectively for less stringent regulations and are slow to adopt new and cleaner technologies. This paper explains the lobbying success of these industries in terms of the strategic role of investment as a credible commitment device. It is demonstrated that if governments are predisposed to special interest groups, underinvestment in new technology enables firms to lobby more effectively. Such industries are shown to be better placed to extract policy concessions, despite contributing less to the government in political donations. The analysis therefore suggests that political considerations may provide a significant incentive for firms to reject environmentally beneficial investments, even when these lower production costs.",
  image: "http://cdn.instructables.com/F8A/9DNT/FWX11M0H/F8A9DNTFWX11M0H.RECT2100.jpg",
  gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
@@ -192,7 +200,7 @@ var project7 = new Project({
  title:  "scrapheap challenge",
  projectType: "Other",
  projectDate: 5/31/2016,
- lat: "51.531295", 
+ lat: "51.531295",
  lng: "-0.097089",
  addresslineOne: "City Road Basin",
  addresslineTwo: "London N1 7TB",
@@ -208,7 +216,7 @@ var project8 = new Project({
  projectDate: 5/31/2016,
  lat: "51.57677641121266",
  lng: "-0.012485262778113793",
- addresslineOne: "Bakers Avenue"
+ addresslineOne: "Bakers Avenue",
  addresslineTwo: "London E17 9AH",
  desc: "Volunteers have been at the heart of our work at FRP for 25 years and we still couldn’t operate without the contribution that they make today. We set out to provide volunteering opportunities that are rewarding for those who help us to achieve our aims. By volunteering for FRP you can: gain work experience and learn new skills; meet other members of the local community; and earn a sense of achievement, from contributing to a practical project with environmental and social aim",
  image: "https://upload.wikimedia.org/wikipedia/commons/5/53/Scrapyard_challenge_vw_beetle.jpg",
@@ -251,7 +259,7 @@ var projectowner3 = new User({
   postcode: "S2 3SD",
   avatar:"https://www.morganstanley.com/assets/images/people/tiles/karlene-quigley-large.jpg",
   password: "fred",
-  passwordConfirmation: "fred"
+  passwordConfirmation: "fred",
 });
 projectowner3.save(function(err, user){
   if(err) console.error(err);
@@ -265,7 +273,7 @@ var projectowner4 = new User({
   postcode: "E2 3SD",
   avatar:"https://www2.mmu.ac.uk/media/mmuacuk/content/images/social-care-and-social-work/scsw-student-profile-mariola-mak.jpg",
   password: "fred",
-  passwordConfirmation: "fred"
+  passwordConfirmation: "fred",
 });
 projectowner4.save(function(err, user){
   if(err) console.error(err);
@@ -279,7 +287,7 @@ var projectowner5 = new User({
   postcode: "SW2 3SD",
   avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
   password: "fred",
-  passwordConfirmation: "fred"
+  passwordConfirmation: "fred",
 });
 projectowner5.save(function(err, user){
   if(err) console.error(err);
@@ -295,7 +303,12 @@ project2.save(function(err, users){
       if(err) console.error(err);
       project5.save(function(err, users){
         if(err) console.error(err);
-
+        project6.save(function(err, users){
+          if(err) console.error(err);
+          project7.save(function(err, users){
+            if(err) console.error(err);
+            project8.save(function(err, users){
+              if(err) console.error(err);
   ////////////// in the middle of the call back death //
 
 
@@ -309,8 +322,10 @@ project2.save(function(err, users){
 
 
 
-
-});
+            });
+          });
+        });
+      });
     });
   });
 });

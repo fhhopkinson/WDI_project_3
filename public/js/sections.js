@@ -45,6 +45,9 @@ function projectShow(project){
         $("#showDesc").text(project.desc);
       //////////////////////////////
       $("#avatarBox").html("<img src='" + data.user.avatar + "' /><h4>" + data.user.name + "</h4>");
+      projectVenue = project.addresslineOne + " " + project.addresslineTwo + " " + project.postcode;
+      console.log("projectVenue is " + projectVenue);
+      $("#showAddress").html(project.addresslineOne + "<br>" + project.addresslineTwo + "<br>" + project.postcode);
     var i = 0;
     var attendees = data.project.attendees;
     while (i < attendees.length){
@@ -52,6 +55,7 @@ function projectShow(project){
        i++
       }
      initSmallMap(project.lat,project.lng); 
+     placesCardFetch(projectVenue,project.lat,project.lng);
   });
 }
 

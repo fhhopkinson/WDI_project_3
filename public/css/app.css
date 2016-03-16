@@ -10,7 +10,7 @@ body {
   font-family: "customFont", DISCO !important;
 }
 
-img {
+#showImage img{
 
 max-width: 100%;
 }
@@ -34,18 +34,18 @@ max-width: 100%;
 }
 
 .topbar-projectindex{
-border-bottom: 2px black solid;
+border-bottom: 1px black solid;
 text-align: center;
 }
 
 .topbar-showproject {
-border-bottom: 2px black solid;
+border-bottom: 1px black solid;
 text-align: center;
 
 }
 
-.avatar {
-width: 120px;
+.avatar img{
+width: 80px;
 }
 
 #avatarBox img{
@@ -80,6 +80,9 @@ ul {
   width: 12%;
 }
 
+#imageFound {
+  width: 200px;
+}
 
 #layout ul li a{
   color: transparent;

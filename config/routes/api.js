@@ -73,6 +73,7 @@ router.route('/projects')
 
 router.route('/projects/:id')
   .get(projectsController.show)
+  .put(upload.single('image'), projectsController.update)
 
 
 module.exports = router;
