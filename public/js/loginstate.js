@@ -39,6 +39,7 @@ function submitForm(){
   //method = request method ie. GET, PUT, PATCH etc.
   form.reset();
   ajaxRequest(method, url, data, authenticationSuccessful);
+  checkLoginState();
 }
 
 function checkLoginState(){

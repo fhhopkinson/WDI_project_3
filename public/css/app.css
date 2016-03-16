@@ -2,7 +2,10 @@ body {
   background: #F1FFFA;
 }
 
+img {
 
+max-width: 100%;
+}
 #map {
   height: 400px;
 
@@ -67,4 +70,8 @@ section {
 
 .registerForm {
   display: inline-block;
+}
+
+#register {
+  text-align: center;
 }
