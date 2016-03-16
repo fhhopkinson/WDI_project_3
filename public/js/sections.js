@@ -54,9 +54,17 @@ function projectShow(project){
        $("#attendeesList").append("<li class='avatar'>" + "<img src='" + attendees[i].avatar +  "'/>" + attendees[i].name + "</li>");
        i++
       }
+
+     // get comments
+     $.each(project.comments, function( index, comment ) {
+       $(commentsList).append("<li>" + comment.commenter + "</br>" + comment.comment + "</li>")
+     });
+
      initSmallMap(project.lat,project.lng); 
      placesCardFetch(projectVenue,project.lat,project.lng);
-  });
+     // build comments PUT form
+     $("#comment").attr("action", "/projects/" + project._id);
+    });
 }
 
 

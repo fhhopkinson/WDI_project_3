@@ -4,6 +4,7 @@ function init(){
   //post information subitted by form
   $('.registerLogin').on('submit', submitForm, checkLoginState());
   $('#submit').on('submit', newForm);
+  $('#comment').on('submit', addComment);
   $('.logout').on('click', logout);
   $('.pure-menu-item a').on('click', showPage);
   $('section').attr("hidden", true);
@@ -19,7 +20,6 @@ function submitForm(){
   event.preventDefault();
 
   var form    = this;
-  console.log(form);
 
   var method  = $(this).attr('method');
   var url     = "http://localhost:3000/api" + $(this).attr('action');
@@ -32,6 +32,18 @@ function submitForm(){
   ajaxRequest(method, url, data, authenticationSuccessful);
 }
 
+function addComment() {
+  event.preventDefault();
+  var form    = this;
+  var method  = $(this).attr('method');
+  var url     = "http://localhost:3000/api" + $(this).attr('action');
+  var data    = $(this).serialize();
+  ajaxRequest(method, url, data, function() {
+    form.reset();
+  })
+}
+
+
 function newForm(){
   // get the data from the forms and make an ajaxRequest
   // call authenticationSuccessful
@@ -42,9 +54,7 @@ function newForm(){
 
   var method  = $(this).attr('method');
   var url     = "http://localhost:3000/api" + $(this).attr('action');
-  //serialize data not JSON name=Acacia&email=acacia@gmail.com
   var data    = new FormData(this);
-
 
   //method = request method ie. GET, PUT, PATCH etc.
   form.reset();
