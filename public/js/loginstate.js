@@ -82,7 +82,6 @@ function showPage() {
   // hide all sections
   // hide errors
   // show the relevant section
-
   $('section').attr("hidden", true);
   var sectionId = $(this).text().toLowerCase()
   var sectionId = $.trim(sectionId)
@@ -90,7 +89,7 @@ function showPage() {
   if (sectionId == "logout") {
     logout()
   }
-
+$('#' + sectionId).removeAttr('hidden');
 
   // $('.logged-in').show();
   // $('#users').show();
