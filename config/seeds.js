@@ -107,7 +107,7 @@ var project1 = new Project({
   lng: "-0.117187",
   addresslineOne: "Brixton",
    addresslineTwo: "London",
-desc: "Rainwater harvesting info session",
+desc: "The revolutionary system is based on a new cloud technology platform that uses sensor data, climate forecast information, & modelling to actively control, maintain, and monitor, water infrastructure.",
   image: "https://s-media-cache-ak0.pinimg.com/236x/03/e9/b9/03e9b99784b7abe86b6a40b52b986346.jpg",
   gallery: ["http://www.blackinsurancenews.com/wp-content/uploads/2015/04/rainwater-harvesting.jpg", "http://www.energydigital.com/public/uploads/large/large_article_im3031_london-olympics-2012.jpg"],
   attendees: [user1._id,user2._id,user3._id,user4._id,user5._id,user6 ._id]
