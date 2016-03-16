@@ -86,14 +86,13 @@ function showPage() {
   var sectionId = $(this).text().toLowerCase()
   var sectionId = $.trim(sectionId)
   console.log(sectionId)
+  $('#' + sectionId).removeAttr('hidden');
   if (sectionId == "logout") {
     logout()
   }
   if (sectionId == "hubs") {
     projectIndex();
   }
-$('#' + sectionId).removeAttr('hidden');
-
   // $('.logged-in').show();
   // $('#users').show();
   // hideErrors();

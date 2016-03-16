@@ -98,6 +98,7 @@ desc: "Energy Gardens are spaces for local people to come together and grow food
  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id,user6 ._id],
 });//
 
+
 var project1 = new Project({
   title:  "Rain on Me",
   projectType: "Environmental",
@@ -108,9 +109,8 @@ var project1 = new Project({
    addresslineTwo: "London",
 desc: "Rainwater harvesting info session",
   image: "https://s-media-cache-ak0.pinimg.com/236x/03/e9/b9/03e9b99784b7abe86b6a40b52b986346.jpg",
-  gallery: ["http://www.blackinsurancenews.com/wp-content/uploads/2015/04/rainwater-harvesting.jpg"],
+  gallery: ["http://www.blackinsurancenews.com/wp-content/uploads/2015/04/rainwater-harvesting.jpg", "http://www.energydigital.com/public/uploads/large/large_article_im3031_london-olympics-2012.jpg"],
   attendees: [user1._id,user2._id,user3._id,user4._id,user5._id,user6 ._id]
-  comments: []
    });
   project1.save(function(err, users){
       if(err) console.error(err);
@@ -131,8 +131,7 @@ desc: "Rainwater harvesting info session",
      desc: "Spiny pals is a meeting where we will discuss ways in which our community can help slow the decline of the hedgehog pupulation",
      image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR7W_VmTVhSlf45O99_MTetZvpnqrqYEHOA39ruGR1eqASqsgUWMzbsfT1z",
      gallery: [],
-     attendees: [user1._id,user2._id,user3._id,user4._id,user5._id],
-     comments: []
+     attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
   });
 
 
@@ -153,8 +152,7 @@ desc: "Rainwater harvesting info session",
   desc: "Rainwater Harvesting Barrel Building Workshop",
     image: "https://rekhadhyani.files.wordpress.com/2013/04/rain.jpg?w=636&h=508",
     gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
-  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id],
-    comments: []
+  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
     });
 
 
@@ -170,8 +168,7 @@ desc: "Rainwater harvesting info session",
     desc: "Brixton Energy Solar 4 is a new co-operative set up to enable local people to invest in renewable energy generation in Brixton and raise funds for energy efficiency initiatives. Brixton Energy Solar 4 is currently in planning, but you can use the pledge support button on this page to be kept informed, get involved or show your support.",
     image: "http://d3d7rtxd5tie6q.cloudfront.net/assets/about-us/syed.png",
     gallery: ["http://d3d7rtxd5tie6q.cloudfront.net/assets/about-us/syed.png" ],
-    attendees: [user1._id,user2._id,user3._id,user4._id,user5._id],
-    comments: []
+    attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
    });
 
 
@@ -187,8 +184,7 @@ desc: "Rainwater harvesting info session",
     desc: "Housed in the homes of real BlueBarrel customers, our workshops begin with an indoor educational session on rainwater harvesting, and then transition outside to build a BlueBarrel System between 8 and 12 barrels in size. Each participant has a hand in construction, gaining the skills and confidence to go home and build their own system.",
       image: "http://cdn.instructables.com/F8A/9DNT/FWX11M0H/F8A9DNTFWX11M0H.RECT2100.jpg",
       gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
-     attendees: [user1._id,user2._id,user3._id,user4._id,user5._id],
-      comments: []
+     attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
       });
 
 

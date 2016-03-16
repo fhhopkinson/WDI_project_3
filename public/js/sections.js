@@ -2,7 +2,7 @@
 $( document ).ready(function() {
     console.log( "Sections file loaded" );
 
-$(".hubslist").on('click', 'img', function(){
+$(".hubslist").on('click', '.projectItemBox', function(){
   projectShow(this.id);
 });
 $("#mapViewIdx").on('click', function(){
@@ -28,7 +28,7 @@ function getProjects(){
   event.preventDefault();
   ajaxRequest('GET', "http://localhost:3000/api/projects", null, function(data){
    $.each(data.projects, function( index, project ) {
-      $(".hubslist").append("<li id='" + project._id + "' >"+ project.title + project.desc + project.projectDate + '<img src="' + project.gallery[0] + '" width="200px" id="' + project._id + '" />' + project.projectDesc + project.projectDate + project.projectType + project.lat + project.lng + project.attendees + project.addresslineOne + project.addresslineTwo + '</li>');
+      $(".hubslist").append("<div class='pure-u-1-3 projectItemBox' style='background-image: url(" + project.image + ");' id='" + project._id + "' ><h3>"+ project.title + "</h3></div>");
      });
   });
 }
