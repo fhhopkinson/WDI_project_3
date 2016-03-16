@@ -80,6 +80,7 @@ postcode: "SE2 3SD",
 avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
 //projects: [{ type: mongoose.Schema.ObjectIt, ref: 'Projects'}],
 password: "fred"
+passwordConfirmation: "fred"
 });
 user6.save();
 
@@ -128,7 +129,7 @@ desc: "Rainwater harvesting info session",
      addresslineTwo: "London",
      postcode: "E1 5JL",
      desc: "Spiny pals is a meeting where we will discuss ways in which our community can help slow the decline of the hedgehog pupulation",
-     image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR7W_VmTVhSlf45O99_MTetZvpnqrqYEHOA39ruGR1eqASqsgUWMzbsfT1z",
+     image: "http://cdn.images.express.co.uk/img/dynamic/128/590x/hedgehog-garden-RSPCA-573919.jpg",
      gallery: [],
      attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
   });
