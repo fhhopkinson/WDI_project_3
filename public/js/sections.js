@@ -40,7 +40,7 @@ function projectShow(project){
     $('section').attr("hidden", true);
     $("#projectShow").removeAttr('hidden');
       var project = data.project
-        $("#showImage").html("<img src='" + project.gallery[0] + "'</img>");
+        $("#showImage").html("<img src='" + project.image + "'</img>");
         $("#showTitle").text(project.title);
         $("#showDesc").text(project.desc);
       //////////////////////////////

@@ -1,15 +1,23 @@
-$(init);
+$( document ).ready(function() {
+    console.log( "loginstate file loaded" );
 
-function init(){
-  //post information subitted by form
-  $('.registerLogin').on('submit', submitForm, checkLoginState());
-  $('#submit').on('submit', newForm);
-  $('#comment').on('submit', addComment);
-  $('.logout').on('click', logout);
-  $('.pure-menu-item a').on('click', showPage);
-  $('section').attr("hidden", true);
-  changeColor();
-}
+    
+
+    function init(){
+      //post information subitted by form
+      $('.registerLogin').on('submit', submitForm, checkLoginState());
+      $('#submit').on('submit', newForm);
+      $('#comment').on('submit', addComment);
+      $('.logout').on('click', logout);
+      $('.pure-menu-item a').on('click', showPage);
+      $('section').attr("hidden", true);
+      changeColor();
+      checkLoginState();
+    }
+
+init();
+});
+
 
 
 
@@ -179,12 +187,14 @@ function showRegister() {
   $('#register').removeAttr("hidden");
 }
 
-function showUser(data){
+showUser = function(data){
   // take the user data and show the current user as <a> in the <li>, eg:
   // <li class="pure-menu-link">Current User</li>
   console.log("got here")
   if(data)  {
     $('#user').empty().append("<li>" + "<a>" + "<i class='fa fa-user'>" + "</i>" + " " + data.user.name.toUpperCase() + "</a>" + "</li>");
+    loggedInUser = data.user;
+    loggedInUserId = data.user._id;
   };
 }
 

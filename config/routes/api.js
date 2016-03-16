@@ -68,6 +68,9 @@ router.route('/users/:id')
   .get(usersController.show)
   .put(upload.single('avatar'), usersController.update);
 
+  router.route('/attending/:eventid/:userid')
+    .get(projectsController.attending);
+
 router.route('/projects')
     .get(projectsController.index)
     .post(upload.single('image'), projectsController.create);
