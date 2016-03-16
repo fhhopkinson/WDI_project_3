@@ -48,7 +48,21 @@ gap
 
 
 
- <center><p> comments go here, I promise</p></center>
+<p>Comments:
+
+ <form class="pure-form pure-form-stacked" id="submit" action="/comments" method="POST">
+<fieldset>
+<legend>Add a new comment</legend>
+<br>
+<label for="name">Name</label>
+<input id="name" name="name" type="text"></br>
+<label for="comment">Comment</label>
+<input id="comment" name="comment" type="text">
+<button type="submit" class="pure-button pure-button-primary">Add Comment</button>
+    </fieldset>
+
+</form>
+
 
   </div>
   <div class="pure-u-2-24">
@@ -60,9 +74,7 @@ right gap
 </div>
 
 
-<h1> Form To Submit Event </h1>
-  <input type="text" name="lat" id="lat">
-  <input type="text" name="lng" id="lng">
+
   </div>
 </div>
 
