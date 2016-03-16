@@ -2,7 +2,7 @@ $(init);
 
 function init(){
   //post information subitted by form
-  $('form').on('submit', submitForm);
+  $('.registerLogin').on('submit', submitForm, checkLoginState());
   $('#submit').on('submit', newForm);
   $('.logout').on('click', logout);
   $('.pure-menu-item a').on('click', showPage);
@@ -23,7 +23,7 @@ function submitForm(){
   var method  = $(this).attr('method');
   var url     = "http://localhost:3000/api" + $(this).attr('action');
   //serialize data not JSON name=Acacia&email=acacia@gmail.com
-  var data    = new FormData(this);
+  var data    = $(this).serialize();
 
 
   //method = request method ie. GET, PUT, PATCH etc.
@@ -191,6 +191,7 @@ function ajaxRequest(method, url, data, callback) {
   .fail(function(err){
     console.error(err)
   })
+}
 
 function ajaxRequestWithImage(method, url, data) {
   // create a re-useable ajaxRequest function
