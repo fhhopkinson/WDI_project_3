@@ -15,6 +15,7 @@ $("#listViewIdx").on('click', function(){
 });
 
  projectIndex = function(){
+    $(".hubslist").empty();
     $('.listView').attr("hidden", true);
     initMap(); // create map
     populateMap() // marker map

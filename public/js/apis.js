@@ -32,12 +32,14 @@ googleMap =  new google.maps.Map(map, {
      marker = new google.maps.Marker({
        position: {lat: parseFloat(project.lat),  lng: parseFloat(project.lng)},
        map: googleMap,
-       draggable: false
+       draggable: false,
+       icon: "/images/" + project.projectType + ".png"
       });
      setTimeout(function(){
        var marker = new google.maps.Marker({
          position: {lat: parseFloat(project.lat), lng: parseFloat(project.lng)},
-         map: googleMap
+         map: googleMap,
+         icon: "/images/" + project.projectType + ".png"
        });
        var infoWindow = new google.maps.InfoWindow({
          position:{lat: parseFloat(project.lat), lng: parseFloat(project.lng)},
