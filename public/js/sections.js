@@ -2,18 +2,13 @@
 $( document ).ready(function() {
     console.log( "Sections file loaded" );
 
-// clicks
-//$("#hubs").on('click',projectIndex)
+
 $(".hubslist").on('click', 'img', function(){
-  //showProject(this.id);
   projectShow(this.id);
 });
 
 function projectIndex(){
-    $("section").hide()
-    $("#login").hide()
-    $("#register").hide()
-    $(".projectIndex").show()
+
     initMap(); // create map
     populateMap() // marker map
     getProjects();
