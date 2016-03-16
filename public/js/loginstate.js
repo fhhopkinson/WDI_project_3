@@ -60,6 +60,7 @@ function authenticationSuccessful(data) {
   // set the token and call checkLoginState
   if(data.token) setToken(data.token) && loggedInState();
   // hideErrors();
+  checkLoginState();
   console.log("authenticationSuccessful");
   // displayUsers();
 
