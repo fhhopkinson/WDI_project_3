@@ -1,13 +1,14 @@
 @font-face{
   font-family: 'MyWebFont';
-  src: url('myfont.woff') format('woff'), 
-       url('myfont.ttf') format('truetype'),
-       url("fonts/DISCO__.ttf") format("truetype");
+  src: url("../fonts/DISCO.ttf") format("truetype");
+}
+
+* {
+    font-family: "MyWebFont";
 }
 
 body {
   background: #F1FFFA;
-  font-family: "customFont", DISCO !important;
 }
 
 #showImage img{
@@ -129,4 +130,3 @@ i {
 .pure-menu-active>.pure-menu-link, .pure-menu-link:hover, .pure-menu-link:focus {
   background: #307F54;
 }
-
