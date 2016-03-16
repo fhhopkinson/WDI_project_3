@@ -11,8 +11,25 @@ max-width: 100%;
 
 }
 
+#mapSmallProjectShow{
+  height: 150px;
+  width: 150px;
+}
+
+.topbar-showproject {
+border-bottom: 2px black solid;
+text-align: center;
+
+}
+
 .avatar {
 width: 120px;
+}
+
+#avatarBox img{
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
 }
 
 #layout {
@@ -79,3 +96,4 @@ section {
 #register {
   text-align: center;
 }
+
