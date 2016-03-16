@@ -2,7 +2,7 @@ body {
   background: #F1FFFA;
 }
 
-img {
+#showImage img{
 
 max-width: 100%;
 }
@@ -36,8 +36,8 @@ text-align: center;
 
 }
 
-.avatar {
-width: 120px;
+.avatar img{
+width: 80px;
 }
 
 #avatarBox img{
