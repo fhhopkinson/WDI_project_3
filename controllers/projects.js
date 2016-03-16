@@ -8,6 +8,11 @@ function projectIndex(req, res){
 }
 
 function projectCreate(req, res){
+
+  if(req.file.key) {
+    req.body.image = s3Config.endpoint + s3Config.bucket + '/' + req.file.key;
+  }
+
    var project = new Project(req.body);
    project.save(function(err,project){
     if(err) return res.status(500).send(err);
