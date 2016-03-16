@@ -89,6 +89,9 @@ function showPage() {
   if (sectionId == "logout") {
     logout()
   }
+  if (sectionId == "hubs") {
+    projectIndex();
+  }
 $('#' + sectionId).removeAttr('hidden');
 
   // $('.logged-in').show();
