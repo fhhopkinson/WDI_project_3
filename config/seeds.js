@@ -130,16 +130,9 @@ desc: "The revolutionary system is based on a new cloud technology platform that
      postcode: "E1 5JL",
      desc: "Spiny pals is a meeting where we will discuss ways in which our community can help slow the decline of the hedgehog pupulation",
      image: "http://cdn.images.express.co.uk/img/dynamic/128/590x/hedgehog-garden-RSPCA-573919.jpg",
-     gallery: [],
+     gallery: ["http://barfblog.com/wp-content/uploads/2015/11/hedgehog.jpg"],
      attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
   });
-
-
-
-
-
-
-
 
   var project3 = new Project({
     title:  "I Can't Stand the Rain…Against my Window",
@@ -149,7 +142,7 @@ desc: "The revolutionary system is based on a new cloud technology platform that
     lng: "-0.1286212",
     addresslineOne: "179 Haggerston Rd",
      addresslineTwo: "London E8 4JB",
-  desc: "Rainwater Harvesting Barrel Building Workshop",
+  desc: "Rainwater Harvesting Barrel Building Workshop. Although it takes 12 years to get "pay back" from them economically, they are the right thing to do environmentally, says Waterwise managing director Jacob Tompkins.",
     image: "https://rekhadhyani.files.wordpress.com/2013/04/rain.jpg?w=636&h=508",
     gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
   attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
@@ -206,7 +199,7 @@ desc: "The revolutionary system is based on a new cloud technology platform that
       projects: [project2._id],
       email: "project_owner2@gmail.com",
       postcode: "SE2 3SD",
-      avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
+      avatar:"https://www.morganstanley.com/assets/images/people/tiles/adam-parker-large.jpg",
       password: "fred",
       passwordConfirmation: "fred"
       });
@@ -220,7 +213,7 @@ desc: "The revolutionary system is based on a new cloud technology platform that
       projects: [project3._id],
       email: "project_owner3@gmail.com",
       postcode: "S2 3SD",
-      avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
+      avatar:"https://www.morganstanley.com/assets/images/people/tiles/karlene-quigley-large.jpg",
       password: "fred",
       passwordConfirmation: "fred"
       });
@@ -234,7 +227,7 @@ desc: "The revolutionary system is based on a new cloud technology platform that
       projects: [project4._id],
       email: "project_owner4@gmail.com",
       postcode: "E2 3SD",
-      avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
+      avatar:"https://www2.mmu.ac.uk/media/mmuacuk/content/images/social-care-and-social-work/scsw-student-profile-mariola-mak.jpg",
       password: "fred",
       passwordConfirmation: "fred"
       });
