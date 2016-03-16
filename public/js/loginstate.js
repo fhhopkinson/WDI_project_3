@@ -4,22 +4,11 @@ function init(){
   //post information subitted by form
   $('form').on('submit', submitForm, checkLoginState());
   $('.logout').on('click', logout);
-  $('ul li a').on('click', showPage);
-}
-
-function showPage() {
-  // hide all sections
-  // hide errors
-  // show the relevant section
+  $('.pure-menu-link').on('click', showPage);
   $('section').attr("hidden", true);
-  var sectionId = '#' + $(this).text().toLowerCase()
-  $(sectionId).removeAtrr('hidden');
-
-  // $('.logged-in').show();
-  // $('#users').show();
-  // hideErrors();
-
 }
+
+
 
 
 function submitForm(){
@@ -60,6 +49,7 @@ function authenticationSuccessful(data) {
   // set the token and call checkLoginState
   if(data.token) setToken(data.token) && loggedInState();
   // hideErrors();
+  checkLoginState();
   console.log("authenticationSuccessful");
   // displayUsers();
 
@@ -71,7 +61,6 @@ function loggedInState(){
   
   $('.logged-in').removeAttr("hidden");
   $('.logged-out').attr("hidden", true);
-
 
 }
 
@@ -93,12 +82,14 @@ function showPage() {
   // hide all sections
   // hide errors
   // show the relevant section
-  $('.pure-menu').attr("hidden");
-  var sectionId = '#' + $(this).text().toLowerCase()
+  $('section').attr("hidden", true);
+  var sectionId = $(this).text().toLowerCase()
+  var sectionId = $.trim(sectionId)
+  console.log(sectionId)
   if (sectionId == "logout") {
     logout()
   }
-  $(sectionId).removeAttr('hidden')
+  $("#" + sectionId).removeAttr('hidden');
 
   // $('.logged-in').show();
   // $('#users').show();
