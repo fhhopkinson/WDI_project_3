@@ -12,6 +12,7 @@ $(".hubslist").on('click', 'img', function(){
 });
 
 function projectIndex(){
+    $("main").hide()
     $("#login").hide()
     $("#register").hide()
     $(".projectIndex").show()
@@ -57,8 +58,11 @@ function displayEventpage(data){
       $("#showDesc").text(project.desc);
     console.log(project);
   });
-  $("#attendeesList").append(data.attendees[1].name);
-
+  var i = 0;
+  while (i < data.attendees.length){
+     $("#attendeesList").append("<li class='avatar'>" + "<img src='" + data.attendees[i].avatar +  "'/>" + data.attendees[i].name + "</li>");
+     i++
+  }
 }
 
 
