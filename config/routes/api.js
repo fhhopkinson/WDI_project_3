@@ -66,7 +66,7 @@ router.route('/users')
 router.route('/users/:id')
   .get(usersController.show)
   .put(upload.single('avatar'), usersController.update);
- 
+
 router.route('/projects')
     .get(projectsController.index)
     .post(secureRoute, projectsController.create)

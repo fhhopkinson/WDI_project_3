@@ -35,7 +35,7 @@ var user2 = new User({
  name: "Henry Tallyho",
  email: "autovincelynch@gmail.com",
  postcode: "E2 7NS",
- avatar: "http://cdn.makeagif.com/media/5-17-2015/rmnODh.gif",
+ avatar: "http://i2.cdn.turner.com/cnnnext/dam/assets/140926165711-john-sutter-profile-image-large-169.jpg",
  // projects: project1._id,
  password: "password",
  passwordConfirmation: "password"
@@ -46,7 +46,7 @@ var user3 = new User({
  name: "George Bigbucks",
  email: "george@gmail.com",
  postcode: "SW3 3DL",
- avatar: "http://cdn.makeagif.com/media/5-17-2015/rmnODh.gif",
+ avatar: "https://lh3.googleusercontent.com/-wysvRmf4xz4/AAAAAAAAAAI/AAAAAAAAAAA/GluI72KIjv0/photo.jpg",
  // projects: project1._id,
  password: "password",
  passwordConfirmation: "password"
@@ -56,7 +56,7 @@ var user4 = new User({
  name: "Steve Loveit",
  email: "steve@gmail.com",
  postcode: "E8 4QN",
- avatar: "http://cdn.makeagif.com/media/5-17-2015/rmnODh.gif",
+ avatar: "http://www.lawyersweekly.com.au/images/LW_Media_Library/594partner-profile-pic-An.jpg",
  // projects: project1._id,
  password: "password",
  passwordConfirmation: "password"
@@ -66,7 +66,7 @@ var user5 = new User({
  name: "Bobbie Shocker",
  email: "bob@gmail.com",
  postcode: "SW11 3JR",
- avatar: "http://cdn.makeagif.com/media/5-17-2015/rmnODh.gif",
+ avatar: "http://zblogged.com/wp-content/uploads/2015/11/17.jpg",
  // projects: project1._id,
  password: "password",
  passwordConfirmation: "password"
@@ -74,7 +74,7 @@ var user5 = new User({
 user5.save();
 
 var user6 = new User({
-name: "fred hopkins",
+name: "Fred Hopkins",
 email: "hopkins@gmail.com",
 postcode: "SE2 3SD",
 avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
@@ -96,21 +96,20 @@ desc: "Energy Gardens are spaces for local people to come together and grow food
   image: "http://d3dza3qm7hzbjp.cloudfront.net/uploads/ckeditor/pictures/55c0b2a172657061b46e0000/content_EnergyGarden.jpg",
   gallery: ["http://d3dza3qm7hzbjp.cloudfront.net/uploads/ckeditor/pictures/55c0b51d72657061b46f0000/content_EnergyGarden3.jpg"],
  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id,user6 ._id],
-  comments: [" What a great idea."]
 });//
 
 var project1 = new Project({
   title:  "Rain on Me",
   projectType: "Environmental",
   projectDate: 5/15/2016,
-  lat: "51.5240916",
-  lng: "-0.1229644",
-  addresslineOne: "Whitby",
-   addresslineTwo: "Beach",
+  lat: "51.459849", 
+  lng: "-0.117187",
+  addresslineOne: "Brixton",
+   addresslineTwo: "London",
 desc: "Rainwater harvesting info session",
   image: "https://s-media-cache-ak0.pinimg.com/236x/03/e9/b9/03e9b99784b7abe86b6a40b52b986346.jpg",
   gallery: ["http://www.blackinsurancenews.com/wp-content/uploads/2015/04/rainwater-harvesting.jpg"],
-  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id,user6 ._id],
+  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id,user6 ._id]
   comments: []
    });
   project1.save(function(err, users){
@@ -130,7 +129,7 @@ desc: "Rainwater harvesting info session",
      addresslineTwo: "London",
      postcode: "E1 5JL",
      desc: "Spiny pals is a meeting where we will discuss ways in which our community can help slow the decline of the hedgehog pupulation",
-     image: "https://upload.wikimedia.org/wikipedia/commons/8/87/Keqs_young_european_hedgehog1.jpg",
+     image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR7W_VmTVhSlf45O99_MTetZvpnqrqYEHOA39ruGR1eqASqsgUWMzbsfT1z",
      gallery: [],
      attendees: [user1._id,user2._id,user3._id,user4._id,user5._id],
      comments: []
@@ -172,7 +171,7 @@ desc: "Rainwater harvesting info session",
     image: "http://d3d7rtxd5tie6q.cloudfront.net/assets/about-us/syed.png",
     gallery: ["http://d3d7rtxd5tie6q.cloudfront.net/assets/about-us/syed.png" ],
     attendees: [user1._id,user2._id,user3._id,user4._id,user5._id],
-    comments: ["Hi, Im a keen renewables activist and hope for more local renewable power and would love to invest-Nathan Fell."]
+    comments: []
    });
 
 
@@ -185,7 +184,7 @@ desc: "Rainwater harvesting info session",
       lng: "-0.1421302",
       addresslineOne: "179 Haggerston Rd",
        addresslineTwo: "London E8 4JB",
-    desc: "Rainwater Harvesting Barrel Building Workshop",
+    desc: "Housed in the homes of real BlueBarrel customers, our workshops begin with an indoor educational session on rainwater harvesting, and then transition outside to build a BlueBarrel System between 8 and 12 barrels in size. Each participant has a hand in construction, gaining the skills and confidence to go home and build their own system.",
       image: "http://cdn.instructables.com/F8A/9DNT/FWX11M0H/F8A9DNTFWX11M0H.RECT2100.jpg",
       gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
      attendees: [user1._id,user2._id,user3._id,user4._id,user5._id],
@@ -197,7 +196,7 @@ desc: "Rainwater harvesting info session",
       name: "project_owner1",
       projects: [project1._id],
       email: "project_owner1@gmail.com",
-      postcode: "SE2 3SD",
+      postcode: "SE1 3SD",
       avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
       password: "fred",
       passwordConfirmation: "fred"
@@ -224,7 +223,7 @@ desc: "Rainwater harvesting info session",
       name: "project_owner3",
       projects: [project3._id],
       email: "project_owner3@gmail.com",
-      postcode: "SE2 3SD",
+      postcode: "S2 3SD",
       avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
       password: "fred",
       passwordConfirmation: "fred"
@@ -238,7 +237,7 @@ desc: "Rainwater harvesting info session",
       name: "project_owner4",
       projects: [project4._id],
       email: "project_owner4@gmail.com",
-      postcode: "SE2 3SD",
+      postcode: "E2 3SD",
       avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
       password: "fred",
       passwordConfirmation: "fred"
@@ -252,7 +251,7 @@ desc: "Rainwater harvesting info session",
       name: "project_owner5",
       projects: [project5._id,project0._id],
       email: "project_owner5@gmail.com",
-      postcode: "SE2 3SD",
+      postcode: "SW2 3SD",
       avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
       password: "fred",
       passwordConfirmation: "fred"
