@@ -154,6 +154,7 @@ function showPage() {
   if (sectionId == "hubs") {
     projectIndex();
   }
+
   // $('.logged-in').show();
   // $('#users').show();
   // hideErrors();
