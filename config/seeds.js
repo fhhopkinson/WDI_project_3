@@ -139,14 +139,9 @@ var project3 = new Project({
   lat: "51.5154863",
   lng: "-0.1286212",
   addresslineOne: "179 Haggerston Rd",
-<<<<<<< HEAD
-  addresslineTwo: "London E8 4JB",
-  desc: "Rainwater Harvesting Barrel Building Workshop. Although it takes 12 years to get "pay back" from them economically, they are the right thing to do environmentally, says Waterwise managing director Jacob Tompkins.",
-=======
   addresslineTwo: "London",
   postcode: "E8 4JB",
   desc: "Rainwater Harvesting Barrel Building Workshop. Although it takes 12 years to get pay back from them economically, they are the right thing to do environmentally, says Waterwise managing director Jacob Tompkins.",
->>>>>>> origin/userpages
   image: "https://rekhadhyani.files.wordpress.com/2013/04/rain.jpg?w=636&h=508",
   gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
   attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
