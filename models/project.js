@@ -1,4 +1,5 @@
 var mongoose      = require('mongoose');
+var Comment       = require('./comment');
 
 var projectSchema = mongoose.Schema({
    title: String,
@@ -13,7 +14,7 @@ var projectSchema = mongoose.Schema({
    image: String,
    gallery: [],
    attendees: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
-   comments: []
+   comments: [Comment.schema]
 });
 
 module.exports = mongoose.model('Project', projectSchema);
