@@ -28,7 +28,6 @@ function getProjects(){
 function projectShow(project){
   event.preventDefault();
   ajaxRequest('GET', "http://localhost:3000/api/projects/" + project, null, function(data){
-    console.log(data);
     //////////////////////////////////
     $('section').attr("hidden", true);
     $("#projectShow").removeAttr('hidden');
@@ -36,13 +35,13 @@ function projectShow(project){
         $("#showImage").html("<img src='" + project.gallery[0] + "'</img>");
         $("#showTitle").text(project.title);
         $("#showDesc").text(project.desc);
-      console.log(project);
       //////////////////////////////
     });
       $("#avatarBox").html("<img src='" + data.user.avatar + "' /><h4>" + data.user.name + "</h4>");
     var i = 0;
-    while (i < data.project.attendees.length){
-       $("#attendeesList").append("<li class='avatar'>" + "<img src='" + data.attendees[i].avatar +  "'/>" + data.attendees[i].name + "</li>");
+    var attendees = data.project.attendees;
+    while (i < attendees.length){
+       $("#attendeesList").append("<li class='avatar'>" + "<img src='" + attendees[i].avatar +  "'/>" + attendees[i].name + "</li>");
        i++
       }
   });
