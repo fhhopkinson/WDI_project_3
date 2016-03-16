@@ -6,6 +6,7 @@ function init(){
   $('.logout').on('click', logout);
   $('.pure-menu-item a').on('click', showPage);
   $('section').attr("hidden", true);
+  changeColor();
 }
 
 
@@ -70,8 +71,8 @@ function setData(token){
   setToken(token);
 }
 
-function RemoveData(){
-
+function changeColor(){
+  $('.pure-menu-link a').css('background-color','#307F54');
 }
 
 
