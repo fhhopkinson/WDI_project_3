@@ -7,7 +7,7 @@ function register(req, res) {
   // add filename to user object before create
 
 
-  User.create(req.body.user, function(err, user) {
+  User.create(req.body, function(err, user) {
     // tidy up mongoose's awful error messages
     if(err) {
       if(err.code && (err.code === 11000 || err.code === 11001)) {
