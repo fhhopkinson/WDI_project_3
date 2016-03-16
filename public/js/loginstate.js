@@ -3,6 +3,7 @@ $(init);
 function init(){
   //post information subitted by form
   $('form').on('submit', submitForm);
+  $('#submit').on('submit', newForm);
   $('.logout').on('click', logout);
   $('.pure-menu-item a').on('click', showPage);
   $('section').attr("hidden", true);
@@ -28,6 +29,25 @@ function submitForm(){
   //method = request method ie. GET, PUT, PATCH etc.
   form.reset();
   ajaxRequest(method, url, data, authenticationSuccessful);
+}
+
+function newForm(){
+  // get the data from the forms and make an ajaxRequest
+  // call authenticationSuccessful
+  event.preventDefault();
+
+  var form    = this;
+  console.log(form);
+
+  var method  = $(this).attr('method');
+  var url     = "http://localhost:3000/api" + $(this).attr('action');
+  //serialize data not JSON name=Acacia&email=acacia@gmail.com
+  var data    = new FormData(this);
+
+
+  //method = request method ie. GET, PUT, PATCH etc.
+  form.reset();
+  ajaxRequest(method, url, data);
 }
 
 function checkLoginState(data){
@@ -172,7 +192,7 @@ function ajaxRequest(method, url, data, callback) {
     console.error(err)
   })
 
-function ajaxRequestWithImage(method, url, data, callback) {
+function ajaxRequestWithImage(method, url, data) {
   // create a re-useable ajaxRequest function
   return $.ajax({
     method: method,
@@ -185,7 +205,7 @@ function ajaxRequestWithImage(method, url, data, callback) {
       if(token) return jqXHR.setRequestHeader('Authorization', 'Bearer ' + token);
     }
   })
-  .done(callback)
+  .done(next())
   .fail(function(err){
     console.error(err)
   })
