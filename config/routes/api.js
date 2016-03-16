@@ -74,15 +74,12 @@ router.route('/projects')
 
 router.route('/projects/:id')
   .get(projectsController.show)
-<<<<<<< HEAD
-  .put(upload.single('image'), projectsController.update)
-=======
+
   .put(projectsController.update);
 
   router.route('/comments')
       .get(commentsController.index)
       .post(commentsController.create);
->>>>>>> origin/userpages
 
 
 module.exports = router;
