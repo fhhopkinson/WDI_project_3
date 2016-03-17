@@ -28,7 +28,8 @@ max-width: 100%;
 }
 #map {
   height: 400px;
-  width: 100%;
+  width: 80%;
+  margin-right: 50px;
 }
 
 #userShowMap {

@@ -62,6 +62,7 @@ function addComment() {
 }
 
 function newForm(){
+
   console.log("newForm");
   event.preventDefault();
   var form    = this;
@@ -243,8 +244,8 @@ function gallery() {
     $(data.projects).each(function(index, project) {
       $(project.gallery).each(function(index, picture) {
         pictures.push(picture);
-      })
-    })
+      });
+    });
     console.log(pictures);
     $(pictures).each(function(index, pic) {
       $('.single-item').append('<div class="pictureSpin"style="background-image: url(' + pic +');"> </div>');
