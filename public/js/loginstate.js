@@ -194,7 +194,6 @@ function getUser() {
   var token = getToken();
   if (token)  {
     var payload = token.split(".")[1];
-    console.log(payload);
     payload = window.atob(payload);
     var user = JSON.parse(payload)._doc;
     return user;
@@ -246,7 +245,6 @@ function gallery() {
         pictures.push(picture);
       });
     });
-    console.log(pictures);
     $(pictures).each(function(index, pic) {
       $('.single-item').append('<div class="pictureSpin"style="background-image: url(' + pic +');"> </div>');
     });
