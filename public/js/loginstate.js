@@ -247,11 +247,13 @@ function gallery() {
     })
     console.log(pictures);
     $(pictures).each(function(index, pic) {
-      $('.single-item').append('<div><img src="' + pic + '" /></div>');
+      $('.single-item').append('<div class="pictureSpin"style="background-image: url(' + pic +');"> </div>');
     });
 
     $('.single-item').slick({
-      arrows: true;
+      autoplay: true,
+      arrows: false,
+      autoplaySpeed: 2000
     });
   });
 }
