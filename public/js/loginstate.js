@@ -6,6 +6,7 @@ $( document ).ready(function() {
 function init(){
   $('.registerLogin').on('submit', submitForm);
   $('#submit').on('submit', newForm);
+  $('').on('submit', updateUserForm)
   $('#comment').on('submit', addComment);
   $('.logout').on('click', logout);
   $('.pure-menu-item a').on('click', showPage);
@@ -33,6 +34,16 @@ function submitForm(){
   var data    = $(this).serialize();
   form.reset();
   ajaxRequest(method, url, data, authenticationSuccessful);
+}
+
+function updateUserForm(){
+  event.preventDefault();
+  var form    = this;
+  var method  = $(this).attr('method');
+  var url     = "http://localhost:3000/api/users/" + getUser._id;
+  var data    = $(this).serialize();
+  form.reset();
+  ajaxRequestWithImage(method, url, data, authenticationSuccessful);
 }
 
 function addComment() {
