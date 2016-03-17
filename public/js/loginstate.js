@@ -162,6 +162,7 @@ function showPage() {
 
 function showUserPage() {
   event.preventDefault();
+  $('#userProjectsX').html(' ')
   ajaxRequest2('GET', "http://localhost:3000/api/users/" + getUser()._id, null, function(user){
     $('section').attr("hidden", true);
     $("#currentUserShow").removeAttr('hidden');
@@ -179,7 +180,6 @@ function showUserPage() {
 
     (user.projects).forEach(function(project) {
       console.log("PROJECT TITLE FOR USER: ", project);
-      // $('#userProjects').empty().append("<div class='pure-u-1-5 userProjectTiles' id='" + project._id + "' ><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
       $('#userProjectsX').append("<div class='pure-u-3-12 userProjectTiles' id='" + project._id + "'><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
     });
   })
