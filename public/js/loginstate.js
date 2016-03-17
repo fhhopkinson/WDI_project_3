@@ -9,8 +9,9 @@ function init(){
   $('#comment').on('submit', addComment);
   $('.logout').on('click', logout);
   $('.pure-menu-item a').on('click', showPage);
-  $('#editProfile').on('click', editProfile);
-  console.log("edit profile clicked")
+  $('#editProfile').on('click', function() {
+    console.log("click");
+  });
   $('section').attr("hidden", true);
   changeColor();
   checkLoginState();
