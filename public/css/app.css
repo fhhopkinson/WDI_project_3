@@ -248,6 +248,10 @@ i {
 
 .nav .next { right: 0; }
 
+#user:hover {
+  text-align: center;
+}
+
 input:checked + .slide-container  .slide {
     opacity: 1;
 

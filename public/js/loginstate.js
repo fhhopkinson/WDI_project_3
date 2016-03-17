@@ -17,7 +17,6 @@ function init(){
   $('section').attr("hidden", true);
   changeColor();
   checkLoginState();
-  showUser();
   gallery();
   $('#home').on("click", function() {
     console.log("hello");
@@ -112,7 +111,6 @@ function checkLoginState(data){
 
 function authenticationSuccessful(data) {
   if(data.token) setToken(data.token) && loggedInState();
-  showUser(data);
   checkLoginState(data);
   showUserPage();
 
@@ -207,15 +205,6 @@ function removeToken() {
 function showRegister() {
   $('section').attr("hidden", true);
   $('#register').removeAttr("hidden");
-}
-
-
-function showUser(){
-  var user = getUser();
-  console.log(user);
-  if(user)  {
-    $('#user').empty().append("<li>" + "<a>" + "<i class='fa fa-user'>" + "</i>" + " " + user.name.toUpperCase() + "</a>" + "</li>");
-  };
 }
 
 function getUser() {
