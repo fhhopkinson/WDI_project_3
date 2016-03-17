@@ -22,6 +22,15 @@ text-align: center;
   margin-bottom: 8px
 }
 
+.pure-button-primary{
+  border-radius: 3px; 
+  background: #296B47;
+  box-shadow: 3px 4px 0px 0px #1F2F16;
+} 
+
+.pure-button-primary:hover {
+  box-shadow: none;
+}
 
 #showImage img{
 max-width: 100%;
