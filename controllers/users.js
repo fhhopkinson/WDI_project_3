@@ -35,7 +35,7 @@ function usersDelete(req, res){
 
 function usersUpdate(req, res) {
 
-  if(req.file.key) {
+  if(req.file) {
     req.body.user.avatar = s3Config.endpoint + s3Config.bucket + '/' + req.file.key;
   }
 

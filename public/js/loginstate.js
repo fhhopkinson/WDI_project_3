@@ -6,7 +6,7 @@ $( document ).ready(function() {
 function init(){
   $('.registerLogin').on('submit', submitForm);
   $('#submit').on('submit', newForm);
-  $('').on('submit', updateUserForm)
+  $('#updateUserForm').on('submit', updateUserForm)
   $('#comment').on('submit', addComment);
   $('.logout').on('click', logout);
   $('.pure-menu-item a').on('click', showPage);
@@ -27,6 +27,7 @@ function init(){
 }
 
 function submitForm(){
+  console.log("submitForm");
   event.preventDefault();
   var form    = this;
   var method  = $(this).attr('method');
@@ -37,16 +38,19 @@ function submitForm(){
 }
 
 function updateUserForm(){
+  console.log("updateUserForm");
   event.preventDefault();
+  console.log("help");
   var form    = this;
   var method  = $(this).attr('method');
-  var url     = "http://localhost:3000/api/users/" + getUser._id;
-  var data    = $(this).serialize();
+  var url     = "http://localhost:3000/api/users/" + getUser()._id;
+  var data    = new FormData(this);
   form.reset();
   ajaxRequestWithImage(method, url, data, authenticationSuccessful);
 }
 
 function addComment() {
+  console.log("addComment");
   event.preventDefault();
   var form    = this;
   var method  = $(this).attr('method');
@@ -58,6 +62,7 @@ function addComment() {
 }
 
 function newForm(){
+  console.log("newForm");
   event.preventDefault();
   var form    = this;
   var method  = $(this).attr('method');
@@ -197,8 +202,8 @@ function ajaxRequest(method, url, data, callback) {
   })
   .done(callback)
   .fail(function(err){
-    console.error(err)
-  })
+    console.error(err);
+  });
 }
 
 function ajaxRequestWithImage(method, url, data, callback) {
@@ -216,13 +221,14 @@ function ajaxRequestWithImage(method, url, data, callback) {
   .done(callback)
   .fail(function(err){
     console.error(err)
-  })
+  });
 }
 
 
 
 function gallery() {
   ajaxRequest2('GET', "http://localhost:3000/api/projects", null, function(data) {
+    var projects = data.gallery
     var pictures = [];
     $(data.projects).each(function(index, project) {
       $(project.gallery).each(function(index, picture) {
@@ -231,7 +237,11 @@ function gallery() {
     })
     console.log(pictures);
     $(pictures).each(function(index, pic) {
-      $('.slides').append('<input type="radio" name="radio-btn" id="' + (index+1) +'" checked /><li class="slide-container"><div class="slide"><img src="' + pic + '" /></div><div class="nav"><label for="img-' + index + '" class="prev">&#x2039;</label><label for="img-' + (index+2) + '" class="next">&#x203a;</label></div></li>')
-    })
-  })
+      $('.single-item').append('<div><img src="' + pic + '" /></div>');
+    });
+
+    $('.single-item').slick({
+      arrows: true;
+    });
+  });
 }
