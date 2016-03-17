@@ -15,18 +15,27 @@ body {
 text-align: center;
 }
 
-
 .individualComment {
   border: 1px white solid;
   background-color: #f2f2f2;
   margin-bottom: 8px
 }
 
+
+.pure-button-primary{
+  border-radius: 3px; 
+  background: #296B47;
+  box-shadow: 3px 4px 0px 0px #1F2F16;
+} 
+
+.pure-button-primary:hover {
+  box-shadow: none;
+}
 .middleProjectShow {
   margin-top: 40px;
 }
 
-# showTitle{
+#showTitle {
   margin-top: 80%;
   bottom:0px;
   text-align: bottom;
@@ -34,7 +43,9 @@ text-align: center;
 
 #showImage img{
 max-width: 100%;
+margin-top: 25px;
 }
+
 #map {
   height: 400px;
   width: 80%;
@@ -62,6 +73,7 @@ max-width: 100%;
   width:200px;
   height:120px;
   background-size: cover;
+  margin: 5px;
 }
 .projectItemBox h3{
   background:rgba(0,0,0,0.5);
@@ -78,9 +90,16 @@ text-align: center;
 
 }
 
+div.pure-u-6-24 {
+  text-align: center;
+}
 
 .avatar img{
 width: 80px;
+border-radius: 10px;
+margin-bottom: 11px;
+margin-top: 9px;
+border:  3px solid #296B47;
 
 }
 
@@ -91,8 +110,8 @@ insideAvBox {
 }
 
 #avatarBox img{
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border-radius: 100px;
   margin: auto 0;
   margin-top: 50px;
@@ -164,11 +183,6 @@ i {
   color: #F1FFFA;
 }
 
-.pure-menu-selected {
-  background-color: orange;
-}
-
-
 
 .pure-form{
   font-family: "customFont", DISCO;
@@ -216,6 +230,10 @@ i {
 .nav label:hover { opacity: 1; }
 
 .nav .next { right: 0; }
+
+#user:hover {
+  text-align: center;
+}
 
 input:checked + .slide-container  .slide {
     opacity: 1;

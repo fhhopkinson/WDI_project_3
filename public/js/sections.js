@@ -15,7 +15,7 @@ $("#avatarBox").on('click', 'img', function(){
 });
 
 
-
+/*
 $("#mapViewIdx").on('click', function(){
   $('.listView').attr("hidden", true);
   $(".mapView").removeAttr('hidden');
@@ -25,7 +25,7 @@ $("#mapViewIdx").on('click', function(){
 $("#listViewIdx").on('click', function(){
  $('.mapView').attr("hidden", true);
  $(".listView").removeAttr('hidden');
-});
+});*/
 
 
 otherUserShow = function(whoseId){
@@ -41,7 +41,7 @@ otherUserShow = function(whoseId){
     var i = 0;
     $("#otherUserProjects").empty();
     while (i < data.projects.length){
-     $("#otherUserProjects").prepend("<ul>" + data.projects[i].title + "</br>" + project.projectDate + "</ul>");
+     $("#otherUserProjects").prepend("<p><ul>" + data.projects[i].title + "</br>" + data.projects[i].projectDate + "</ul></p>");
      i++
     }
   });
@@ -100,7 +100,7 @@ projectShow = function(project){
     var attendees = data.project.attendees;
     $("#attendeesList").empty();
     while (i < attendees.length){
-       $("#attendeesList").append("<li class='avatar'>" + "<img src='" + attendees[i].avatar +  "' id='" + attendees[i]._id + "' />" + attendees[i].name + "</li>");
+       $("#attendeesList").append("<li class='avatar'>" + "<img src='" + attendees[i].avatar +  "' id='" + attendees[i]._id + "' />" + "<br>" +attendees[i].name + "</li>");
        i++
       }
 

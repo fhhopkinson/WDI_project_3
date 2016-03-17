@@ -14,6 +14,7 @@ $( document ).ready(function() {
          console.log( data );
          alert( "Cool your attendance was registered." );
     });
+    projectShow(projectId);
   }
 
 
