@@ -115,7 +115,7 @@ whereDoILivePostcodeToLATLNG = function(postcode){
    imageFound = results[0].photos[0].getUrl({
     maxWidth: 400
          });
-   $("#imageFound").html("<img src='" + imageFound + "' />");
+   $("#imageFound").html("<img width='150px' height='150px' src='" + imageFound + "' />");
  });
 }
 
