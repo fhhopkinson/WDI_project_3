@@ -177,13 +177,10 @@ function showUserPage() {
     $('section').attr("hidden", true);
     $("#userShow").removeAttr('hidden');
     console.log(user);
-    $('#profilePic').empty();
-    $('#userProjects').empty();
-    $('#profileHeader').empty()
-    $('#profileHeader').html(user.name)
-    $('#profilePic').append('<img src="' + user.avatar + '">')
+    $('#profileHeader').empty().html(user.name)
+    $('#profilePic').empty().append('<img src="' + user.avatar + '">')
     user.projects.forEach(function(project) {
-      $('#userProjects').append("<div class='pure-u-1-5' style='background-image: url(" + project.image + ");' id='" + project._id + "' ><h3>"+ project.title + project.attendees.length + "</h3></div>");
+      $('#userProjects').empty().append("<div class='pure-u-1-5 userProjectTiles' id='" + project._id + "' ><h3>"+ project.title + "</h3><img class='projectImages' src='" + project.image + "'/><h3> Attendees: " + project.attendees.length + "</h3></div>");
     });
   })
 }

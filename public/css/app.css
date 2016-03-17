@@ -258,3 +258,13 @@ input#img-5:checked ~ .nav-dots label#img-dot-5,
 input#img-6:checked ~ .nav-dots label#img-dot-6 {
   background: rgba(0, 0, 0, 0.8);
 }
+
+.userProjectTiles {
+  background-color: red;
+  text-align: center;
+}
+
+.projectImages {
+  width: 100%;
+  height: 150px;
+}
