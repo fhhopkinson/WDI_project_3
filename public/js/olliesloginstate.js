@@ -21,6 +21,15 @@ function init(){
   });
 }
 
+function gallery() {
+  ajaxRequest('GET', "http://localhost:3000/api/projects", null, function(project) {
+    picture = project.gallery;
+    $picture.forEach(function(pic, index) {
+    $('.splash').append('<ul class="slides"><input type="radio" name="radio-btn" id="' + index+1 +'" checked /><li class="slide-container"><div class="slide"><img src="' + pic + '" /></div><div class="nav"><label for="img-' + index + '" class="prev">&#x2039;</label><label for="img-' + (index+2)'" class="next">&#x203a;</label></div></li>')
+    })
+  })
+}
+
 function submitForm(){
   event.preventDefault();
   var form    = this;
@@ -196,7 +205,3 @@ function ajaxRequestWithImage(method, url, data, callback) {
     console.error(err)
   })
 }
-
-
-
-
