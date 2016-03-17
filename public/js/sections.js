@@ -1,4 +1,3 @@
-
 $( document ).ready(function() {
     console.log( "Sections file loaded" );
 
@@ -18,7 +17,6 @@ $("#listViewIdx").on('click', function(){
  $('.mapView').attr("hidden", true);
  $(".listView").removeAttr('hidden');
 });
-
 
 viewListProjects = function(){
   $('.mapView').attr("hidden", true);
@@ -84,24 +82,6 @@ projectShow = function(project){
      //build attending button
      $(".eventAttendingYes").attr('id', project._id);
     });
-}
-
-function userShow(user){
-  event.preventDefault();
-  $('section').attr("hidden", true);
-  $(".userShow").removeAttr('hidden');
-  ajaxRequest('GET', "http://localhost:3000/api/users/" + user, null, function(data){
-  if(user)  {
-    $('#profileHeader').empty().append("<h1>" + user.name.toUpperCase() + "</h1>" );
-  };
-};
-
-function userEdit(){
-  event.preventDefault();
-  $('section').attr("hidden", true);
-  $(".userEdit").removeAttr('hidden');
-  console.log("Profile Edit")
-
 }
 
 
