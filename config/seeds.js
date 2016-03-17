@@ -222,7 +222,7 @@ var project6 = new Project({
 var project7 = new Project({
  title:  "Scrapheap Challenge",
  projectType: "Other",
- projectDate: 5/31/2016,
+ projectDate: 31/5/2016,
  lat: "51.531295",
  lng: "-0.097089",
  addresslineOne: "City Road Basin",
@@ -349,26 +349,29 @@ projectowner5.save(function(err, user){
   else console.log(user);
 });
 
-
-project2.save(function(err, users){
+project0.save(function(err, users){
   if(err) console.error(err);
-  project3.save(function(err, users){
+  project1.save(function(err, users){
     if(err) console.error(err);
-    project4.save(function(err, users){
+  project2.save(function(err, users){
+    if(err) console.error(err);
+    project3.save(function(err, users){
       if(err) console.error(err);
-      project5.save(function(err, users){
+      project4.save(function(err, users){
         if(err) console.error(err);
-        project6.save(function(err, users){
+        project5.save(function(err, users){
           if(err) console.error(err);
-          project7.save(function(err, users){
+          project6.save(function(err, users){
             if(err) console.error(err);
-            project8.save(function(err, users){
+            project7.save(function(err, users){
               if(err) console.error(err);
-              project9.save(function(err, users){
+              project8.save(function(err, users){
                 if(err) console.error(err);
-                project10.save(function(err, users){
+                project9.save(function(err, users){
                   if(err) console.error(err);
-  ////////////// in the middle of the call back death //
+                  project10.save(function(err, users){
+                    if(err) console.error(err);
+    ////////////// in the middle of the call back death //
 
 
 
@@ -378,7 +381,8 @@ project2.save(function(err, users){
 
 
 
-
+                    });
+                  });
                 });
               });
             });
