@@ -172,7 +172,7 @@ function showPage() {
 function showUserPage() {
   event.preventDefault();
   console.log("showUser");
-  ajaxRequest2('GET', "http://localhost:3000/api/users/56e9a7b4fb52512d6f623ed3", null, function(user){
+  ajaxRequest2('GET', "http://localhost:3000/api/users/" + loggedInUserId, null, function(user){
     $('section').attr("hidden", true);
     $("#userShow").removeAttr('hidden');
     console.log(user);

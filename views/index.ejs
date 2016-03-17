@@ -24,100 +24,94 @@
 <body>
 
   <div id="layout">
-   <a href="#menu" id="menuLink" class="menu-link">
-     <span></span>
-   </a>
-   <div id="menu">
-    <div class="pure-menu">
-      <a class="pure-menu-link menu-title" href="/#/" id="home">Green<br>Hub</a>
-      <ul class="pure-menu-list">
-
-        <li class="pure-menu-item">
-          <a href="/#/" class="pure-menu-link register logged-out"><i class="fa fa-rocket"></i> Register</a>
-        </li>
-
-        <li class="pure-menu-item">
-          <a href="/#/" class="pure-menu-link login logged-out"><i class="fa fa-key"></i> Login</a>
-        </li>
-        <li class="pure-menu-item menu-item-divided">
-          <a href="/#/" class="pure-menu-link "><i></i> Front</a>
-        </li>
-
-        <li class="pure-menu-item menu-item-divided">
-          <a href="/#/" class="pure-menu-link logged-in" id="user"><i class="fa fa-user"></i> Current User</a>
-        </li>
-
-        <li class="pure-menu-item">
-
-          <a href="#" class="pure-menu-link logged-in"><i class="fa fa-leaf"></i> Hubs</a>
-
-        </li>
-
-        <li class="pure-menu-item">
-          <a href="/#/" class="pure-menu-link logout logged-in" id="logout"><i class="fa fa-sign-in"></i> Logout</a>
-        </li>
-      </ul>
+    <a href="#menu" id="menuLink" class="menu-link">
+      <span></span>
+    </a>
+    <div id="menu">
+      <div class="pure-menu">
+        <a class="pure-menu-link menu-title" href="/#/" id="home">Green<br>Hub</a>
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="/#/" class="pure-menu-link register logged-out"><i class="fa fa-rocket"></i> Register</a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/#/" class="pure-menu-link login logged-out"><i class="fa fa-key"></i> Login</a>
+          </li>
+          <li class="pure-menu-item menu-item-divided">
+            <a href="/#/" class="pure-menu-link "><i class="fa fa-fort-awesome"></i> Home</a>
+          </li>
+          <li class="pure-menu-item menu-item-divided">
+            <a href="/#/" class="pure-menu-link logged-in" id="user"><i class="fa fa-user"></i> Current User</a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link logged-in"><i class="fa fa-leaf"></i> Hubs</a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/#/" class="pure-menu-link logout logged-in" id="logout"><i class="fa fa-sign-in"></i> Logout</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</div>
-<div class="pure-g">
-  <div class="pure-u-2-24"></div>
-  <div class="pure-u-22-24">
-    <% include ../views/partials/loginForm %>
-  </div>
-</div>
-<div class="pure-g">
-  <div class="pure-u-2-24"></div>
-  <div class="pure-u-22-24">
-    <% include ../views/partials/registerForm %>
-  </div>
-</div>
-<div class="pure-g">
-  <div class="pure-u-2-24"></div>
-  <div class="pure-u-22-24">
-    <% include ../views/partials/projectShow %>
-  </div>
-</div>
-<div class="pure-g">
-  <div class="pure-u-2-24"></div>
-  <div class="pure-u-22-24">
-    <% include ../views/partials/userShow %>
-  </div>
-</div>
-<div class="pure-g">
-  <div class="pure-u-2-24"></div>
-  <div class="pure-u-22-24">
-    <% include ../views/partials/projectEdit %>
-  </div>
-</div>
-<div class="pure-g">
-  <div class="pure-u-2-24"></div>
-  <div class="pure-u-22-24">
-    <% include ../views/partials/userEdit %>
-  </div>
-</div>
-<div class="pure-g">
-  <div class="pure-u-2-24"></div>
-  <div class="pure-u-22-24">
-    <% include ../views/partials/projectsIndex %>
-  </div>
-</div>
-<div class="pure-g">
-  <div class="pure-u-2-24"></div>
-  <div class="pure-u-22-24">
-    <% include ../views/partials/userIndex %>
-  </div>
-</div>
-<div class="pure-g">
-  <div class="pure-u-2-24"></div>
-  <div class="pure-u-22-24">
-    <% include ../views/partials/projectNew %>
   </div>
   <div class="pure-g">
     <div class="pure-u-2-24"></div>
     <div class="pure-u-22-24">
-      <% include ../views/partials/front %>
+      <% include partials/loginForm %>
     </div>
-</div>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u-2-24"></div>
+    <div class="pure-u-22-24">
+      <% include partials/registerForm %>
+    </div>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u-2-24"></div>
+    <div class="pure-u-22-24">
+      <% include partials/projectShow %>
+    </div>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u-2-24"></div>
+    <div class="pure-u-22-24">
+      <% include partials/userShow %>
+    </div>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u-2-24"></div>
+    <div class="pure-u-22-24">
+      <% include partials/projectEdit %>
+    </div>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u-2-24"></div>
+    <div class="pure-u-22-24">
+      <% include partials/userEdit %>
+    </div>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u-2-24"></div>
+    <div class="pure-u-22-24">
+      <% include partials/projectsIndex %>
+    </div>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u-2-24"></div>
+    <div class="pure-u-22-24">
+      <% include partials/userIndex %>
+    </div>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u-2-24"></div>
+    <div class="pure-u-22-24">
+      <% include partials/projectNew %>
+    </div>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u-2-24"></div>
+    <div class="pure-u-22-24">
+      <% include partials/front %>
+    </div>
+  </div>
 </body>
 </html>
