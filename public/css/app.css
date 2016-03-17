@@ -9,10 +9,11 @@
 
 body {
   background: #F1FFFA;
+  color: #296B47;
 }
 
 .middle-front{
-text-align: center;
+text-alifgn: center;
 }
 
 .individualComment {
@@ -31,11 +32,13 @@ text-align: center;
 .pure-button-primary:hover {
   box-shadow: none;
 }
+
 .middleProjectShow {
   margin-top: 40px;
 }
 
-#showTitle {
+
+#showTitle{
   margin-top: 80%;
   bottom:0px;
   text-align: bottom;
@@ -80,13 +83,14 @@ margin-top: 25px;
 }
 
 .topbar-projectindex{
-border-bottom: 2px black solid;
+border-bottom: 2px #296B47 solid;
 text-align: center;
 }
 
-.topbar-showproject {
-border-bottom: 2px black solid;
+div.topbar-showproject {
+border-bottom: 2px #296B47 solid;
 text-align: center;
+width: 100%;
 
 }
 
@@ -104,8 +108,7 @@ border:  3px solid #296B47;
 }
 
 insideAvBox {
-  width: 200px;
-  height: 100px;
+
   text-align: right;
 }
 
@@ -165,6 +168,11 @@ ul {
 
 a.pure-menu-link:hover {
   background: #568259;
+  -webkit-transition: all 250ms ease-in-out;
+   -moz-transition: all 250ms ease-in-out;
+   -ms-transition: all 250ms ease-in-out;
+   -o-transition: all 250ms ease-in-out;
+   transition: all 250ms ease-in-out;
 }
 
 link:active  {
