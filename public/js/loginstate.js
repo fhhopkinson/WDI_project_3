@@ -5,7 +5,7 @@ $( document ).ready(function() {
 
     function init(){
       //post information subitted by form
-      $('.registerLogin').on('submit', submitForm, checkLoginState());
+      $('.registerLogin').on('submit', submitForm);
       $('#submit').on('submit', newForm);
       $('#comment').on('submit', addComment);
       $('.logout').on('click', logout);
@@ -80,7 +80,6 @@ function checkLoginState(data){
   // check for a token
   // if there is one, call loggedInState
   // otherwise, call loggedOutState
-  showUser(data);
   var token = getToken();
 
   if (token) {
@@ -100,6 +99,7 @@ function authenticationSuccessful(data) {
   checkLoginState(data);
   showUserPage();
   console.log("authenticationSuccessful");
+
   // displayUsers();
 
 }
@@ -109,12 +109,7 @@ function loggedInState(){
   // show hubs, logout, and users links
   $('.logged-in').removeAttr("hidden");
   $('.logged-out').attr("hidden", true);
-  setData();
 
-}
-
-function setData(token){
-  setToken(token);
 }
 
 function changeColor(){
@@ -126,6 +121,7 @@ function changeColor(){
 function setToken(token) {
   // set the token into localStorage
   // pass in the token itself and then it will be stored as a token
+  console.log(token);
   return localStorage.setItem('token', token);
 }
 
@@ -228,7 +224,7 @@ function showRegister() {
   $('#register').removeAttr("hidden");
 }
 
-showUser = function(data){
+function showUser(data){
   // take the user data and show the current user as <a> in the <li>, eg:
   // <li class="pure-menu-link">Current User</li>
   console.log("got here")
@@ -237,6 +233,15 @@ showUser = function(data){
     loggedInUser = data.user;
     loggedInUserId = data.user._id;
   };
+}
+
+function getUser() {
+  var token = getToken();
+  if (token)  var payload = token.split(".")[1];
+  console.log(token);
+  var user = window.atob(payload)
+  console.log(user);
+  return user;
 }
 
 function ajaxRequest(method, url, data, callback) {
