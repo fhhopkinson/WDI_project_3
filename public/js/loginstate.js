@@ -91,6 +91,7 @@ function authenticationSuccessful(data) {
   // hideErrors();
   showUser(data);
   checkLoginState(data);
+  showUserPage();
   console.log("authenticationSuccessful");
   // displayUsers();
 
@@ -143,17 +144,18 @@ function showPage() {
   // hide errors
   // show the relevant section
   $('section').attr("hidden", true);
-  // var sectionId = $(this).text().toLowerCase()
+  var sectionIdLog = $(this).text().toLowerCase()
   var sectionId = $(this).attr('id')
-  // var sectionId = $.trim(sectionId)
-  $('#' + sectionId).removeAttr('hidden');
+  var sectionIdLog = $.trim(sectionIdLog)
+
 
   if (sectionId == "logout") {
     logout();
-  }else if (sectionId == "hubs") {
-    projectIndex();
   }else if (sectionId == "user") {
     showUserPage();
+  } else {
+    console.log("other")
+    $('#' + sectionIdLog).removeAttr('hidden');
   }
 
   // $('.logged-in').show();
@@ -167,11 +169,13 @@ function showUserPage() {
   console.log("showUser");
   ajaxRequest2('GET', "http://localhost:3000/api/users/56e9a7b4fb52512d6f623ed3", null, function(user){
     $('section').attr("hidden", true);
-    $(".userShow").removeAttr('hidden');
+    $("#userShow").removeAttr('hidden');
     console.log(user);
     $('#profilePic').empty();
     $('#userProjects').empty();
-    $('#profilePic').append('<img src="' + user.avatar + '"> <h3>' + user.name + '</h3>')
+    $('#profileHeader').empty()
+    $('#profileHeader').html(user.name)
+    $('#profilePic').append('<img src="' + user.avatar + '">')
     user.projects.forEach(function(project) {
       $('#userProjects').append("<div class='pure-u-1-5' style='background-image: url(" + project.image + ");' id='" + project._id + "' ><h3>"+ project.title + project.attendees.length + "</h3></div>");
     });
@@ -197,7 +201,6 @@ function logout(){
   // call loggedOutState
   removeToken();
   loggedOutState();
-
 }
 
 function loggedOutState(){
@@ -205,6 +208,7 @@ function loggedOutState(){
   // hide the users section and links
   $('.logged-out').removeAttr("hidden");
   $('.logged-in').attr("hidden", true);
+  $('#front').removeAttr("hidden");
   console.log("loggedOutState")
 }
 
