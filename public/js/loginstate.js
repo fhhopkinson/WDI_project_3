@@ -229,7 +229,7 @@ function showUser(data){
   // <li class="pure-menu-link">Current User</li>
   console.log("got here")
   if(data)  {
-    $('#user').empty().append("<li>" + "<a>" + "<i class='fa fa-user'>" + "</i>" + " " + data.user.name.toUpperCase() + "</a>" + "</li>");
+    $('#user').empty().append("<li>" + "<a id='" + data.user._id +"'>" + "<i class='fa fa-user'>" + "</i>" + " " + data.user.name.toUpperCase() + "</a>" + "</li>");
     loggedInUser = data.user;
     loggedInUserId = data.user._id;
   };
