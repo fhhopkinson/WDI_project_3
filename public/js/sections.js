@@ -15,7 +15,7 @@ $("#avatarBox").on('click', 'img', function(){
 });
 
 
-
+/*
 $("#mapViewIdx").on('click', function(){
   $('.listView').attr("hidden", true);
   $(".mapView").removeAttr('hidden');
@@ -25,7 +25,7 @@ $("#mapViewIdx").on('click', function(){
 $("#listViewIdx").on('click', function(){
  $('.mapView').attr("hidden", true);
  $(".listView").removeAttr('hidden');
-});
+});*/
 
 
 otherUserShow = function(whoseId){
@@ -41,8 +41,7 @@ otherUserShow = function(whoseId){
     var i = 0;
     $("#otherUserProjects").empty();
     while (i < data.projects.length){
-      var prettyProjectDate = timeConverter(parseFloat(data.projects[i].projectDate));
-     $("#otherUserProjects").prepend("<ul>" + data.projects[i].title + "</br>" + prettyProjectDate + "</ul>");
+     $("#otherUserProjects").prepend("<ul>" + data.projects[i].title + "</br>" + project.projectDate + "</ul>");
      i++
     }
   });
@@ -85,15 +84,18 @@ projectShow = function(project){
     $('section').attr("hidden", true);
     $("#projectShow").removeAttr('hidden');
       var project = data.project
-      var prettyProjectDate = timeConverter(parseFloat(project.projectDate));
+      console.log("===============================");
+      console.log(data.project.addresslineOne + data.project.addresslineTwo 
+        + data.project.postcode);
+      console.log("===============================");
         $("#showImage").html("<img src='" + project.image + "'</img>");
         $("#showTitle").text(project.title);
         $("#showDesc").text(project.desc);
       //////////////////////////////
       $("#avatarBox").html("<div class='insideAvBox'><img src='" + data.user.avatar + "' id='" + data.user._id + "' /></div><div class='insideAvBoxFurther'>" + data.user.name + "</div></div>");
       projectVenue = project.addresslineOne + " " + project.addresslineTwo + " " + project.postcode;
-      console.log("Project will be held on: <b>" + prettyProjectDate + "</b>The project venue is " + projectVenue);
-      $("#showAddress").html( "Project will be held on: <b>" + prettyProjectDate + "</b><br></br> At Venue: </br>"  + project.addresslineOne + "<br>" + project.addresslineTwo + "<br>" + project.postcode);
+      console.log("Project will be held on: <b>" + project.projectDate + "</b>The project venue is " + projectVenue);
+      $("#showAddress").html( "Project will be held on: <b>" + project.projectDate + "</b><br></br> At Venue: </br>"  + project.addresslineOne + "<br>" + project.addresslineTwo + "<br>" + project.postcode);
     var i = 0;
     var attendees = data.project.attendees;
     $("#attendeesList").empty();
@@ -106,7 +108,7 @@ projectShow = function(project){
      $.each(project.comments, function( index, comment ) {
        $(commentsList).append("<div class='pure-g'><div class='pure-u-4-24'><img src='" + comment.commenterAvatar + "' width='40px' height='40px' /></div>" + "<div class='pure-u-20-24 individualComment'>" + comment.commenter + "</br>" + comment.comment + "</div></div>")
      });
-
+     console.log(projectVenue);
      initSmallMap(project.lat,project.lng);
      placesCardFetch(projectVenue,project.lat,project.lng);
      // build comments PUT form

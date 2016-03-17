@@ -15,12 +15,12 @@ body {
 text-align: center;
 }
 
-
 .individualComment {
   border: 1px white solid;
   background-color: #f2f2f2;
   margin-bottom: 8px
 }
+
 
 .pure-button-primary{
   border-radius: 3px; 
@@ -31,6 +31,14 @@ text-align: center;
 .pure-button-primary:hover {
   box-shadow: none;
 }
+.middleProjectShow {
+  margin-top: 40px;
+}
+
+# showTitle{
+  margin-top: 80%;
+  bottom:0px;
+  text-align: bottom;
 
 #showImage img{
 max-width: 100%;
@@ -46,6 +54,7 @@ margin-top: 25px;
 #userShowMap {
   height: 400px;
   width: 600px;
+  margin-left: 30%;
 }
 
 #mapSmallProjectShow{
@@ -63,6 +72,7 @@ margin-top: 25px;
   width:200px;
   height:120px;
   background-size: cover;
+  margin: 5px;
 }
 .projectItemBox h3{
   background:rgba(0,0,0,0.5);
@@ -99,8 +109,8 @@ insideAvBox {
 }
 
 #avatarBox img{
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border-radius: 100px;
   margin: auto 0;
   margin-top: 50px;

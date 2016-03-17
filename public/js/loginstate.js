@@ -14,6 +14,8 @@ function init(){
   $('#editProfile').on('click', function() {
     console.log("click");
   });
+  $("#showFront").on('click', frontPage);
+
   $('section').attr("hidden", true);
   changeColor();
   checkLoginState();
@@ -49,6 +51,14 @@ function updateUserForm(){
   ajaxRequestWithImage(method, url, data, authenticationSuccessful);
 }
 
+function frontPage(){
+  $('section').attr("hidden", true);
+  checkLoginState();
+  $('#front').removeAttr("hidden");
+  generateMap();
+}
+
+
 function addComment() {
   console.log("addComment");
   event.preventDefault();
@@ -56,8 +66,9 @@ function addComment() {
   var method  = $(this).attr('method');
   var url     = "http://localhost:3000/api" + $(this).attr('action');
   var data    = $(this).serialize();
+  currentProjectId = $(this).attr('action').split("/")[2];
   ajaxRequest(method, url, data, function() {
-    form.reset();
+  projectShow(currentProjectId);
   })
 }
 
@@ -211,7 +222,6 @@ function getUser() {
   var token = getToken();
   if (token)  {
     var payload = token.split(".")[1];
-    console.log(payload);
     payload = window.atob(payload);
     var user = JSON.parse(payload)._doc;
     return user;
