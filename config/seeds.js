@@ -64,6 +64,7 @@ var user4 = new User({
 
 });
 user4.save();
+
 var user5 = new User({
  name: "Bobbie Shocker",
  email: "bob@gmail.com",
@@ -87,6 +88,27 @@ var user6 = new User({
 });
 user6.save();
 
+var user7 = new User({
+  name: "Livs Foster",
+  email: "foster@gmail.com",
+  postcode: "SE4 3SD",
+  avatar:"http://7-themes.com/data_images/out/75/7028553-beautiful-girl-style-profile-makeup.jpg",
+  password: "qw",
+  passwordConfirmation: "qw"
+//projects: [{ type: mongoose.Schema.ObjectIt, ref: 'Projects'}],
+});
+user7.save();
+
+var user8 = new User({
+  name: "James Board",
+  email: "bored@gmail.com",
+  postcode: "SE1 5SD",
+  avatar:"http://trevorastonphotography.co.uk/wp-content/uploads/2013/12/no-more-bad-profile-pictures.jpg",
+  password: "qw",
+  passwordConfirmation: "qw"
+//projects: [{ type: mongoose.Schema.ObjectIt, ref: 'Projects'}],
+});
+user8.save();
 
 var project0 = new Project({
   title:  "Energy Garden",
