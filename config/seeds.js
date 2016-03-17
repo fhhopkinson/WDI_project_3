@@ -371,7 +371,7 @@ projectowner4.save(function(err, user){
 
 var projectowner5 = new User({
   name: "Albert Herring",
-  projects: [project5._id,project0._id],
+  projects: [project5._id,project0._id,project1._id],
   email: "project_owner5@gmail.com",
   postcode: "SW2 3SD",
   avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
