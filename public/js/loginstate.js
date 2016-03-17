@@ -5,7 +5,7 @@ $( document ).ready(function() {
 
     function init(){
       //post information subitted by form
-      $('.registerLogin').on('submit', submitForm, checkLoginState());
+      $('.registerLogin').on('submit', submitForm);
       $('#submit').on('submit', newForm);
       $('#comment').on('submit', addComment);
       $('.logout').on('click', logout);
@@ -73,7 +73,6 @@ function checkLoginState(data){
   // check for a token
   // if there is one, call loggedInState
   // otherwise, call loggedOutState
-  showUser(data);
   var token = getToken();
 
   if (token) {
@@ -91,7 +90,6 @@ function authenticationSuccessful(data) {
   // hideErrors();
   showUser(data);
   checkLoginState(data);
-  console.log("authenticationSuccessful");
   // displayUsers();
 
 }
@@ -101,12 +99,7 @@ function loggedInState(){
   // show hubs, logout, and users links
   $('.logged-in').removeAttr("hidden");
   $('.logged-out').attr("hidden", true);
-  setData();
 
-}
-
-function setData(token){
-  setToken(token);
 }
 
 function changeColor(){
@@ -118,6 +111,7 @@ function changeColor(){
 function setToken(token) {
   // set the token into localStorage
   // pass in the token itself and then it will be stored as a token
+  console.log(token);
   return localStorage.setItem('token', token);
 }
 
