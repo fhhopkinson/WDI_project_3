@@ -100,7 +100,7 @@ projectShow = function(project){
     var attendees = data.project.attendees;
     $("#attendeesList").empty();
     while (i < attendees.length){
-       $("#attendeesList").append("<li class='avatar'>" + "<img src='" + attendees[i].avatar +  "' id='" + attendees[i]._id + "' />" + attendees[i].name + "</li>");
+       $("#attendeesList").append("<li class='avatar'>" + "<img src='" + attendees[i].avatar +  "' id='" + attendees[i]._id + "' />" + "<br>" +attendees[i].name + "</li>");
        i++
       }
 
