@@ -64,7 +64,7 @@ function projectsAttending(req, res) {
   console.log("we just arrived in the projectsAttending controller function");
   console.log(req.params.eventid);
   console.log(req.params.userid);
-    Project.findOneAndUpdate({_id:req.params.id}, {attendees:req.params.userid}, function (err, project) {
+    Project.findOneAndUpdate({_id:req.params.eventid}, {attendees:req.params.userid}, function (err, project) {
     if(err) return res.status(500).json({ message: err });
     return res.status(200).json(project);
   });

@@ -47,17 +47,18 @@ googleMap =  new google.maps.Map(map, {
          maxWidth: 200,
          borderRadius: 10,
          arrowPosition: 50,
-         content: '<h4>' + project.title + '</h4>' + '<img src="' + project.gallery[0] + '" width="200px"/><p>'  +  '</p>'
+         content:"<div class='pure-u-1-3 projectItemBox' style='background-image: url(" + project.image + ");' id='" + project._id + "' ><h3>"+ project.title + "</h3></div>"
        });
        marker.addListener('click', function(){
          infoWindow.open(googleMap);
          googleMap.panTo(marker.position);
-         googleMap.setZoom(14);
+         googleMap.setZoom(12);
 
-        if(currentInfoWindow) currentInfoWindow.close();
-
-        currentInfoWindow = infoWindow;
-
+       });
+       google.maps.event.addDomListener(infoWindow, 'domready', function() {
+           $('.projectItemBox').click(function() {
+               projectShow(this.id);
+           });
        });
 
      },idx*10);
