@@ -9,6 +9,7 @@
 
 body {
   background: #F1FFFA;
+  color: #296B47;
 }
 
 .middle-front{
@@ -31,11 +32,13 @@ text-alifgn: center;
 .pure-button-primary:hover {
   box-shadow: none;
 }
+
 .middleProjectShow {
   margin-top: 40px;
 }
 
-#showTitle {
+
+#showTitle{
   margin-top: 80%;
   bottom:0px;
   text-align: bottom;
@@ -80,13 +83,14 @@ margin-top: 25px;
 }
 
 .topbar-projectindex{
-border-bottom: 2px white solid;
+border-bottom: 2px #296B47 solid;
 text-align: center;
 }
 
-.topbar-showproject {
-border-bottom: 2px white solid;
+div.topbar-showproject {
+border-bottom: 2px #296B47 solid;
 text-align: center;
+width: 100%;
 
 }
 
@@ -164,6 +168,11 @@ ul {
 
 a.pure-menu-link:hover {
   background: #568259;
+  -webkit-transition: all 250ms ease-in-out;
+   -moz-transition: all 250ms ease-in-out;
+   -ms-transition: all 250ms ease-in-out;
+   -o-transition: all 250ms ease-in-out;
+   transition: all 250ms ease-in-out;
 }
 
 link:active  {

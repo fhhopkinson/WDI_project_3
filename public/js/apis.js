@@ -4,7 +4,7 @@ $(function(){
  var smallGmap;
  var geocoder;
 
-
+stylesGreenHub = [{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#fbf9e5"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#568259"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fc9f77"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#568259"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"},{"color":"#b55858"}]},{"featureType":"road","elementType":"labels.text","stylers":[{"color":"#77b1bb"},{"visibility":"on"},{"weight":"0.01"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#0AC19B"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffe745"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"color":"#c9d8d9"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2A4B97"}]}];
 
 initSmallMap = function(lat,lng) {
   
@@ -12,7 +12,8 @@ var map = document.getElementById("mapSmallProjectShow")
 googleMap =  new google.maps.Map(map, {
   zoom: 16,
   disableDefaultUI: true,
-  center: {lat: parseFloat(lat),  lng: parseFloat(lng)}
+  center: {lat: parseFloat(lat),  lng: parseFloat(lng)},
+  style: stylesGreenHub
   });
 }
 
@@ -21,7 +22,8 @@ var map = document.getElementById("userShowMap")
 googleMap =  new google.maps.Map(map, {
   zoom: 14,
   disableDefaultUI: true,
-  center: {lat: parseFloat(lat),  lng: parseFloat(lng)}
+  center: {lat: parseFloat(lat),  lng: parseFloat(lng)},
+  style: stylesGreenHub
   });
  populateMap(userProfileMap);
 }
@@ -47,7 +49,7 @@ whereDoILivePostcodeToLATLNG = function(postcode){
     zoom: 10,
     disableDefaultUI: true,
     center: {lat: 51.5165009,  lng: -0.1178475},
-    styles: [{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#fbf9e5"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#568259"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fc9f77"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#568259"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"},{"color":"#b55858"}]},{"featureType":"road","elementType":"labels.text","stylers":[{"color":"#77b1bb"},{"visibility":"on"},{"weight":"0.01"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#0AC19B"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffe745"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"color":"#c9d8d9"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2A4B97"}]}]
+    styles: stylesGreenHub
   });
 }
 
@@ -98,10 +100,11 @@ whereDoILivePostcodeToLATLNG = function(postcode){
    // Search nearby places
  placesService = new google.maps.places.PlacesService(map);
  placesService.nearbySearch({ keyword: address, location: latlng, radius: 15000 }, function(results, status) {  //map.getCenter()
-   
+
    imageFound = results[0].photos[0].getUrl({
     maxWidth: 400
          });
+
    $("#imageFound").html("<img width='150px' height='150px' src='" + imageFound + "' />");
  });
 }
