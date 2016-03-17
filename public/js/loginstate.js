@@ -8,6 +8,7 @@ function init(){
   $('#submit').on('submit', newForm);
   $('#updateUserForm').on('submit', updateUserForm)
   $('#comment').on('submit', addComment);
+  $('#submitNewHub').on('submit', submitNewHub);
   $('.logout').on('click', logout);
   $('.pure-menu-item a').on('click', showPage);
   $('#editProfile').on('click', function() {
@@ -59,6 +60,33 @@ function addComment() {
   ajaxRequest(method, url, data, function() {
     form.reset();
   })
+}
+
+function submitNewHub(){
+  console.log("Submit New Hub");
+  event.preventDefault();
+  var form    = this;
+  var method  = $(this).attr('method');
+  var urll     = "http://localhost:3000/api" + $(this).attr('action');
+  var data    = new FormData(this);
+  form.reset();
+
+    return $.ajax({
+      method: method,
+      url: urll,
+      data: data,
+      contentType: false, // allow ajax to send file data
+      processData: false, // allow ajax to send file data
+      beforeSend: function(jqXHR) {
+        var token = getToken();
+        if(token) return jqXHR.setRequestHeader('Authorization', 'Bearer ' + token);
+      }
+    }).done(function(data){
+     console.log(data);
+    }).fail(function(data) {
+      console.error(data.responseJSON);
+    });
+  
 }
 
 function newForm(){
@@ -218,6 +246,7 @@ function ajaxRequest(method, url, data, callback) {
 }
 
 function ajaxRequestWithImage(method, url, data, callback) {
+  console.log("arrived in AJAXrequestwithimage");
   return $.ajax({
     method: method,
     url: url,
