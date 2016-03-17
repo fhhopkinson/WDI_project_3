@@ -19,7 +19,6 @@ function init(){
   $('section').attr("hidden", true);
   changeColor();
   checkLoginState();
-  showUser();
   gallery();
   $('#home').on("click", function() {
     console.log("hello");
@@ -55,7 +54,6 @@ function updateUserForm(){
 function frontPage(){
   $('section').attr("hidden", true);
   checkLoginState();
-  showUser();
   $('#front').removeAttr("hidden");
   generateMap();
 }
@@ -68,8 +66,9 @@ function addComment() {
   var method  = $(this).attr('method');
   var url     = "http://localhost:3000/api" + $(this).attr('action');
   var data    = $(this).serialize();
+  currentProjectId = $(this).attr('action').split("/")[2];
   ajaxRequest(method, url, data, function() {
-    form.reset();
+  projectShow(currentProjectId);
   })
 }
 
@@ -97,7 +96,7 @@ function submitNewHub(){
     }).fail(function(data) {
       console.error(data.responseJSON);
     });
-  
+
 }
 
 function newForm(){
@@ -123,7 +122,6 @@ function checkLoginState(data){
 
 function authenticationSuccessful(data) {
   if(data.token) setToken(data.token) && loggedInState();
-  showUser(data);
   checkLoginState(data);
   showUserPage();
 
@@ -175,9 +173,14 @@ function showUserPage() {
     $('#profilePic').empty().append('<img src="' + user.avatar + '">')
     $('#usersName').empty().append('<h1>' + user.name + '</h1>')
 
+    console.log("USER PROJECTS PRE LOOP: ", user.projects);
 
-    user.projects.forEach(function(project) {
-      $('#userProjects').empty().append("<div class='pure-u-1-5 userProjectTiles' id='" + project._id + "' ><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
+    // ('#userProjectsX').empty()
+
+    (user.projects).forEach(function(project) {
+      console.log("PROJECT TITLE FOR USER: ", project);
+      // $('#userProjects').empty().append("<div class='pure-u-1-5 userProjectTiles' id='" + project._id + "' ><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
+      $('#userProjectsX').append("<div class='pure-u-3-12 userProjectTiles' id='" + project._id + "'><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
     });
   })
 
@@ -218,15 +221,6 @@ function removeToken() {
 function showRegister() {
   $('section').attr("hidden", true);
   $('#register').removeAttr("hidden");
-}
-
-
-function showUser(){
-  var user = getUser();
-  console.log(user);
-  if(user)  {
-    $('#user').empty().append("<li>" + "<a>" + "<i class='fa fa-user'>" + "</i>" + " " + user.name.toUpperCase() + "</a>" + "</li>");
-  };
 }
 
 function getUser() {
@@ -285,7 +279,6 @@ function gallery() {
         pictures.push(picture);
       });
     });
-    console.log(pictures);
     $(pictures).each(function(index, pic) {
       $('.single-item').append('<div class="pictureSpin"style="background-image: url(' + pic +');"> </div>');
     });
