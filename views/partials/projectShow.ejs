@@ -15,7 +15,7 @@
       </div>
     </div>
   </div>
-  <div class="pure-g">
+  <div class="pure-g middleProjectShow">
     <div class="pure-u-6-24">
       <h4>Are you attending?</h4>
       <button class="button-large pure-button eventAttendingYes" >Yes</button>
@@ -26,7 +26,7 @@
     <div class="pure-u-1-24">
 
     </div>
-    <div class="pure-u-11-24">
+    <div class="pure-u-11-24 middleContentShow">
       <div id="showImage">
       </div>
       <p id="showDesc">
@@ -34,17 +34,24 @@
       <p id="showAddress">
       </p>
 
-      <form class="pure-form pure-form-stacked" id="comment" action="/projects" method="PUT">
-        <fieldset>
-          <legend>Add a new comment</legend>
-          <br>
-          <label for="commenter">Name</label>
-          <input id="name" name="commenter" type="text"></br>
-          <label for="comment">Comment</label>
-          <textarea id="comment" name="comment" placeholder="Your comment here"> </textarea>
-          <button type="submit" class="pure-button pure-button-primary">Add Comment</button>
-        </fieldset>
-      </form>
+      <div class="pure-g">
+       <div class="pure-u-4-24">
+       <br>
+       <img id="avatarCommenter" width="40px" height="40px"/>
+       </div>
+       <div class="pure-u-20-24">
+       <form class="pure-form pure-form-stacked" id="comment" action="/projects" method="PUT">
+         <fieldset>
+           <label for="commenter">Name</label>
+           <input id="commenterName" placeholder="log in to comment" readonly name="commenter" type="text"></br>
+           <input id="commenterAvatar" readonly name="commenterAvatar" type="hidden"></br>
+           <label for="comment">Comment</label>
+           <textarea id="comment" name="comment" placeholder="Your comment here"> </textarea>
+           <button type="submit" class="pure-button pure-button-primary">Add Comment</button>
+         </fieldset>
+       </form>
+       </div>
+     </div>
       Comments:
       <ul id="commentsList">
 
@@ -54,6 +61,25 @@
       <div id="imageFound">Image From Google Places</div>
       <div id="mapSmallProjectShow">
      </div>
+     <p>
+     </p>
+     <p>
+     </p>
+     <p>
+     </p>
+     <p>
+     </p>
+     <p>
+     </p>
+     <p>
+     </p>
+      <!-- Social Share Buttons -->
+      <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+      <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_google_plus"></a>
+      </div>
    </div>
 
  </div>

@@ -3,6 +3,7 @@
 <head>
   <title>GreenHub</title>
   <link rel="stylesheet" type="text/css" href="/css/pure-min.css">
+  <link rel="stylesheet" type="text/css" href="/css/slick.css">
   <style>  html, button, input, select, textarea,
     .pure-g [class *= "pure-u"] {
       font-family: "customFont", DISCO !important;
@@ -10,6 +11,8 @@
 
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
+  <script type="text/javascript" src="/js/slick.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/app.css">
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6eFUCAvihA4XE4rGNJj1_Qs2km9zXZSs&libraries=places"></script>
 
@@ -39,13 +42,16 @@
             <a href="/#/" class="pure-menu-link login logged-out"><i class="fa fa-key"></i> Login</a>
           </li>
           <li class="pure-menu-item menu-item-divided">
-            <a href="/#/" class="pure-menu-link "><i class="fa fa-fort-awesome" id="home"></i> Home</a>
-          </li>
-          <li class="pure-menu-item menu-item-divided">
             <a href="/#/" class="pure-menu-link logged-in" id="user"><i class="fa fa-user"></i> Current User</a>
           </li>
           <li class="pure-menu-item">
             <a href="#" class="pure-menu-link logged-in"><i class="fa fa-leaf"></i> Hubs</a>
+          </li>
+          <li class="pure-menu-item">
+                      <a href="#" class="pure-menu-link logged-in" id="projectNew"><i class="fa fa-map-marker" ></i>AddProject</a>
+                    </li>
+          <li class="pure-menu-item menu-item-divided">
+            <a href="/#/" class="pure-menu-link" id="editProfile"><i class="fa fa-pencil"></i></i> EditProfile</a>
           </li>
           <li class="pure-menu-item">
             <a href="/#/" class="pure-menu-link logout logged-in" id="logout"><i class="fa fa-sign-in"></i> Logout</a>
@@ -75,7 +81,7 @@
   <div class="pure-g">
     <div class="pure-u-2-24"></div>
     <div class="pure-u-22-24">
-      <% include partials/userShow %>
+      <% include partials/currentUserShow %>
     </div>
   </div>
   <div class="pure-g">
@@ -113,6 +119,13 @@
     <div class="pure-u-22-24">
       <% include partials/front %>
     </div>
-  </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-2-24"></div>
+      <div class="pure-u-22-24">
+        <% include partials/userShow %>
+      </div>
+     </div>
+
 </body>
 </html>

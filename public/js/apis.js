@@ -5,15 +5,43 @@ console.log( "Apis & Google Stuff loaded" );
  var smallGmap;
  var geocoder;
 
+
+
 initSmallMap = function(lat,lng) {
   console.log(lat + ":" + lng);
 var map = document.getElementById("mapSmallProjectShow")
 googleMap =  new google.maps.Map(map, {
-  zoom: 12,
+  zoom: 16,
   disableDefaultUI: true,
   center: {lat: parseFloat(lat),  lng: parseFloat(lng)}
   });
 }
+
+userProfileMap = function(lat,lng) {
+  console.log("arrived in userProfileMap");
+var map = document.getElementById("userShowMap")
+googleMap =  new google.maps.Map(map, {
+  zoom: 14,
+  disableDefaultUI: true,
+  center: {lat: parseFloat(lat),  lng: parseFloat(lng)}
+  });
+ populateMap(userProfileMap);
+}
+
+whereDoILivePostcodeToLATLNG = function(postcode){
+   var latlng = new google.maps.LatLng(51.525507,-0.0587999);
+   placesService = new google.maps.places.PlacesService(map);
+   placesService.nearbySearch({ keyword: postcode, location: latlng, radius: 15000 }, function(results, status) {
+     if(results.length > 0) {
+       whereLives = results[0];
+       var iliveLAT = whereLives.geometry.location.lat()
+       var iliveLNG = whereLives.geometry.location.lng()
+       userProfileMap(iliveLAT, iliveLNG);
+     }
+   });
+}
+
+
 
  initMap = function() {
   var map = document.getElementById("map")
@@ -25,14 +53,14 @@ googleMap =  new google.maps.Map(map, {
   });
 }
 
- populateMap = function(){
+ populateMap = function(whichmap){ // tell populatemap whichmap
    ajaxRequest('GET', "http://localhost:3000/api/projects/", null, function(data){
      console.log(data);
      projects = data.projects;
      projects.forEach(function(project, idx){
      marker = new google.maps.Marker({
        position: {lat: parseFloat(project.lat),  lng: parseFloat(project.lng)},
-       map: googleMap,
+       map: whichmap,//googleMap,
        draggable: false,
        icon: "/images/" + project.projectType + ".png"
       });
@@ -76,7 +104,7 @@ googleMap =  new google.maps.Map(map, {
    imageFound = results[0].photos[0].getUrl({
     maxWidth: 400
          });
-   $("#imageFound").html("<img src='" + imageFound + "' />");
+   $("#imageFound").html("<img width='150px' height='150px' src='" + imageFound + "' />");
  });
 }
 

@@ -15,18 +15,46 @@ body {
 text-align: center;
 }
 
-img {
 
+.individualComment {
+  border: 1px white solid;
+  background-color: #f2f2f2;
+  margin-bottom: 8px
+}
+
+.middleProjectShow {
+  margin-top: 40px;
+}
+
+# showTitle{
+  margin-top: 80%;
+  bottom:0px;
+  text-align: bottom;
+}
+
+#showImage img{
 max-width: 100%;
 }
 #map {
   height: 400px;
+  width: 80%;
+  margin-right: 50px;
+}
 
+#userShowMap {
+  height: 400px;
+  width: 600px;
+  margin-left: 30%;
 }
 
 #mapSmallProjectShow{
   height: 150px;
   width: 150px;
+}
+
+.middleContentShow {
+
+  margin-right: 25px;
 }
 
 .projectItemBox{
@@ -50,17 +78,34 @@ text-align: center;
 
 }
 
-.avatar {
-width: 120px;
+
+.avatar img{
+width: 80px;
+
+}
+
+insideAvBox {
+  width: 200px;
+  height: 100px;
+  text-align: right;
 }
 
 #avatarBox img{
   width: 60px;
   height: 60px;
   border-radius: 100px;
+  margin: auto 0;
+  margin-top: 50px;
+  margin-left: 50px;
 }
 
 #profilePic img{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+
+.profilePic img{
   width: 200px;
   height: 200px;
   border-radius: 100px;
@@ -265,4 +310,19 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 .projectImages {
   width: 90%;
   height: 150px;
+}
+
+.single-item {
+  min-width: 700px;
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+.pictureSpin {
+  min-height: 450px;
+  max-height: 450px;
+  min-width: 700px;
+  max-width: 700px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
