@@ -7,10 +7,10 @@
 
 body {
   background: #F1FFFA;
-  font-family: "customFont", DISCO !important;
+  font-family: "MyWebFont", DISCO;
 }
 
-#showImage img{
+img {
 
 max-width: 100%;
 }
@@ -34,18 +34,18 @@ max-width: 100%;
 }
 
 .topbar-projectindex{
-border-bottom: 1px black solid;
+border-bottom: 2px black solid;
 text-align: center;
 }
 
 .topbar-showproject {
-border-bottom: 1px black solid;
+border-bottom: 2px black solid;
 text-align: center;
 
 }
 
-.avatar img{
-width: 80px;
+.avatar {
+width: 120px;
 }
 
 #avatarBox img{
@@ -78,11 +78,9 @@ ul {
 
 #layout:hover {
   width: 12%;
+  background: rgba(41,107, 71, .89);
 }
 
-#imageFound {
-  width: 200px;
-}
 
 #layout ul li a{
   color: transparent;
@@ -114,8 +112,8 @@ i {
 
 
 
-.pure-g{
-  font-family: "customFont", DISCO !important;
+.pure-form{
+  font-family: "customFont", DISCO;
 }
 
 .registerForm {

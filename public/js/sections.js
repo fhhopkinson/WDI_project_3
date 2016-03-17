@@ -14,6 +14,8 @@ $("#listViewIdx").on('click', function(){
  $(".listView").removeAttr('hidden');
 });
 
+$("#user").on('click', userShow);
+
  projectIndex = function(){
     $(".hubslist").empty();
     $('.listView').attr("hidden", true);
@@ -57,6 +59,12 @@ function projectShow(project){
      initSmallMap(project.lat,project.lng); 
      placesCardFetch(projectVenue,project.lat,project.lng);
   });
+}
+
+function userShow(user){
+  event.preventDefault()
+  $('section').attr("hidden", true);
+  $(".userShow").removeAttr('hidden');
 }
 
 
