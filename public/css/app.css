@@ -265,6 +265,6 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 }
 
 .projectImages {
-  width: 100%;
+  width: 90%;
   height: 150px;
 }

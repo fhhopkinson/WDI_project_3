@@ -180,7 +180,7 @@ function showUserPage() {
     $('#profileHeader').empty().html(user.name)
     $('#profilePic').empty().append('<img src="' + user.avatar + '">')
     user.projects.forEach(function(project) {
-      $('#userProjects').empty().append("<div class='pure-u-1-5 userProjectTiles' id='" + project._id + "' ><h3>"+ project.title + "</h3><img class='projectImages' src='" + project.image + "'/><h3> Attendees: " + project.attendees.length + "</h3></div>");
+      $('#userProjects').empty().append("<div class='pure-u-1-5 userProjectTiles' id='" + project._id + "' ><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
     });
   })
 }
