@@ -1,6 +1,11 @@
 $( document ).ready(function() {
+<<<<<<< HEAD
     console.log( "Sections file loaded" );
 
+=======
+
+// $('.userProjectTiles').on('click', console.log("hello");)
+>>>>>>> adf24106706488ca1b15da20f4f15a7667020056
 
 $(".hubslist").on('click', '.projectItemBox', function(){
   projectShow(this.id);
@@ -77,6 +82,7 @@ function getProjects(){
   });
 }
 
+
 projectShow = function(project){
   event.preventDefault();
   ajaxRequest('GET', "http://localhost:3000/api/projects/" + project, null, function(data){
@@ -92,7 +98,19 @@ projectShow = function(project){
         $("#showTitle").text(project.title);
         $("#showDesc").text(project.desc);
       //////////////////////////////
+
       $("#avatarBox").html("<div class='insideAvBox'><img src='" + data.user.avatar + "' id='" + data.user._id + "' />" + "<br>" + data.user.name + "</div>");
+
+      if (data.user.avatar == undefined){
+        data.user.avatar = "/images/female-placeholder-profile-img.png"
+        }
+        if (data.user.name == undefined){
+          data.user.name = "log in to comment"
+        }
+        if (data.user._id == undefined){
+          data.user._id = "notloggedin"
+        }
+
       projectVenue = project.addresslineOne + " " + project.addresslineTwo + " " + project.postcode;
       console.log("Project will be held on: <b>" + project.projectDate + "</b>The project venue is " + projectVenue);
       $("#showAddress").html( "Project will be held on: <b>" + project.projectDate + "</b><br></br> At Venue: </br>"  + project.addresslineOne + "<br>" + project.addresslineTwo + "<br>" + project.postcode);

@@ -32,7 +32,7 @@ user1.save();
 
 var user2 = new User({
  name: "Henry Tallyho",
- email: "autovincelynch@gmail.com",
+ email: "henryTallho@gmail.com",
  postcode: "E2 7NS",
  avatar: "http://i2.cdn.turner.com/cnnnext/dam/assets/140926165711-john-sutter-profile-image-large-169.jpg",
  password: "qw",
@@ -131,6 +131,18 @@ var user10 = new User({
 //projects: [{ type: mongoose.Schema.ObjectIt, ref: 'Projects'}],
 });
 user10.save();
+
+var user11 = new User({
+  name: "Vince Lynch",
+  email: "autovincelynch@gmail.com",
+  postcode: "NW5 1UX",
+  avatar:"http://i.imgur.com/HGZVqP7.jpg",
+  password: "password",
+  passwordConfirmation: "password"
+//projects: [{ type: mongoose.Schema.ObjectIt, ref: 'Projects'}],
+});
+user11.save();
+
 
 var project0 = new Project({
   title:  "Energy Garden",
@@ -359,7 +371,7 @@ projectowner4.save(function(err, user){
 
 var projectowner5 = new User({
   name: "Albert Herring",
-  projects: [project5._id,project0._id],
+  projects: [project5._id,project0._id,project1._id],
   email: "project_owner5@gmail.com",
   postcode: "SW2 3SD",
   avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",

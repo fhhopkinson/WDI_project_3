@@ -24,10 +24,10 @@ text-alifgn: center;
 
 
 .pure-button-primary{
-  border-radius: 3px; 
+  border-radius: 3px;
   background: #296B47;
   box-shadow: 3px 4px 0px 0px #1F2F16;
-} 
+}
 
 .pure-button-primary:hover {
   box-shadow: none;
@@ -39,6 +39,7 @@ text-alifgn: center;
 
 
 #showTitle{
+
   bottom:0px;
   text-align: bottom;
 }
@@ -298,13 +299,34 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 }
 
 .userProjectTiles {
-  background-color: red;
+  background-color: #296B47;
+  margin-left: 5px;
+  width: 24%;
+  height: 220px;
+  text-align: center;
+  position: relative;
+  color: #F1FFFA;
+  border-radius: 5px;
+}
+
+.pTop {
+  position: absolute;
+  margin: 0;
+  top: 1px;
   text-align: center;
 }
 
+.pBottom {
+  position: absolute;
+  bottom: 1px
+  margin-top: 0;
+}
+
 .projectImages {
-  width: 90%;
-  height: 150px;
+  height: 140px;
+  margin-top: 40px;
+  border: 3px solid #F1FFFA;
+  border-radius: 10px;
 }
 
 .single-item {
@@ -322,6 +344,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
   z-index: -1;
 }
 
-.testDiv {
-  border: 1px solid black;
+#userProjectsX {
+  margin-top: 10px;
+  letter-spacing: normal;
 }
