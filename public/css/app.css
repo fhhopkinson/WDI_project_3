@@ -25,7 +25,9 @@ text-align: center;
 
 #showImage img{
 max-width: 100%;
+margin-top: 25px;
 }
+
 #map {
   height: 400px;
   width: 80%;
@@ -68,9 +70,16 @@ text-align: center;
 
 }
 
+div.pure-u-6-24 {
+  text-align: center;
+}
 
 .avatar img{
 width: 80px;
+border-radius: 10px;
+margin-bottom: 11px;
+margin-top: 9px;
+border:  3px solid #296B47;
 
 }
 
@@ -152,11 +161,6 @@ link:active  {
 i {
   color: #F1FFFA;
 }
-
-.pure-menu-selected {
-  background-color: orange;
-}
-
 
 
 .pure-form{
