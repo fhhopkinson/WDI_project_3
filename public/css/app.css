@@ -61,6 +61,12 @@ width: 80px;
   border-radius: 100px;
 }
 
+#profilePic img{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+
 #layout {
   background-color: #296B47;
   height: 100vw;
@@ -252,4 +258,14 @@ input#img-4:checked ~ .nav-dots label#img-dot-4,
 input#img-5:checked ~ .nav-dots label#img-dot-5,
 input#img-6:checked ~ .nav-dots label#img-dot-6 {
   background: rgba(0, 0, 0, 0.8);
+}
+
+.userProjectTiles {
+  background-color: red;
+  text-align: center;
+}
+
+.projectImages {
+  width: 90%;
+  height: 150px;
 }
