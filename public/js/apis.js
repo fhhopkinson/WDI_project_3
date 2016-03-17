@@ -43,12 +43,12 @@ whereDoILivePostcodeToLATLNG = function(postcode){
    var latlng = new google.maps.LatLng(51.525507,-0.0587999);
    placesService = new google.maps.places.PlacesService(map);
    placesService.nearbySearch({ keyword: postcode, location: latlng, radius: 15000 }, function(results, status) {
-     console.log(results);
-     whereLives = results[0];
-     console.log(whereLives);
-     var iliveLAT = whereLives.geometry.location.lat()
-     var iliveLNG = whereLives.geometry.location.lng()
-     userProfileMap(iliveLAT, iliveLNG);
+     if(results.length > 0) {
+       whereLives = results[0];
+       var iliveLAT = whereLives.geometry.location.lat()
+       var iliveLNG = whereLives.geometry.location.lng()
+       userProfileMap(iliveLAT, iliveLNG);
+     }
    });
 }
 

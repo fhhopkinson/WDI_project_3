@@ -2,7 +2,6 @@ $( document ).ready(function() {
     console.log( "Sections file loaded" );
 
 
-
 $(".hubslist").on('click', '.projectItemBox', function(){
   projectShow(this.id);
 });
