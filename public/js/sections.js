@@ -41,7 +41,7 @@ otherUserShow = function(whoseId){
     var i = 0;
     $("#otherUserProjects").empty();
     while (i < data.projects.length){
-     $("#otherUserProjects").prepend("<ul>" + data.projects[i].title + "</br>" + project.projectDate + "</ul>");
+     $("#otherUserProjects").prepend("<p><ul>" + data.projects[i].title + "</br>" + data.projects[i].projectDate + "</ul></p>");
      i++
     }
   });
