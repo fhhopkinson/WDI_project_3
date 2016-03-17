@@ -47,7 +47,7 @@ function getProjects(){
   });
 }
 
-function projectShow(project){
+projectShow = function(project){
   event.preventDefault();
   ajaxRequest('GET', "http://localhost:3000/api/projects/" + project, null, function(data){
     //////////////////////////////////
@@ -64,6 +64,7 @@ function projectShow(project){
       $("#showAddress").html(project.addresslineOne + "<br>" + project.addresslineTwo + "<br>" + project.postcode);
     var i = 0;
     var attendees = data.project.attendees;
+    $("#attendeesList").empty();
     while (i < attendees.length){
        $("#attendeesList").append("<li class='avatar'>" + "<img src='" + attendees[i].avatar +  "'/>" + attendees[i].name + "</li>");
        i++
