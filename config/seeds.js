@@ -110,6 +110,28 @@ var user8 = new User({
 });
 user8.save();
 
+var user9 = new User({
+  name: "James Bond",
+  email: "007@gmail.com",
+  postcode: "NW1 5SD",
+  avatar:"http://blog.mysinglepropertywebsites.com/wp-content/uploads/2010/07/tech-profile-shawn-anen.jpg",
+  password: "qw",
+  passwordConfirmation: "qw"
+//projects: [{ type: mongoose.Schema.ObjectIt, ref: 'Projects'}],
+});
+user9.save();
+
+var user10 = new User({
+  name: "Fred Bond",
+  email: "008@gmail.com",
+  postcode: "W1 5SD",
+  avatar:"http://wwwf.imperial.ac.uk/business-school/wp-content/uploads/2013/11/Makant-Profile-Picture.png",
+  password: "qw",
+  passwordConfirmation: "qw"
+//projects: [{ type: mongoose.Schema.ObjectIt, ref: 'Projects'}],
+});
+user10.save();
+
 var project0 = new Project({
   title:  "Energy Garden",
   projectType: "Energy",
