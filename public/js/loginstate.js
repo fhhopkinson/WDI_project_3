@@ -13,6 +13,12 @@ $( document ).ready(function() {
       $('section').attr("hidden", true);
       changeColor();
       checkLoginState();
+      $('#home').on("click", function() {
+        console.log("hello");
+        $('section').attr("hidden", true);
+        $('#front').removeAttr("hidden");
+      });
+
     }
 
 init();
@@ -153,7 +159,7 @@ function showPage() {
     logout();
   }else if (sectionId == "user") {
     showUserPage();
-  } else {
+  }else {
     console.log("other")
     $('#' + sectionIdLog).removeAttr('hidden');
   }
