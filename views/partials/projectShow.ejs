@@ -1,82 +1,60 @@
 <section id="projectShow">
+  <div class="pure-g topbar-showproject">
+    <div class="pure-u-6-24">
 
-<div class="pure-g topbar-showproject">
-  <div class="pure-u-6-24">
-  above page left
+    </div>
+    <div class="pure-u-1-24">
+
+    </div>
+    <div class="pure-u-11-24">
+      <h1 id="showTitle">Project Show Page </h1>
+    </div>
+    <div class="pure-u-2-24">
+      <div id="avatarBox">
+
+      </div>
+    </div>
   </div>
+  <div class="pure-g">
+    <div class="pure-u-6-24">
+      <h4>Are you attending?</h4>
+      <button class="button-large pure-button eventAttendingYes" >Yes</button>
+      <button class="button-large pure-button">No</button>
+      <ul id="attendeesList">
+      </ul>
+    </div>
+    <div class="pure-u-1-24">
 
-  <div class="pure-u-1-24">
-  above gap
-  </div>
+    </div>
+    <div class="pure-u-11-24">
+      <div id="showImage">
+      </div>
+      <p id="showDesc">
+      </p>  
+      <p id="showAddress">
+      </p>
 
-  <div class="pure-u-11-24">
-  <h1 id="showTitle">Project Show Page </h1>
-  </div>
+      <form class="pure-form pure-form-stacked" id="comment" action="/projects" method="PUT">
+        <fieldset>
+          <legend>Add a new comment</legend>
+          <br>
+          <label for="commenter">Name</label>
+          <input id="name" name="commenter" type="text"></br>
+          <label for="comment">Comment</label>
+          <textarea id="comment" name="comment" placeholder="Your comment here"> </textarea>
+          <button type="submit" class="pure-button pure-button-primary">Add Comment</button>
+        </fieldset>
+      </form>
+      Comments:
+      <ul id="commentsList">
 
-  <div class="pure-u-2-24">
-  <div id="avatarBox">
-  Gap at right edge
-  </div>
-  </div>
-</div>
+      </ul>
+    </div>
+    <div class="pure-u-2-24">
+      <div id="imageFound">Image From Google Places</div>
+      <div id="mapSmallProjectShow">
+     </div>
+   </div>
 
-<div class="pure-g">
-  <div class="pure-u-6-24">
-    
-  <h4>Are you attending?</h4>
-  <button class="button-large pure-button">Yes</button>
-  <button class="button-large pure-button">No</button>
-
-  <ul id="attendeesList"></ul>
-  </div>
-
-
-
-<div class="pure-u-1-24">
-
-gap
-</div>
-
-
-  <div class="pure-u-11-24">
-  <div id="showImage"></div>
-
-  <p id="showDesc">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut .</p>  <p id="showAddress">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, .</p>
-
-
-
-<p>Comments:
-
- <form class="pure-form pure-form-stacked" id="submit" action="/comments" method="POST">
-<fieldset>
-<legend>Add a new comment</legend>
-<br>
-<label for="name">Name</label>
-<input id="name" name="name" type="text"></br>
-<label for="comment">Comment</label>
-<input id="comment" name="comment" type="text">
-<button type="submit" class="pure-button pure-button-primary">Add Comment</button>
-    </fieldset>
-
-</form>
-
-
-  </div>
-  <div class="pure-u-2-24">
-right gap
-  <div id="imageFound">Image From Google Places</div>
-  <div id="mapSmallProjectShow">
-   Small Map goes here
-  </div>
-</div>
-
-
-
-  </div>
-</div>
-
-
+ </div>
 </section>

@@ -8,6 +8,7 @@ var authenticationsController = require('../../controllers/authentications');
 
 var projectsController = require('../../controllers/projects');
 var usersController    = require('../../controllers/users');
+var commentsController    = require('../../controllers/comments');
 var secret             = require('../../config/tokens').secret;
 var s3Config           = require('../../config/s3');
 
@@ -52,13 +53,10 @@ var upload = multer({
   })
 });
 
-router.route('/register')
-  .get(authenticationsController.register)
-  .post(authenticationsController.register);
+router.post('/register', authenticationsController.register);
+router.post('/login', authenticationsController.login);
 
-router.route('/login')
-  .get(authenticationsController.login)
-  .post(authenticationsController.login);
+
 
 router.route('/users')
   .get(usersController.index);
@@ -67,13 +65,21 @@ router.route('/users/:id')
   .get(usersController.show)
   .put(upload.single('avatar'), usersController.update);
 
+router.route('/attending/:projectid/:userid')
+  .put(projectsController.attending);
+
 router.route('/projects')
-    .get(projectsController.index)
-    .post(upload.single('image'), projectsController.create)
+  .get(projectsController.index)
+  .post(upload.single('image'), projectsController.create);
 
 router.route('/projects/:id')
   .get(projectsController.show)
-  .put(upload.single('image'), projectsController.update)
+
+  .put(projectsController.update);
+
+  router.route('/comments')
+      .get(commentsController.index)
+      .post(commentsController.create);
 
 
 module.exports = router;

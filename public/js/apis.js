@@ -21,7 +21,7 @@ googleMap =  new google.maps.Map(map, {
     zoom: 10,
     disableDefaultUI: true,
     center: {lat: 51.5165009,  lng: -0.1178475},
-    styles: [{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#fbf9e5"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#b5e280"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fc9f77"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#b5e280"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"},{"color":"#b55858"}]},{"featureType":"road","elementType":"labels.text","stylers":[{"color":"#77b1bb"},{"visibility":"on"},{"weight":"0.01"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffe745"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffe745"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"color":"#c9d8d9"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#92e4f3"}]}]
+    styles: [{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#fbf9e5"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#568259"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fc9f77"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#568259"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"},{"color":"#b55858"}]},{"featureType":"road","elementType":"labels.text","stylers":[{"color":"#77b1bb"},{"visibility":"on"},{"weight":"0.01"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#0AC19B"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffe745"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"color":"#c9d8d9"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2A4B97"}]}]
   });
 }
 
@@ -47,18 +47,20 @@ googleMap =  new google.maps.Map(map, {
          maxWidth: 200,
          borderRadius: 10,
          arrowPosition: 50,
-         content: '<h4>' + project.title + '</h4>' + project.projectDate + '<img src="' + project.gallery[0] + '" width="200px"/><p>' + project.desc +  '</p>'
+         content:"<div class='pure-u-1-3 projectItemBox' style='background-image: url(" + project.image + ");' id='" + project._id + "' ><h3>"+ project.title + "</h3></div>"
        });
        marker.addListener('click', function(){
          infoWindow.open(googleMap);
          googleMap.panTo(marker.position);
-         googleMap.setZoom(14);
-
-        if(currentInfoWindow) currentInfoWindow.close();
-
-        currentInfoWindow = infoWindow;
+         googleMap.setZoom(12);
 
        });
+       google.maps.event.addDomListener(infoWindow, 'domready', function() {
+           $('.projectItemBox').click(function() {
+               projectShow(this.id);
+           });
+       });
+
      },idx*10);
 
      }); // end of the foreach (I think)
@@ -79,4 +81,3 @@ googleMap =  new google.maps.Map(map, {
 }
 
 }); // end of js
-

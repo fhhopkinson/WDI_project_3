@@ -11,8 +11,6 @@ function drop(){
 }
 drop();
 
-
-
 var User = require('../models/user');
 var Project = require('../models/project');
 
@@ -98,6 +96,7 @@ var project0 = new Project({
   lng: "-0.1003084",
   addresslineOne: "City Hall",
   addresslineTwo: "London",
+  postcode: "SE1 2AA",
   desc: "Energy Gardens are spaces for local people to come together and grow food, generate and use clean energy, improve the local environment and build their community. They are green spaces where people will have the opportunity to get their hands in the soil to grow vegetables, get on roofs to install solar panels, communicate with other gardening groups via solar powered interactive message boards and learn about how to make preserves, brew beer, harvest honey, store seeds, cook and support biodiversity. Crops from the garden will be shared with local people and food banks. Projects like honey and hops will be shared with volunteers and supporters. With the support of Players of the People's Postcode Lottery and the London Sustainable Development Commission, and in partnership with community gardening experts Groundwork London, Repowering is creating fifty gardens across the capital's Overground stations. - See more at: http://www.repowering.org.uk/projects/energy-garden#sthash.ONTIenLd.dpuf",
   image: "http://d3dza3qm7hzbjp.cloudfront.net/uploads/ckeditor/pictures/55c0b2a172657061b46e0000/content_EnergyGarden.jpg",
   gallery: ["http://d3dza3qm7hzbjp.cloudfront.net/uploads/ckeditor/pictures/55c0b51d72657061b46f0000/content_EnergyGarden3.jpg"],
@@ -113,6 +112,7 @@ var project1 = new Project({
   lng: "-0.117187",
   addresslineOne: "Brixton",
   addresslineTwo: "London",
+  postode: "SW9 9SL",
   desc: "The revolutionary system is based on a new cloud technology platform that uses sensor data, climate forecast information, & modelling to actively control, maintain, and monitor, water infrastructure.",
   image: "https://s-media-cache-ak0.pinimg.com/236x/03/e9/b9/03e9b99784b7abe86b6a40b52b986346.jpg",
   gallery: ["http://www.blackinsurancenews.com/wp-content/uploads/2015/04/rainwater-harvesting.jpg", "http://www.energydigital.com/public/uploads/large/large_article_im3031_london-olympics-2012.jpg"],
@@ -123,7 +123,7 @@ project1.save(function(err, users){
   });//
 
 var project2 = new Project({
- title: "Spiny pals",
+ title: "Spiny Pals",
  projectType: "Animals",
  projectDate: 03/31/2016,
  lat: "51.5186568",
@@ -162,7 +162,7 @@ var project4 = new Project({
   addresslineTwo: "Brixton",
   postcode: "SW2 1AS",
   desc: "Brixton Energy Solar 4 is a new co-operative set up to enable local people to invest in renewable energy generation in Brixton and raise funds for energy efficiency initiatives. Brixton Energy Solar 4 is currently in planning, but you can use the pledge support button on this page to be kept informed, get involved or show your support.",
-  image: "https://upload.wikimedia.org/wikipedia/commons/0/05/BedZED_2007.jpg",
+  image: "http://news.panasonic.com/global/images/04_blackfriars_CG.jpg",
   gallery: ["http://d3d7rtxd5tie6q.cloudfront.net/assets/about-us/syed.png", "http://static.standard.co.uk/s3fs-public/styles/story_large/public/thumbnails/image/2012/07/09/10/blackfriars-solar-.jpg" ],
   attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
 });
@@ -174,7 +174,8 @@ var project5 = new Project({
  lat: "51.5369818",
  lng: "-0.1421302",
  addresslineOne: "179 Haggerston Rd",
- addresslineTwo: "London E8 4JB",
+ addresslineTwo: "London ",
+ postcode: "E8 4JB",
  desc: "Housed in the homes of real BlueBarrel customers, our workshops begin with an indoor educational session on rainwater harvesting, and then transition outside to build a BlueBarrel System between 8 and 12 barrels in size. Each participant has a hand in construction, gaining the skills and confidence to go home and build their own system.",
  image: "http://cdn.instructables.com/F8A/9DNT/FWX11M0H/F8A9DNTFWX11M0H.RECT2100.jpg",
  gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
@@ -197,13 +198,14 @@ var project6 = new Project({
 });
 
 var project7 = new Project({
- title:  "scrapheap challenge",
+ title:  "Scrapheap Challenge",
  projectType: "Other",
  projectDate: 5/31/2016,
  lat: "51.531295",
  lng: "-0.097089",
  addresslineOne: "City Road Basin",
- addresslineTwo: "London N1 7TB",
+ addresslineTwo: "London ",
+ postcode: "N1 7TB",
  desc: "There is a pile of scrap metal and broken sofas and things that are polluting the river system and it is the aim of this project to clean this up and clean the water to and ensure that there will be no more problems like this.",
  image: "https://upload.wikimedia.org/wikipedia/commons/5/53/Scrapyard_challenge_vw_beetle.jpg",
  gallery: ["http://previews.123rf.com/images/ljupco/ljupco0606/ljupco060600111/430569-Scrapheap-in-Skopje-Stock-Photo.jpg", "http://c7.alamy.com/comp/AB5H91/rubbish-dump-pile-landfill-waste-produce-products-man-made-AB5H91.jpg"],
@@ -217,15 +219,31 @@ var project8 = new Project({
  lat: "51.57677641121266",
  lng: "-0.012485262778113793",
  addresslineOne: "Bakers Avenue",
- addresslineTwo: "London E17 9AH",
+ addresslineTwo: "London ",
+ postcode: "E17 9AH",
  desc: "Volunteers have been at the heart of our work at FRP for 25 years and we still couldn’t operate without the contribution that they make today. We set out to provide volunteering opportunities that are rewarding for those who help us to achieve our aims. By volunteering for FRP you can: gain work experience and learn new skills; meet other members of the local community; and earn a sense of achievement, from contributing to a practical project with environmental and social aim",
  image: "https://upload.wikimedia.org/wikipedia/commons/5/53/Scrapyard_challenge_vw_beetle.jpg",
  gallery: ["http://previews.123rf.com/images/ljupco/ljupco0606/ljupco060600111/430569-Scrapheap-in-Skopje-Stock-Photo.jpg", "http://c7.alamy.com/comp/AB5H91/rubbish-dump-pile-landfill-waste-produce-products-man-made-AB5H91.jpg"],
  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
 });
 
+var project9 = new Project({
+ title:  "Badger Crossing",
+ projectType: "Animals",
+ projectDate: 5/31/2016,
+ lat: "51.57677641121266",
+ lng: "-0.012485262778113793",
+ addresslineOne: "Balham Park Road",
+ addresslineTwo: "London",
+ postcode: "SW12 8EA",
+ desc: "Early fences and tunnels to prevent road kill and allow movement were not highly successful. The fences were too low and were not anchored in the ground, allowing the badgers to climb over or crawl under them and onto the road. The fences also frequently developed large holes, so they offered little protection. These deficiencies were corrected in later projects. Near the town of Heumen, for example, the national Ministry of Transport constructed five tunnels under the highway and built higher, stronger fences. Escape gates were put in the fences at one-kilometer-intervals to protect any badgers that ended up on the road. These meant the badgers could get off the roads, but couldn't get back on again.",
+ image: "http://www.savethebadger.com/badgercubs.jpg",
+ gallery: ["http://www.wildlifetrusts.org/sites/default/files/images/Badger%20web%20version%20(Tim%20Matthews).jpg", "http://i.telegraph.co.uk/multimedia/archive/02108/ba_2108798b.jpg"],
+ attendees: [user1._id,user2._id,user3._id]
+});
+
 var projectowner1 = new User({
-  name: "project_owner1",
+  name: "Peter Grimes",
   projects: [project1._id],
   email: "project_owner1@gmail.com",
   postcode: "SE1 3SD",
@@ -239,7 +257,7 @@ projectowner1.save(function(err, user){
 });
 
 var projectowner2 = new User({
-  name: "project_owner2",
+  name: "Richard Charles",
   projects: [project2._id],
   email: "project_owner2@gmail.com",
   postcode: "SE2 3SD",
@@ -253,7 +271,7 @@ projectowner2.save(function(err, user){
 });
 
 var projectowner3 = new User({
-  name: "project_owner3",
+  name: "Charlie Brown",
   projects: [project3._id],
   email: "project_owner3@gmail.com",
   postcode: "S2 3SD",
@@ -267,7 +285,7 @@ projectowner3.save(function(err, user){
 });
 
 var projectowner4 = new User({
-  name: "project_owner4",
+  name: "Hen French",
   projects: [project4._id],
   email: "project_owner4@gmail.com",
   postcode: "E2 3SD",
@@ -281,7 +299,7 @@ projectowner4.save(function(err, user){
 });
 
 var projectowner5 = new User({
-  name: "project_owner5",
+  name: "Albert Herring",
   projects: [project5._id,project0._id],
   email: "project_owner5@gmail.com",
   postcode: "SW2 3SD",
@@ -309,6 +327,8 @@ project2.save(function(err, users){
             if(err) console.error(err);
             project8.save(function(err, users){
               if(err) console.error(err);
+              project9.save(function(err, users){
+                if(err) console.error(err);
   ////////////// in the middle of the call back death //
 
 
@@ -321,7 +341,7 @@ project2.save(function(err, users){
 
 
 
-
+              });
             });
           });
         });

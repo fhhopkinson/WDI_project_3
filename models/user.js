@@ -6,7 +6,7 @@ var userSchema = mongoose.Schema({
    email: { type: String, unique: true, required: true },
    postcode: String,
    avatar: String,
-   projects: [{ type: mongoose.Schema.ObjectId, ref: 'Projects' }],
+   projects: [{ type: mongoose.Schema.ObjectId, ref: 'Project' }],
    passwordHash: { type: String, required: true }
 });
 
