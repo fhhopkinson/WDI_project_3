@@ -280,16 +280,34 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 }
 
 .userProjectTiles {
-  background-color: red;
+  background-color: #296B47;
   margin-left: 5px;
   width: 24%;
   height: 220px;
   text-align: center;
   position: relative;
+  color: #F1FFFA;
+  border-radius: 5px;
+}
+
+.pTop {
+  position: absolute;
+  margin: 0;
+  top: 1px;
+  text-align: center;
+}
+
+.pBottom {
+  position: absolute;
+  bottom: 1px
+  margin-top: 0;
 }
 
 .projectImages {
-  height: 50%;
+  height: 140px;
+  margin-top: 40px;
+  border: 3px solid #F1FFFA;
+  border-radius: 10px;
 }
 
 .single-item {

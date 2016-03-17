@@ -180,7 +180,7 @@ function showUserPage() {
 
     (user.projects).forEach(function(project) {
       console.log("PROJECT TITLE FOR USER: ", project);
-      $('#userProjectsX').append("<div class='userProjectTiles' id='" + project._id + "'><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
+      $('#userProjectsX').append("<div class='userProjectTiles' id='" + project._id + "'><p class='pTop'>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p class='pbottom'> Attendees: " + project.attendees.length + "</p></div>");
     });
   })
 
