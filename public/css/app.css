@@ -22,7 +22,12 @@ max-width: 100%;
 }
 #map {
   height: 400px;
+  width: 100%;
+}
 
+#userShowMap {
+  height: 400px;
+  width: 600px;
 }
 
 #mapSmallProjectShow{
