@@ -21,7 +21,16 @@ $("#listViewIdx").on('click', function(){
     populateMap() // marker map
     getProjects();
   }
-   
+
+
+function showUser() {
+  event.preventDefault();
+  ajaxRequest('GET', "http://localhost:3000/api/users/56e9a7b4fb52512d6f623ed3", null, function(data){
+    $('section').attr("hidden", true);
+    $(".userShow").removeAttr('hidden');  
+  })
+}
+
 
 
 function getProjects(){
@@ -60,7 +69,7 @@ function projectShow(project){
        $(commentsList).append("<li>" + comment.commenter + "</br>" + comment.comment + "</li>")
      });
 
-     initSmallMap(project.lat,project.lng); 
+     initSmallMap(project.lat,project.lng);
      placesCardFetch(projectVenue,project.lat,project.lng);
      // build comments PUT form
      $("#comment").attr("action", "/projects/" + project._id);
