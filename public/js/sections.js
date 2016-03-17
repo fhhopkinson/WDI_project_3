@@ -1,5 +1,6 @@
 
 $( document ).ready(function() {
+    $('#user').on('click', showUser())
     console.log( "Sections file loaded" );
 $("#front").removeAttr('hidden');
 $(".hubslist").on('click', '.projectItemBox', function(){
@@ -27,7 +28,13 @@ function showUser() {
   event.preventDefault();
   ajaxRequest('GET', "http://localhost:3000/api/users/56e9a7b4fb52512d6f623ed3", null, function(data){
     $('section').attr("hidden", true);
-    $(".userShow").removeAttr('hidden');  
+    $(".userShow").removeAttr('hidden');
+    var user = data.user
+    $('#profilePic').html('<img src="' + user.avatar + '"> <h3>' + user.name + '</h3>')
+    user.projects.forEach(function(project) {
+      $('#userProjects').append("<div class='pure-u-1-5' style='background-image: url(" + project.image + ");' id='" + project._id + "' ><h3>"+ project.title + "</h3></div>");
+     });
+    })
   })
 }
 
