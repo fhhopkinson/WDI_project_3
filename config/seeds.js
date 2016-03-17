@@ -185,7 +185,7 @@ var project4 = new Project({
   postcode: "SW2 1AS",
   desc: "Brixton Energy Solar 4 is a new co-operative set up to enable local people to invest in renewable energy generation in Brixton and raise funds for energy efficiency initiatives. Brixton Energy Solar 4 is currently in planning, but you can use the pledge support button on this page to be kept informed, get involved or show your support.",
   image: "http://news.panasonic.com/global/images/04_blackfriars_CG.jpg",
-  gallery: ["http://d3d7rtxd5tie6q.cloudfront.net/assets/about-us/syed.png", "http://static.standard.co.uk/s3fs-public/styles/story_large/public/thumbnails/image/2012/07/09/10/blackfriars-solar-.jpg" ],
+  gallery: ["http://d3d7rtxd5tie6q.cloudfront.net/assets/about-us/syed.png", "http://static.standard.co.uk/s3fs-public/styles/story_large/public/thumbnails/image/2012/07/09/10/blackfriars-solar-.jpg", "https://static-secure.guim.co.uk/sys-images/Guardian/Pix/pictures/2010/8/11/1281538290059/solar-panels-006.jpg" ],
   attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
 });
 
@@ -261,8 +261,22 @@ var project9 = new Project({
  desc: "Early fences and tunnels to prevent road kill and allow movement were not highly successful. The fences were too low and were not anchored in the ground, allowing the badgers to climb over or crawl under them and onto the road. The fences also frequently developed large holes, so they offered little protection. These deficiencies were corrected in later projects. Near the town of Heumen, for example, the national Ministry of Transport constructed five tunnels under the highway and built higher, stronger fences. Escape gates were put in the fences at one-kilometer-intervals to protect any badgers that ended up on the road. These meant the badgers could get off the roads, but couldn't get back on again.",
  image: "http://www.savethebadger.com/badgercubs.jpg",
  gallery: ["http://www.wildlifetrusts.org/sites/default/files/images/Badger%20web%20version%20(Tim%20Matthews).jpg", "http://i.telegraph.co.uk/multimedia/archive/02108/ba_2108798b.jpg"],
- attendees: [user1._id,user2._id,user3._id]
+ attendees: [user4._id,user2._id,user3._id]
 });
+
+var project10 = new Project({
+ title:  "Litter Picking",
+ projectType: "Recycling",
+ projectDate: 5/31/2017,
+ lat: "51.538492",
+ lng: "-0.035889",
+ addresslineOne: "25 Barge Lane",
+ addresslineTwo: "London",
+ postcode: "E3 5PF",
+ desc: "There is a lot of litter in the park nearby adn I would like some help clearing it up as a clean park would benefit the community in two ways: Firstly, it would make the park nicer, secondly, it would help recycle and that would help save the environment",
+ image: "http://cdn.nycitynewsservice.com/blogs.dir/9/files/2011/12/dirty-parks-DN.jpg",
+ gallery: ["http://www.thetimes.co.uk/tto/multimedia/archive/00185/Hyde_Park_Litter_185437a.jpg","http://static01.nyt.com/images/2013/09/09/nyregion/RIVERSIDE/RIVERSIDE-master675.jpg"],
+ attendees: [user1._id,user2._id,user6._id]
 
 var projectowner1 = new User({
   name: "Peter Grimes",
@@ -351,6 +365,8 @@ project2.save(function(err, users){
               if(err) console.error(err);
               project9.save(function(err, users){
                 if(err) console.error(err);
+                project10.save(function(err, users){
+                  if(err) console.error(err);
   ////////////// in the middle of the call back death //
 
 
