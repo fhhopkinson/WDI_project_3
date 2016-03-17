@@ -221,8 +221,8 @@ var project5 = new Project({
  addresslineTwo: "London",
  postcode: "NW5 1UX",
  desc: "Housed in the homes of real BlueBarrel customers, our workshops begin with an indoor educational session on rainwater harvesting, and then transition outside to build a BlueBarrel System between 8 and 12 barrels in size. Each participant has a hand in construction, gaining the skills and confidence to go home and build their own system.",
- image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRkZimS3JQ4PJvZDt8UNcWhQVxdhsj8XtuBs4c6QtTInBOJegR2lUz4Iwdf",
- gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
+ image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzK7bfHpGbda1GmTVNsRc0YXq4eud_oJLwdDvL6L16wf8G5_d2xQ",
+ gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg", "http://farm2.static.flickr.com/1049/4603516198_a4299a0f9f.jpg"],
  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
 });
 
