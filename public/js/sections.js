@@ -60,7 +60,7 @@ projectShow = function(project){
         $("#showTitle").text(project.title);
         $("#showDesc").text(project.desc);
       //////////////////////////////
-      $("#avatarBox").html("<img src='" + data.user.avatar + "' /><h4>" + data.user.name + "</h4>");
+      $("#avatarBox").html("<div class='insideAvBox'><img src='" + data.user.avatar + "' /></div><div class='insideAvBoxFurther'>" + data.user.name + "</div></div>");
       projectVenue = project.addresslineOne + " " + project.addresslineTwo + " " + project.postcode;
       console.log("Project will be held on: <b>" + prettyProjectDate + "</b>The project venue is " + projectVenue);
       $("#showAddress").html( "Project will be held on: <b>" + prettyProjectDate + "</b><br></br> At Venue: </br>"  + project.addresslineOne + "<br>" + project.addresslineTwo + "<br>" + project.postcode);
@@ -74,13 +74,16 @@ projectShow = function(project){
 
      // get comments
      $.each(project.comments, function( index, comment ) {
-       $(commentsList).append("<li>" + comment.commenter + "</br>" + comment.comment + "</li>")
+       $(commentsList).append("<div class='pure-g'><div class='pure-u-4-24'><img src='" + comment.commenterAvatar + "' width='40px' height='40px' /></div>" + "<div class='pure-u-20-24 individualComment'>" + comment.commenter + "</br>" + comment.comment + "</div></div>")
      });
 
      initSmallMap(project.lat,project.lng);
      placesCardFetch(projectVenue,project.lat,project.lng);
      // build comments PUT form
      $("#comment").attr("action", "/projects/" + project._id);
+     $("#commenterName").val(getUser().name);
+     $("#avatarCommenter").attr("src", getUser().avatar);
+     $("#commenterAvatar").val(getUser().avatar);
      //build attending button
      $(".eventAttendingYes").attr('id', project._id);
     });
