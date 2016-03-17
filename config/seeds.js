@@ -122,7 +122,7 @@ var project0 = new Project({
   desc: "Energy Gardens are spaces for local people to come together and grow food, generate and use clean energy, improve the local environment and build their community. They are green spaces where people will have the opportunity to get their hands in the soil to grow vegetables, get on roofs to install solar panels, communicate with other gardening groups via solar powered interactive message boards and learn about how to make preserves, brew beer, harvest honey, store seeds, cook and support biodiversity. Crops from the garden will be shared with local people and food banks. Projects like honey and hops will be shared with volunteers and supporters. With the support of Players of the People's Postcode Lottery and the London Sustainable Development Commission, and in partnership with community gardening experts Groundwork London, Repowering is creating fifty gardens across the capital's Overground stations. - See more at: http://www.repowering.org.uk/projects/energy-garden#sthash.ONTIenLd.dpuf",
   image: "http://d3dza3qm7hzbjp.cloudfront.net/uploads/ckeditor/pictures/55c0b2a172657061b46e0000/content_EnergyGarden.jpg",
   gallery: ["http://d3dza3qm7hzbjp.cloudfront.net/uploads/ckeditor/pictures/55c0b51d72657061b46f0000/content_EnergyGarden3.jpg"],
- attendees: [user1._id,user2._id,user3._id,user4._id,user5._id,user6 ._id],
+ attendees: [user1._id,user2._id,user3._id,user4._id,user5._id,user6 ._id]
 });//
 
 
@@ -277,6 +277,7 @@ var project10 = new Project({
  image: "http://cdn.nycitynewsservice.com/blogs.dir/9/files/2011/12/dirty-parks-DN.jpg",
  gallery: ["http://www.thetimes.co.uk/tto/multimedia/archive/00185/Hyde_Park_Litter_185437a.jpg","http://static01.nyt.com/images/2013/09/09/nyregion/RIVERSIDE/RIVERSIDE-master675.jpg"],
  attendees: [user1._id,user2._id,user6._id]
+ });
 
 var projectowner1 = new User({
   name: "Peter Grimes",
@@ -378,7 +379,7 @@ project2.save(function(err, users){
 
 
 
-
+                });
               });
             });
           });

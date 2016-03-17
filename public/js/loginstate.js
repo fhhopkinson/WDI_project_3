@@ -46,6 +46,7 @@ function addComment() {
 }
 
 function newForm(){
+  console.log("reached Ajax request for Submit");
   event.preventDefault();
   var form    = this;
   var method  = $(this).attr('method');
