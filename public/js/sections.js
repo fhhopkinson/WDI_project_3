@@ -81,8 +81,7 @@ projectShow = function(project){
      // build comments PUT form
      $("#comment").attr("action", "/projects/" + project._id);
      //build attending button
-     $( "#eventAttendingYes" ).data(project._id);
-     // currentShowProjectId = project._id;
+     $(".eventAttendingYes").attr('id', project._id);
     });
 }
 

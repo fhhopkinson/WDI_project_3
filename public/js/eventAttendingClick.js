@@ -1,15 +1,15 @@
 $( document ).ready(function() {
     console.log( "eventAttendingClick file loaded" );
 
-  $( "#eventAttendingYes" ).click(function() {
-   attendingAjaxRoute(); // i.e. projectId + currentuserid
+  $( ".eventAttendingYes" ).click(function() {
+   attendingAjaxRoute(this.id); // i.e. projectId + currentuserid
   });
 
-  attendingAjaxRoute = function(){
+  attendingAjaxRoute = function(projectId){
     console.log("ajaxin")
     $.ajax({
       method: "PUT",
-      url: "/api/attending/" + "56ea8bc22c47b00a406cb18d" + "/" + loggedInUserId
+      url: "/api/attending/" + projectId + "/" + getUser()._id
     }).done(function(data) {
          console.log( data );
          alert( "Cool your attendance was registered." );
