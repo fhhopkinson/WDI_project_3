@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    console.log( "loginstate file loaded" );
+
     init();
 });
 
@@ -12,7 +12,7 @@ function init(){
   $('.logout').on('click', logout);
   $('.pure-menu-item a').on('click', showPage);
   $('#editProfile').on('click', function() {
-    console.log("click");
+
   });
   $("#showFront").on('click', frontPage);
 
@@ -21,7 +21,6 @@ function init(){
   checkLoginState();
   gallery();
   $('#home').on("click", function() {
-    console.log("hello");
     $('section').attr("hidden", true);
     $('#front').removeAttr("hidden");
     generateMap();
@@ -29,7 +28,7 @@ function init(){
 }
 
 function submitForm(){
-  console.log("submitForm");
+
   event.preventDefault();
   var form    = this;
   var method  = $(this).attr('method');
@@ -40,9 +39,7 @@ function submitForm(){
 }
 
 function updateUserForm(){
-  console.log("updateUserForm");
   event.preventDefault();
-  console.log("help");
   var form    = this;
   var method  = $(this).attr('method');
   var url     = "http://localhost:3000/api/users/" + getUser()._id;
@@ -60,7 +57,6 @@ function frontPage(){
 
 
 function addComment() {
-  console.log("addComment");
   event.preventDefault();
   var form    = this;
   var method  = $(this).attr('method');
@@ -73,7 +69,6 @@ function addComment() {
 }
 
 function submitNewHub(){
-  console.log("Submit New Hub");
   event.preventDefault();
   var form    = this;
   var method  = $(this).attr('method');
@@ -92,7 +87,6 @@ function submitNewHub(){
         if(token) return jqXHR.setRequestHeader('Authorization', 'Bearer ' + token);
       }
     }).done(function(data){
-     console.log(data);
     }).fail(function(data) {
       console.error(data.responseJSON);
     });
@@ -101,7 +95,6 @@ function submitNewHub(){
 
 function newForm(){
 
-  console.log("newForm");
   event.preventDefault();
   var form    = this;
   var method  = $(this).attr('method');
@@ -152,7 +145,6 @@ function showPage() {
   if (sectionId == "logout") {
     logout();
   }else if (sectionId == "user") {
-    console.log("fred");
     showUserPage();
   }else {
     $('#' + sectionIdLog).removeAttr('hidden');
@@ -176,8 +168,6 @@ function showUserPage() {
 
     console.log("USER PROJECTS PRE LOOP: ", user.projects);
 
-    // ('#userProjectsX').empty()
-
     (user.projects).forEach(function(project) {
       console.log("PROJECT TITLE FOR USER: ", project);
       $('#userProjectsX').append("<div class='userProjectTiles' id='" + project._id + "'><p class='pTop'>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p class='pbottom'> Attendees: " + project.attendees.length + "</p></div>");
@@ -187,7 +177,6 @@ function showUserPage() {
   if (user.postcode == undefined){
     user.postcode = "mums house"
     }
-  console.log(user.postcode);
   whereDoILivePostcodeToLATLNG(user.postcode); // find lat & lng of where postcode is
 }
 
@@ -250,7 +239,6 @@ function ajaxRequest(method, url, data, callback) {
 }
 
 function ajaxRequestWithImage(method, url, data, callback) {
-  console.log("arrived in AJAXrequestwithimage");
   return $.ajax({
     method: method,
     url: url,
