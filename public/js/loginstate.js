@@ -126,16 +126,26 @@ function showUserPage() {
   event.preventDefault();
   ajaxRequest2('GET', "http://localhost:3000/api/users/" + getUser()._id, null, function(user){
     $('section').attr("hidden", true);
-    $("#userShow").removeAttr('hidden');
+    $("#currentUserShow").removeAttr('hidden');
+      // does profile avatar image exist?
+    if (user.avatar == undefined){
+      user.avatar = "/images/female-placeholder-profile-img.png"
+      }
+
     $('#profilePic').empty().append('<img src="' + user.avatar + '">')
     $('#usersName').empty().append('<h1>' + user.name + '</h1>')
-    console.log(user.postcode);
-    whereDoILivePostcodeToLATLNG(user.postcode); // find lat & lng of where postcode is
+
 
     user.projects.forEach(function(project) {
       $('#userProjects').empty().append("<div class='pure-u-1-5 userProjectTiles' id='" + project._id + "' ><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
     });
   })
+
+  if (user.postcode == undefined){
+    user.postcode = "mums house"
+    }
+  console.log(user.postcode);
+  whereDoILivePostcodeToLATLNG(user.postcode); // find lat & lng of where postcode is
 }
 
 function ajaxRequest2(method, url, data, callback) {
