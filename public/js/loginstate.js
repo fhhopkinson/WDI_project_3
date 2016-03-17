@@ -96,7 +96,7 @@ function submitNewHub(){
     }).fail(function(data) {
       console.error(data.responseJSON);
     });
-  
+
 }
 
 function newForm(){
@@ -173,9 +173,14 @@ function showUserPage() {
     $('#profilePic').empty().append('<img src="' + user.avatar + '">')
     $('#usersName').empty().append('<h1>' + user.name + '</h1>')
 
+    console.log("USER PROJECTS PRE LOOP: ", user.projects);
 
-    user.projects.forEach(function(project) {
-      $('#userProjects').empty().append("<div class='pure-u-1-5 userProjectTiles' id='" + project._id + "' ><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
+    // ('#userProjectsX').empty()
+
+    (user.projects).forEach(function(project) {
+      console.log("PROJECT TITLE FOR USER: ", project);
+      // $('#userProjects').empty().append("<div class='pure-u-1-5 userProjectTiles' id='" + project._id + "' ><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
+      $('#userProjectsX').append("<div class='pure-u-3-12 userProjectTiles' id='" + project._id + "'><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
     });
   })
 
@@ -274,7 +279,6 @@ function gallery() {
         pictures.push(picture);
       });
     });
-    console.log(pictures);
     $(pictures).each(function(index, pic) {
       $('.single-item').append('<div class="pictureSpin"style="background-image: url(' + pic +');"> </div>');
     });
