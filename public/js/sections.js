@@ -15,7 +15,7 @@ $("#avatarBox").on('click', 'img', function(){
 });
 
 
-
+/*
 $("#mapViewIdx").on('click', function(){
   $('.listView').attr("hidden", true);
   $(".mapView").removeAttr('hidden');
@@ -25,7 +25,7 @@ $("#mapViewIdx").on('click', function(){
 $("#listViewIdx").on('click', function(){
  $('.mapView').attr("hidden", true);
  $(".listView").removeAttr('hidden');
-});
+});*/
 
 
 otherUserShow = function(whoseId){
