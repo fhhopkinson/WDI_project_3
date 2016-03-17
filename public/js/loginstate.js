@@ -15,6 +15,7 @@ function init(){
   changeColor();
   checkLoginState();
   showUser();
+  gallery();
   $('#home').on("click", function() {
     console.log("hello");
     $('section').attr("hidden", true);
@@ -109,8 +110,11 @@ function showUserPage() {
   ajaxRequest2('GET', "http://localhost:3000/api/users/" + getUser()._id, null, function(user){
     $('section').attr("hidden", true);
     $("#userShow").removeAttr('hidden');
-    $('#profileHeader').empty().html(user.name)
     $('#profilePic').empty().append('<img src="' + user.avatar + '">')
+    $('#usersName').empty().append('<h1>' + user.name + '</h1>')
+    console.log(user.postcode);
+    whereDoILivePostcodeToLATLNG(user.postcode); // find lat & lng of where postcode is
+
     user.projects.forEach(function(project) {
       $('#userProjects').empty().append("<div class='pure-u-1-5 userProjectTiles' id='" + project._id + "' ><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
     });
@@ -200,5 +204,22 @@ function ajaxRequestWithImage(method, url, data, callback) {
   .done(callback)
   .fail(function(err){
     console.error(err)
+  })
+}
+
+
+
+function gallery() {
+  ajaxRequest2('GET', "http://localhost:3000/api/projects", null, function(data) {
+    var pictures = [];
+    $(data.projects).each(function(index, project) {
+      $(project.gallery).each(function(index, picture) {
+        pictures.push(picture);
+      })
+    })
+    console.log(pictures);
+    $(pictures).each(function(index, pic) {
+      $('.slides').append('<input type="radio" name="radio-btn" id="' + (index+1) +'" checked /><li class="slide-container"><div class="slide"><img src="' + pic + '" /></div><div class="nav"><label for="img-' + index + '" class="prev">&#x2039;</label><label for="img-' + (index+2) + '" class="next">&#x203a;</label></div></li>')
+    })
   })
 }

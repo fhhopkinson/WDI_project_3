@@ -29,7 +29,7 @@ generateMap = function(){
     $('.listView').attr("hidden", true);
     $(".mapView").removeAttr('hidden');
     initMap(); // create map
-    populateMap() // marker map
+    populateMap(googleMap) // marker map
     getProjects();
   }
 
@@ -55,14 +55,15 @@ projectShow = function(project){
     $('section').attr("hidden", true);
     $("#projectShow").removeAttr('hidden');
       var project = data.project
+      var prettyProjectDate = timeConverter(parseFloat(project.projectDate));
         $("#showImage").html("<img src='" + project.image + "'</img>");
         $("#showTitle").text(project.title);
         $("#showDesc").text(project.desc);
       //////////////////////////////
       $("#avatarBox").html("<img src='" + data.user.avatar + "' /><h4>" + data.user.name + "</h4>");
       projectVenue = project.addresslineOne + " " + project.addresslineTwo + " " + project.postcode;
-      console.log("projectVenue is " + projectVenue);
-      $("#showAddress").html(project.addresslineOne + "<br>" + project.addresslineTwo + "<br>" + project.postcode);
+      console.log("Project will be held on: <b>" + prettyProjectDate + "</b>The project venue is " + projectVenue);
+      $("#showAddress").html( "Project will be held on: <b>" + prettyProjectDate + "</b><br></br> At Venue: </br>"  + project.addresslineOne + "<br>" + project.addresslineTwo + "<br>" + project.postcode);
     var i = 0;
     var attendees = data.project.attendees;
     $("#attendeesList").empty();
