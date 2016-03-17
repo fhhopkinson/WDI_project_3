@@ -157,9 +157,10 @@ function showPage() {
   }else if (sectionId == "user") {
     showUserPage();
   }else if (sectionId == "hubs") {
-    viewListProjects()
+    //viewListProjects()
   }else {
     $('#' + sectionIdLog).removeAttr('hidden')
+    viewListProjects()
   }
 
 
