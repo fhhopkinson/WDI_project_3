@@ -67,8 +67,11 @@ function userShow(user){
   event.preventDefault();
   $('section').attr("hidden", true);
   $(".userShow").removeAttr('hidden');
-
-}
+  ajaxRequest('GET', "http://localhost:3000/api/users/" + user, null, function(data){
+  if(user)  {
+    $('#profileHeader').empty().append("<h1>" + user.name.toUpperCase() + "</h1>" );
+  };
+};
 
 function userEdit(){
   event.preventDefault();
