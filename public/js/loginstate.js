@@ -54,7 +54,6 @@ function updateUserForm(){
 function frontPage(){
   $('section').attr("hidden", true);
   checkLoginState();
-  showUser();
   $('#front').removeAttr("hidden");
   generateMap();
 }
