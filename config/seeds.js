@@ -239,7 +239,7 @@ var project9 = new Project({
  desc: "Early fences and tunnels to prevent road kill and allow movement were not highly successful. The fences were too low and were not anchored in the ground, allowing the badgers to climb over or crawl under them and onto the road. The fences also frequently developed large holes, so they offered little protection. These deficiencies were corrected in later projects. Near the town of Heumen, for example, the national Ministry of Transport constructed five tunnels under the highway and built higher, stronger fences. Escape gates were put in the fences at one-kilometer-intervals to protect any badgers that ended up on the road. These meant the badgers could get off the roads, but couldn't get back on again.",
  image: "http://www.savethebadger.com/badgercubs.jpg",
  gallery: ["http://www.wildlifetrusts.org/sites/default/files/images/Badger%20web%20version%20(Tim%20Matthews).jpg", "http://i.telegraph.co.uk/multimedia/archive/02108/ba_2108798b.jpg"],
- attendees: [user1._id,user2._id,user3._id,]
+ attendees: [user1._id,user2._id,user3._id]
 });
 
 var projectowner1 = new User({
@@ -341,7 +341,7 @@ project2.save(function(err, users){
 
 
 
-             });
+              });
             });
           });
         });
