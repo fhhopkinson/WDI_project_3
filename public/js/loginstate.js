@@ -191,7 +191,7 @@ function showRegister() {
   $('#register').removeAttr("hidden");
 }
 
-showUser = function(data){
+function showUser(data){
   // take the user data and show the current user as <a> in the <li>, eg:
   // <li class="pure-menu-link">Current User</li>
   console.log("got here")
@@ -200,6 +200,15 @@ showUser = function(data){
     loggedInUser = data.user;
     loggedInUserId = data.user._id;
   };
+}
+
+function getUser() {
+  var token = getToken();
+  if (token)  var payload = token.split(".")[1];
+  console.log(token);
+  var user = window.atob(payload)
+  console.log(user);
+  return user;
 }
 
 function ajaxRequest(method, url, data, callback) {

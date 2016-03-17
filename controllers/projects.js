@@ -61,11 +61,11 @@ function projectsUpdate(req, res) {
 
 // this is for when you click attending when logged in
 function projectsAttending(req, res) { 
-  console.log("we just arrived in the projectsAttending controller function");
-  console.log(req.params.eventid);
-  console.log(req.params.userid);
-    Project.findOneAndUpdate({_id:req.params.eventid}, {attendees:req.params.userid}, function (err, project) {
+  var projectId = req.params.projectid;
+  var userId = req.params.userid;
+  Project.findByIdAndUpdate(projectId, { $push: { attendees: userId } }, { new: true }, function (err, project) {
     if(err) return res.status(500).json({ message: err });
+    console.log("ATTENDEE UPDATED?", project);
     return res.status(200).json(project);
   });
 }
