@@ -212,7 +212,7 @@ var project4 = new Project({
 });
 
 var project5 = new Project({
- title:  "I Can't Stand the Rain…Against my Window",
+ title:  "I Can't Stand the Rain",
  projectType: "Environmental",
  projectDate: "5/25/16",
  lat: "51.5369818",
