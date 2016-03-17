@@ -18,6 +18,7 @@ $("#listViewIdx").on('click', function(){
  $(".listView").removeAttr('hidden');
 });
 
+
 viewListProjects = function(){
   $('.mapView').attr("hidden", true);
   $(".listView").removeAttr('hidden');

@@ -9,6 +9,8 @@ function init(){
   $('#comment').on('submit', addComment);
   $('.logout').on('click', logout);
   $('.pure-menu-item a').on('click', showPage);
+  $('#editProfile').on('click', editProfile);
+  console.log("edit profile clicked")
   $('section').attr("hidden", true);
   changeColor();
   checkLoginState();
@@ -66,6 +68,7 @@ function authenticationSuccessful(data) {
   showUser(data);
   checkLoginState(data);
   showUserPage();
+
 }
 
 function loggedInState(){
