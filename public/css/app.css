@@ -141,6 +141,7 @@ insideAvBox {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
 }
 
 ul {
@@ -200,49 +201,7 @@ i {
 
 
 
-/*             CSS CAROSEL */
 
-@import url(http://fonts.googleapis.com/css?family=Varela+Round);
-
-.slides {
-    padding: 0;
-    width: 609px;
-    height: 420px;
-    display: block;
-    margin: 0 auto;
-    position: relative;
-}
-
-.slides * {
-    user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-}
-
-.slides input { display: none; }
-
-.slide-container { display: block; }
-
-.slide {
-    top: 0;
-    opacity: 0;
-    width: 609px;
-    height: 420px;
-    display: block;
-    position: absolute;
-
-    transform: scale(0);
-
-    transition: all .7s ease-in-out;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-}
 
 .nav label {
     width: 200px;
@@ -330,16 +289,20 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 }
 
 .single-item {
-  min-width: 700px;
-  max-width: 700px;
+  width: 95%;
   margin: 40px auto;
+  margin-left: 0px;
 }
 
 .pictureSpin {
   min-height: 450px;
   max-height: 450px;
-  min-width: 700px;
-  max-width: 700px;
+  width: 80%;
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.testDiv {
+  border: 1px solid black;
 }

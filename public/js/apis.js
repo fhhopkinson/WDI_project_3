@@ -1,5 +1,4 @@
 $(function(){
-console.log( "Apis & Google Stuff loaded" );
 
 
  var smallGmap;
@@ -8,7 +7,7 @@ console.log( "Apis & Google Stuff loaded" );
 
 
 initSmallMap = function(lat,lng) {
-  console.log(lat + ":" + lng);
+  
 var map = document.getElementById("mapSmallProjectShow")
 googleMap =  new google.maps.Map(map, {
   zoom: 16,
@@ -18,7 +17,6 @@ googleMap =  new google.maps.Map(map, {
 }
 
 userProfileMap = function(lat,lng) {
-  console.log("arrived in userProfileMap");
 var map = document.getElementById("userShowMap")
 googleMap =  new google.maps.Map(map, {
   zoom: 14,
@@ -55,7 +53,7 @@ whereDoILivePostcodeToLATLNG = function(postcode){
 
  populateMap = function(whichmap){ // tell populatemap whichmap
    ajaxRequest('GET', "http://localhost:3000/api/projects/", null, function(data){
-     console.log(data);
+     
      projects = data.projects;
      projects.forEach(function(project, idx){
      marker = new google.maps.Marker({
@@ -95,12 +93,12 @@ whereDoILivePostcodeToLATLNG = function(postcode){
    });
  }
  placesCardFetch = function(address, lat, lng){
-  console.log(address + lat + lng );
+  
  var latlng = new google.maps.LatLng(lat,lng);
    // Search nearby places
  placesService = new google.maps.places.PlacesService(map);
  placesService.nearbySearch({ keyword: address, location: latlng, radius: 15000 }, function(results, status) {  //map.getCenter()
-   console.log(results);
+   
    imageFound = results[0].photos[0].getUrl({
     maxWidth: 400
          });
