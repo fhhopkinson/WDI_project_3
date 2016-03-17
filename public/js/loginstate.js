@@ -14,6 +14,8 @@ function init(){
   $('#editProfile').on('click', function() {
     console.log("click");
   });
+  $("#showFront").on('click', frontPage);
+
   $('section').attr("hidden", true);
   changeColor();
   checkLoginState();
@@ -49,6 +51,15 @@ function updateUserForm(){
   form.reset();
   ajaxRequestWithImage(method, url, data, authenticationSuccessful);
 }
+
+function frontPage(){
+  $('section').attr("hidden", true);
+  checkLoginState();
+  showUser();
+  $('#front').removeAttr("hidden");
+  generateMap();
+}
+
 
 function addComment() {
   console.log("addComment");
