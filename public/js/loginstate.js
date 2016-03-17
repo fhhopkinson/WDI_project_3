@@ -165,10 +165,10 @@ function showUserPage() {
     $('#profilePic').empty().append('<img src="' + user.avatar + '">')
     $('#usersName').empty().append('<h1>' + user.name + '</h1>')
 
-    // ('#userProjectsX').empty()
+    console.log("USER PROJECTS PRE LOOP: ", user.projects);
 
     (user.projects).forEach(function(project) {
-      // $('#userProjects').empty().append("<div class='pure-u-1-5 userProjectTiles' id='" + project._id + "' ><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
+  
       $('#userProjectsX').append("<div class='pure-u-3-12 userProjectTiles' id='" + project._id + "'><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
     });
   })
