@@ -222,7 +222,6 @@ function getUser() {
   var token = getToken();
   if (token)  {
     var payload = token.split(".")[1];
-    console.log(payload);
     payload = window.atob(payload);
     var user = JSON.parse(payload)._doc;
     return user;

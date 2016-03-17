@@ -113,7 +113,7 @@ user8.save();
 var project0 = new Project({
   title:  "Energy Garden",
   projectType: "Energy",
-  projectDate: "5-20-2016",
+  projectDate: "5/15/16",
   lat: "51.5240023",
   lng: "-0.1003084",
   addresslineOne: "City Hall",
@@ -129,7 +129,7 @@ var project0 = new Project({
 var project1 = new Project({
   title:  "Rain on Me",
   projectType: "Environmental",
-  projectDate: 5/15/2016,
+  projectDate: "6/25/16",
   lat: "51.69849",
   lng: "-0.117187",
   addresslineOne: "Brixton",
@@ -147,7 +147,7 @@ project1.save(function(err, users){
 var project2 = new Project({
  title: "Spiny Pals",
  projectType: "Animals",
- projectDate: 03/31/2016,
+ projectDate: "3/31/16",
  lat: "51.5186568",
  lng: "-0.0705147",
  addresslineOne: "68-80 Hanbury St",
@@ -162,12 +162,12 @@ var project2 = new Project({
 var project3 = new Project({
   title:  "I Can't Stand the Rain…Against my Window",
   projectType: "Environmental",
-  projectDate: 5/25/2016,
+  projectDate: "5/25/16",
   lat: "51.5154863",
   lng: "-0.1286212",
-  addresslineOne: "179 Haggerston Rd",
-  addresslineTwo: "London",
-  postcode: "E8 4JB",
+  addresslineOne: "Buxton St",
+  addresslineTwo: ", London",
+  postcode: "E1 5AR",
   desc: "Rainwater Harvesting Barrel Building Workshop. Although it takes 12 years to get pay back from them economically, they are the right thing to do environmentally, says Waterwise managing director Jacob Tompkins.",
   image: "https://rekhadhyani.files.wordpress.com/2013/04/rain.jpg?w=636&h=508",
   gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
@@ -177,7 +177,7 @@ var project3 = new Project({
 var project4 = new Project({
   title: "Brixton Energy Solar 4",
   projectType: "Energy",
-  projectDate: 21/10/16,
+  projectDate: "10/10/16",
   lat: "51.460045",
   lng: "-0.115064",
   addresslineOne: "Community Centre",
@@ -192,12 +192,12 @@ var project4 = new Project({
 var project5 = new Project({
  title:  "I Can't Stand the Rain…Against my Window",
  projectType: "Environmental",
- projectDate: 5/25/2016,
+ projectDate: "5/25/16",
  lat: "51.5369818",
  lng: "-0.1421302",
- addresslineOne: "179 Haggerston Rd",
- addresslineTwo: "London ",
- postcode: "E8 4JB",
+ addresslineOne: "12 Ingestre Rd",
+ addresslineTwo: "London",
+ postcode: "NW5 1UX",
  desc: "Housed in the homes of real BlueBarrel customers, our workshops begin with an indoor educational session on rainwater harvesting, and then transition outside to build a BlueBarrel System between 8 and 12 barrels in size. Each participant has a hand in construction, gaining the skills and confidence to go home and build their own system.",
  image: "http://cdn.instructables.com/F8A/9DNT/FWX11M0H/F8A9DNTFWX11M0H.RECT2100.jpg",
  gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
@@ -207,7 +207,7 @@ var project5 = new Project({
 var project6 = new Project({
  title:  "Get our houses green!",
  projectType: "Lobbying",
- projectDate: 5/31/2016,
+ projectDate: "5/31/16",
  lat: "151.528471",
  lng: "-0.0846979",
  addresslineOne: "Buttersland Street",
@@ -222,7 +222,7 @@ var project6 = new Project({
 var project7 = new Project({
  title:  "Scrapheap Challenge",
  projectType: "Other",
- projectDate: 31/5/2016,
+ projectDate: "6/31/16",
  lat: "51.531295",
  lng: "-0.097089",
  addresslineOne: "City Road Basin",
@@ -237,7 +237,7 @@ var project7 = new Project({
 var project8 = new Project({
  title:  "Recycle This!",
  projectType: "Recycling",
- projectDate: 5/31/2016,
+ projectDate: "6/12/16",
  lat: "51.57677641121266",
  lng: "-0.012485262778113793",
  addresslineOne: "Bakers Avenue",
@@ -252,7 +252,7 @@ var project8 = new Project({
 var project9 = new Project({
  title:  "Badger Crossing",
  projectType: "Animals",
- projectDate: 5/31/2016,
+ projectDate: "4/12/16",
  lat: "51.57677641121266",
  lng: "-0.012485262778113793",
  addresslineOne: "Balham Park Road",
@@ -267,7 +267,7 @@ var project9 = new Project({
 var project10 = new Project({
  title:  "Litter Picking",
  projectType: "Recycling",
- projectDate: 5/31/2017,
+ projectDate: "7/12/17",
  lat: "51.538492",
  lng: "-0.035889",
  addresslineOne: "25 Barge Lane",
@@ -281,7 +281,7 @@ var project10 = new Project({
 
 var projectowner1 = new User({
   name: "Peter Grimes",
-  projects: [project1._id],
+  projects: [project1._id, project6._id,project7._id],
   email: "project_owner1@gmail.com",
   postcode: "SE1 3SD",
   avatar:"https://www.cheme.cornell.edu/engineering2/customcf/iws_news/uploads/alabi__reis.jpg",
@@ -309,7 +309,7 @@ projectowner2.save(function(err, user){
 
 var projectowner3 = new User({
   name: "Charlie Brown",
-  projects: [project3._id],
+  projects: [project3._id,project8._id,project9._id,project10._id],
   email: "project_owner3@gmail.com",
   postcode: "S2 3SD",
   avatar:"https://www.morganstanley.com/assets/images/people/tiles/karlene-quigley-large.jpg",
