@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-
+// $('.userProjectTiles').on('click', console.log("hello");)
 
 $(".hubslist").on('click', '.projectItemBox', function(){
   projectShow(this.id);
@@ -61,6 +61,7 @@ function getProjects(){
      });
   });
 }
+
 
 projectShow = function(project){
   event.preventDefault();
