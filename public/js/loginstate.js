@@ -106,6 +106,11 @@ function showUserPage() {
   ajaxRequest2('GET', "http://localhost:3000/api/users/" + getUser()._id, null, function(user){
     $('section').attr("hidden", true);
     $("#currentUserShow").removeAttr('hidden');
+      // does profile avatar image exist?
+    if (user.avatar == undefined){
+      user.avatar = "/images/female-placeholder-profile-img.png"
+      }
+
     $('#profilePic').empty().append('<img src="' + user.avatar + '">')
     $('#usersName').empty().append('<h1>' + user.name + '</h1>')
 
