@@ -67,8 +67,9 @@ function addComment() {
   var method  = $(this).attr('method');
   var url     = "http://localhost:3000/api" + $(this).attr('action');
   var data    = $(this).serialize();
+  currentProjectId = $(this).attr('action').split("/")[2];
   ajaxRequest(method, url, data, function() {
-    form.reset();
+  projectShow(currentProjectId);
   })
 }
 
