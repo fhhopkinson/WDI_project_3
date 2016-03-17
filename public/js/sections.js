@@ -11,6 +11,8 @@ $(".hubslist").on('click', '.projectItemBox', function(){
 $("#mapViewIdx").on('click', function(){
   $('.listView').attr("hidden", true);
   $(".mapView").removeAttr('hidden');
+  $('#front').removeAttr('hidden');
+  generateMap();
 });
 $("#listViewIdx").on('click', function(){
  $('.mapView').attr("hidden", true);
@@ -25,7 +27,6 @@ viewListProjects = function(){
 generateMap = function(){
     $(".hubslist").empty();
     $('.listView').attr("hidden", true);
-    $('main').attr("hidden", true);
     $(".mapView").removeAttr('hidden');
     initMap(); // create map
     populateMap() // marker map
