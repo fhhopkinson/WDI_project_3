@@ -35,10 +35,11 @@ text-align: center;
   margin-top: 40px;
 }
 
-# showTitle{
+#showTitle {
   margin-top: 80%;
   bottom:0px;
   text-align: bottom;
+}
 
 #showImage img{
 max-width: 100%;
