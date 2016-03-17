@@ -15,6 +15,8 @@ $("#listViewIdx").on('click', function(){
 });
 
 $("#user").on('click', userShow);
+$("#userEditButton").on('click', userEdit);
+
 
  projectIndex = function(){
     $(".hubslist").empty();
@@ -62,9 +64,18 @@ function projectShow(project){
 }
 
 function userShow(user){
-  event.preventDefault()
+  event.preventDefault();
   $('section').attr("hidden", true);
   $(".userShow").removeAttr('hidden');
+
+}
+
+function userEdit(){
+  event.preventDefault();
+  $('section').attr("hidden", true);
+  $(".userEdit").removeAttr('hidden');
+  console.log("Profile Edit")
+
 }
 
 
