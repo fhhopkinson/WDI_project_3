@@ -86,7 +86,7 @@ function submitNewHub(){
     }).fail(function(data) {
       console.error(data.responseJSON);
     });
-  
+
 }
 
 function newForm(){
@@ -164,9 +164,15 @@ function showUserPage() {
     $('#profilePic').empty().append('<img src="' + user.avatar + '">')
     $('#usersName').empty().append('<h1>' + user.name + '</h1>')
 
-
-    user.projects.forEach(function(project) {
-      $('#userProjects').empty().append("<div class='pure-u-1-5 userProjectTiles' id='" + project._id + "' ><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
+    console.log(user.projects);
+    $(user.projects).each(function(project) {
+      $('.centre').empty().append('<div class="userProjectSpinner"> <img class="projectImages" src="url("' + project.image +'")"/> <p>' + project.title + '</p>');
+    });
+    $('.centre').slick({
+      autoplay: true,
+      dots: true,
+      arrows: true,
+      autoplaySpeed: 500
     });
   })
 
