@@ -1,7 +1,7 @@
 $( document ).ready(function() {
     console.log( "loginstate file loaded" );
 
-    
+
 
     function init(){
       //post information subitted by form
@@ -13,6 +13,13 @@ $( document ).ready(function() {
       $('section').attr("hidden", true);
       changeColor();
       checkLoginState();
+      $('#home').on("click", function() {
+        console.log("hello");
+        $('section').attr("hidden", true);
+        $('#front').removeAttr("hidden");
+        generateMap();
+      });
+
     }
 
 init();
@@ -91,6 +98,7 @@ function authenticationSuccessful(data) {
   // hideErrors();
   showUser(data);
   checkLoginState(data);
+  showUserPage();
   console.log("authenticationSuccessful");
   // displayUsers();
 
@@ -143,25 +151,54 @@ function showPage() {
   // hide errors
   // show the relevant section
   $('section').attr("hidden", true);
-  var sectionId = $(this).text().toLowerCase()
-  var sectionId = $.trim(sectionId)
-  console.log(sectionId)
-  $('#' + sectionId).removeAttr('hidden');
+  var sectionIdLog = $(this).text().toLowerCase()
+  var sectionId = $(this).attr('id')
+  var sectionIdLog = $.trim(sectionIdLog)
+
 
   if (sectionId == "logout") {
-    logout()
+    logout();
+  }else if (sectionId == "user") {
+    showUserPage();
+  }else if (sectionId == "hubs") {
+    viewListProjects()
+  }else {
+    $('#' + sectionIdLog).removeAttr('hidden')
   }
-  if (sectionId == "hubs") {
-    viewListProjects();
-  }
-  if (sectionId == "front") {
-    generateMap();
-  }
+
 
   // $('.logged-in').show();
   // $('#users').show();
   // hideErrors();
 
+}
+
+function showUserPage() {
+  event.preventDefault();
+  console.log("showUser");
+  ajaxRequest2('GET', "http://localhost:3000/api/users/56e9a7b4fb52512d6f623ed3", null, function(user){
+    $('section').attr("hidden", true);
+    $("#userShow").removeAttr('hidden');
+    console.log(user);
+    $('#profileHeader').empty().html(user.name)
+    $('#profilePic').empty().append('<img src="' + user.avatar + '">')
+    user.projects.forEach(function(project) {
+      $('#userProjects').empty().append("<div class='pure-u-1-5 userProjectTiles' id='" + project._id + "' ><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
+    });
+  })
+}
+
+function ajaxRequest2(method, url, data, callback) {
+  // create a re-useable ajaxRequest function
+  return $.ajax({
+    method: method,
+    url: url,
+    data: data
+  })
+  .done(callback)
+  .fail(function(err){
+    console.error(err)
+  })
 }
 
 
@@ -170,7 +207,6 @@ function logout(){
   // call loggedOutState
   removeToken();
   loggedOutState();
-
 }
 
 function loggedOutState(){
@@ -178,6 +214,7 @@ function loggedOutState(){
   // hide the users section and links
   $('.logged-out').removeAttr("hidden");
   $('.logged-in').attr("hidden", true);
+  $('#front').removeAttr("hidden");
   console.log("loggedOutState")
 }
 

@@ -32,7 +32,8 @@ generateMap = function(){
     populateMap() // marker map
     getProjects();
   }
-   
+
+
   /// show front - onLoad
   $("#front").removeAttr('hidden');
   generateMap();
@@ -75,7 +76,7 @@ projectShow = function(project){
        $(commentsList).append("<li>" + comment.commenter + "</br>" + comment.comment + "</li>")
      });
 
-     initSmallMap(project.lat,project.lng); 
+     initSmallMap(project.lat,project.lng);
      placesCardFetch(projectVenue,project.lat,project.lng);
      // build comments PUT form
      $("#comment").attr("action", "/projects/" + project._id);
