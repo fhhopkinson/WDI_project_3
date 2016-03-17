@@ -199,7 +199,7 @@ var project5 = new Project({
  addresslineTwo: "London",
  postcode: "NW5 1UX",
  desc: "Housed in the homes of real BlueBarrel customers, our workshops begin with an indoor educational session on rainwater harvesting, and then transition outside to build a BlueBarrel System between 8 and 12 barrels in size. Each participant has a hand in construction, gaining the skills and confidence to go home and build their own system.",
- image: "http://cdn.instructables.com/F8A/9DNT/FWX11M0H/F8A9DNTFWX11M0H.RECT2100.jpg",
+ image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRkZimS3JQ4PJvZDt8UNcWhQVxdhsj8XtuBs4c6QtTInBOJegR2lUz4Iwdf",
  gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
 });
@@ -244,7 +244,7 @@ var project8 = new Project({
  addresslineTwo: "London ",
  postcode: "E17 9AH",
  desc: "Volunteers have been at the heart of our work at FRP for 25 years and we still couldn’t operate without the contribution that they make today. We set out to provide volunteering opportunities that are rewarding for those who help us to achieve our aims. By volunteering for FRP you can: gain work experience and learn new skills; meet other members of the local community; and earn a sense of achievement, from contributing to a practical project with environmental and social aim",
- image: "https://upload.wikimedia.org/wikipedia/commons/5/53/Scrapyard_challenge_vw_beetle.jpg",
+ image: "http://gallery.nen.gov.uk/assets/0908/0000/0373/scrap_heap.jpg",
  gallery: ["http://previews.123rf.com/images/ljupco/ljupco0606/ljupco060600111/430569-Scrapheap-in-Skopje-Stock-Photo.jpg", "http://c7.alamy.com/comp/AB5H91/rubbish-dump-pile-landfill-waste-produce-products-man-made-AB5H91.jpg"],
  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
 });
