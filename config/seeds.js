@@ -122,7 +122,7 @@ var project0 = new Project({
   desc: "Energy Gardens are spaces for local people to come together and grow food, generate and use clean energy, improve the local environment and build their community. They are green spaces where people will have the opportunity to get their hands in the soil to grow vegetables, get on roofs to install solar panels, communicate with other gardening groups via solar powered interactive message boards and learn about how to make preserves, brew beer, harvest honey, store seeds, cook and support biodiversity. Crops from the garden will be shared with local people and food banks. Projects like honey and hops will be shared with volunteers and supporters. With the support of Players of the People's Postcode Lottery and the London Sustainable Development Commission, and in partnership with community gardening experts Groundwork London, Repowering is creating fifty gardens across the capital's Overground stations. - See more at: http://www.repowering.org.uk/projects/energy-garden#sthash.ONTIenLd.dpuf",
   image: "http://d3dza3qm7hzbjp.cloudfront.net/uploads/ckeditor/pictures/55c0b2a172657061b46e0000/content_EnergyGarden.jpg",
   gallery: ["http://d3dza3qm7hzbjp.cloudfront.net/uploads/ckeditor/pictures/55c0b51d72657061b46f0000/content_EnergyGarden3.jpg"],
- attendees: [user1._id,user2._id,user3._id,user4._id,user5._id,user6 ._id]
+ attendees: [user3._id,user4._id,user5._id,user6 ._id]
 });//
 
 
@@ -138,7 +138,7 @@ var project1 = new Project({
   desc: "The revolutionary system is based on a new cloud technology platform that uses sensor data, climate forecast information, & modelling to actively control, maintain, and monitor, water infrastructure.",
   image: "https://s-media-cache-ak0.pinimg.com/236x/03/e9/b9/03e9b99784b7abe86b6a40b52b986346.jpg",
   gallery: ["http://www.blackinsurancenews.com/wp-content/uploads/2015/04/rainwater-harvesting.jpg", "http://www.energydigital.com/public/uploads/large/large_article_im3031_london-olympics-2012.jpg"],
-  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id,user6 ._id]
+  attendees: [user1._id,user3._id,user4._id,user5._id,user6 ._id]
 });
 project1.save(function(err, users){
   if(err) console.error(err);
@@ -156,7 +156,7 @@ var project2 = new Project({
  desc: "Spiny pals is a meeting where we will discuss ways in which our community can help slow the decline of the hedgehog pupulation",
  image: "http://cdn.images.express.co.uk/img/dynamic/128/590x/hedgehog-garden-RSPCA-573919.jpg",
  gallery: ["http://barfblog.com/wp-content/uploads/2015/11/hedgehog.jpg"],
- attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
+ attendees: [user1._id,user2._id,user4._id,user5._id]
 });
 
 var project3 = new Project({
@@ -171,7 +171,7 @@ var project3 = new Project({
   desc: "Rainwater Harvesting Barrel Building Workshop. Although it takes 12 years to get pay back from them economically, they are the right thing to do environmentally, says Waterwise managing director Jacob Tompkins.",
   image: "https://rekhadhyani.files.wordpress.com/2013/04/rain.jpg?w=636&h=508",
   gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
-  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
+  attendees: [user1._id,user2._id,user3._id,user4._id,]
 });
 
 var project4 = new Project({
@@ -185,8 +185,8 @@ var project4 = new Project({
   postcode: "SW2 1AS",
   desc: "Brixton Energy Solar 4 is a new co-operative set up to enable local people to invest in renewable energy generation in Brixton and raise funds for energy efficiency initiatives. Brixton Energy Solar 4 is currently in planning, but you can use the pledge support button on this page to be kept informed, get involved or show your support.",
   image: "http://news.panasonic.com/global/images/04_blackfriars_CG.jpg",
-  gallery: ["http://d3d7rtxd5tie6q.cloudfront.net/assets/about-us/syed.png", "http://static.standard.co.uk/s3fs-public/styles/story_large/public/thumbnails/image/2012/07/09/10/blackfriars-solar-.jpg", "https://static-secure.guim.co.uk/sys-images/Guardian/Pix/pictures/2010/8/11/1281538290059/solar-panels-006.jpg" ],
-  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
+  gallery: ["https://media.licdn.com/media/AAEAAQAAAAAAAANzAAAAJGU5Y2Q2Y2UzLTUyYjgtNDEzZi1hMTAwLTk0MGE1OThmM2JmZg.png", "http://static.standard.co.uk/s3fs-public/styles/story_large/public/thumbnails/image/2012/07/09/10/blackfriars-solar-.jpg", "https://static-secure.guim.co.uk/sys-images/Guardian/Pix/pictures/2010/8/11/1281538290059/solar-panels-006.jpg" ],
+  attendees: [,user2._id,user3._id,user4._id,user5._id,user6._id]
 });
 
 var project5 = new Project({
@@ -215,7 +215,7 @@ var project6 = new Project({
  postcode: "N1 6BY",
  desc: "Old and environmentally damaging industries often lobby effectively for less stringent regulations and are slow to adopt new and cleaner technologies. This paper explains the lobbying success of these industries in terms of the strategic role of investment as a credible commitment device. It is demonstrated that if governments are predisposed to special interest groups, underinvestment in new technology enables firms to lobby more effectively. Such industries are shown to be better placed to extract policy concessions, despite contributing less to the government in political donations. The analysis therefore suggests that political considerations may provide a significant incentive for firms to reject environmentally beneficial investments, even when these lower production costs.",
  image: "http://cdn.instructables.com/F8A/9DNT/FWX11M0H/F8A9DNTFWX11M0H.RECT2100.jpg",
- gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
+ gallery: ["http://www.smithsofthedean.co.uk/rainsavers/Images/water-butts/Water%20Butts/recycled-210-water-butt4.JPG"],
  attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
 });
 
