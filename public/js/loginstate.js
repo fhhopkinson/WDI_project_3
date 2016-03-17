@@ -161,12 +161,11 @@ function showPage() {
   }else if (sectionId == "user") {
     showUserPage();
   }else if (sectionId == "hubs") {
-    viewListProjects('')
-  } else{
-    console.log("other")
-    $('#' + sectionIdLog).removeAttr('hidden');
-    logout()
+    viewListProjects()
+  }else {
+    $('#' + sectionIdLog).removeAttr('hidden')
   }
+
 
   // $('.logged-in').show();
   // $('#users').show();
