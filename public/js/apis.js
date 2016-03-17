@@ -100,10 +100,11 @@ whereDoILivePostcodeToLATLNG = function(postcode){
    // Search nearby places
  placesService = new google.maps.places.PlacesService(map);
  placesService.nearbySearch({ keyword: address, location: latlng, radius: 15000 }, function(results, status) {  //map.getCenter()
-   
+
    imageFound = results[0].photos[0].getUrl({
     maxWidth: 400
          });
+
    $("#imageFound").html("<img width='150px' height='150px' src='" + imageFound + "' />");
  });
 }

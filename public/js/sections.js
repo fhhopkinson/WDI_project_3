@@ -75,6 +75,15 @@ projectShow = function(project){
         $("#showTitle").text(project.title);
         $("#showDesc").text(project.desc);
       //////////////////////////////
+      if (data.user.avatar == undefined){
+        data.user.avatar = "/images/female-placeholder-profile-img.png"
+        }
+        if (data.user.name == undefined){
+          data.user.name = "log in to comment"
+        }
+        if (data.user._id == undefined){
+          data.user._id = "notloggedin"
+        }
       $("#avatarBox").html("<div class='insideAvBox'><img src='" + data.user.avatar + "' id='" + data.user._id + "' /></div><div class='insideAvBoxFurther'>" + data.user.name + "</div></div>");
       projectVenue = project.addresslineOne + " " + project.addresslineTwo + " " + project.postcode;
 
