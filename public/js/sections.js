@@ -1,28 +1,42 @@
 
 $( document ).ready(function() {
     console.log( "Sections file loaded" );
-$("#front").removeAttr('hidden');
+
+
+
 $(".hubslist").on('click', '.projectItemBox', function(){
   projectShow(this.id);
+
 });
 $("#mapViewIdx").on('click', function(){
   $('.listView').attr("hidden", true);
   $(".mapView").removeAttr('hidden');
+  $('#front').removeAttr('hidden');
+  generateMap();
 });
 $("#listViewIdx").on('click', function(){
  $('.mapView').attr("hidden", true);
  $(".listView").removeAttr('hidden');
 });
 
- projectIndex = function(){
+viewListProjects = function(){
+  $('.mapView').attr("hidden", true);
+  $(".listView").removeAttr('hidden');
+}
+
+generateMap = function(){
     $(".hubslist").empty();
     $('.listView').attr("hidden", true);
+    $(".mapView").removeAttr('hidden');
     initMap(); // create map
     populateMap() // marker map
     getProjects();
   }
    
-
+  /// show front - onLoad
+  $("#front").removeAttr('hidden');
+  generateMap();
+  // && generate map
 
 function getProjects(){
   event.preventDefault();

@@ -47,7 +47,7 @@ googleMap =  new google.maps.Map(map, {
          maxWidth: 200,
          borderRadius: 10,
          arrowPosition: 50,
-         content: '<h4>' + project.title + '</h4>' + project.projectDate + '<img src="' + project.gallery[0] + '" width="200px"/><p>' + project.desc +  '</p>'
+         content: '<h4>' + project.title + '</h4>' + '<img src="' + project.gallery[0] + '" width="200px"/><p>'  +  '</p>'
        });
        marker.addListener('click', function(){
          infoWindow.open(googleMap);
@@ -59,6 +59,7 @@ googleMap =  new google.maps.Map(map, {
         currentInfoWindow = infoWindow;
 
        });
+
      },idx*10);
 
      }); // end of the foreach (I think)
