@@ -17,6 +17,7 @@ $( document ).ready(function() {
         console.log("hello");
         $('section').attr("hidden", true);
         $('#front').removeAttr("hidden");
+        generateMap();
       });
 
     }
@@ -159,9 +160,12 @@ function showPage() {
     logout();
   }else if (sectionId == "user") {
     showUserPage();
-  }else {
+  }else if (sectionId == "hubs") {
+    viewListProjects('')
+  } else{
     console.log("other")
     $('#' + sectionIdLog).removeAttr('hidden');
+    logout()
   }
 
   // $('.logged-in').show();

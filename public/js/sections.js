@@ -1,27 +1,43 @@
 
 $( document ).ready(function() {
     console.log( "Sections file loaded" );
-$("#front").removeAttr('hidden');
+
+
+
 $(".hubslist").on('click', '.projectItemBox', function(){
   projectShow(this.id);
+
 });
 $("#mapViewIdx").on('click', function(){
   $('.listView').attr("hidden", true);
   $(".mapView").removeAttr('hidden');
+  $('#front').removeAttr('hidden');
+  generateMap();
 });
 $("#listViewIdx").on('click', function(){
  $('.mapView').attr("hidden", true);
  $(".listView").removeAttr('hidden');
 });
 
- projectIndex = function(){
+viewListProjects = function(){
+  $('.mapView').attr("hidden", true);
+  $(".listView").removeAttr('hidden');
+}
+
+generateMap = function(){
     $(".hubslist").empty();
     $('.listView').attr("hidden", true);
+    $(".mapView").removeAttr('hidden');
     initMap(); // create map
     populateMap() // marker map
     getProjects();
   }
 
+
+  /// show front - onLoad
+  $("#front").removeAttr('hidden');
+  generateMap();
+  // && generate map
 
 function getProjects(){
   event.preventDefault();
@@ -32,7 +48,7 @@ function getProjects(){
   });
 }
 
-function projectShow(project){
+projectShow = function(project){
   event.preventDefault();
   ajaxRequest('GET', "http://localhost:3000/api/projects/" + project, null, function(data){
     //////////////////////////////////
@@ -49,6 +65,7 @@ function projectShow(project){
       $("#showAddress").html(project.addresslineOne + "<br>" + project.addresslineTwo + "<br>" + project.postcode);
     var i = 0;
     var attendees = data.project.attendees;
+    $("#attendeesList").empty();
     while (i < attendees.length){
        $("#attendeesList").append("<li class='avatar'>" + "<img src='" + attendees[i].avatar +  "'/>" + attendees[i].name + "</li>");
        i++

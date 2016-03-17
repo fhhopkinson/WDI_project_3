@@ -11,8 +11,6 @@ function drop(){
 }
 drop();
 
-
-
 var User = require('../models/user');
 var Project = require('../models/project');
 
@@ -163,7 +161,7 @@ var project4 = new Project({
   addresslineTwo: "Brixton",
   postcode: "SW2 1AS",
   desc: "Brixton Energy Solar 4 is a new co-operative set up to enable local people to invest in renewable energy generation in Brixton and raise funds for energy efficiency initiatives. Brixton Energy Solar 4 is currently in planning, but you can use the pledge support button on this page to be kept informed, get involved or show your support.",
-  image: "https://upload.wikimedia.org/wikipedia/commons/0/05/BedZED_2007.jpg",
+  image: "http://news.panasonic.com/global/images/04_blackfriars_CG.jpg",
   gallery: ["http://d3d7rtxd5tie6q.cloudfront.net/assets/about-us/syed.png", "http://static.standard.co.uk/s3fs-public/styles/story_large/public/thumbnails/image/2012/07/09/10/blackfriars-solar-.jpg" ],
   attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
 });
@@ -244,7 +242,7 @@ var project9 = new Project({
 });
 
 var projectowner1 = new User({
-  name: "Albert Herring",
+  name: "Peter Grimes",
   projects: [project1._id],
   email: "project_owner1@gmail.com",
   postcode: "SE1 3SD",
