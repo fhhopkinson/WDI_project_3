@@ -93,7 +93,6 @@ function showPage() {
   if (sectionId == "logout") {
     logout();
   }else if (sectionId == "user") {
-    console.log("fred");
     showUserPage();
   }else {
     $('#' + sectionIdLog).removeAttr('hidden');
@@ -103,7 +102,7 @@ function showPage() {
 
 function showUserPage() {
   event.preventDefault();
-  ajaxRequest2('GET', "http://localhost:3000/api/users/" + getUser()._id, null, function(user){
+  ajaxRequest2('GET', "http://localhost:3000/api/users/56e9a7b4fb52512d6f623ed3", null, function(user){
     $('section').attr("hidden", true);
     $("#userShow").removeAttr('hidden');
     $('#profileHeader').empty().html(user.name)
@@ -146,7 +145,6 @@ function showRegister() {
   $('#register').removeAttr("hidden");
 }
 
-
 function showUser(){
   var user = getUser();
   console.log(user);
@@ -160,8 +158,8 @@ function getUser() {
   if (token)  {
     var payload = token.split(".")[1];
     payload = window.atob(payload);
-    var user = JSON.parse(payload)._doc;
-    return user;
+    payload = JSON.parse(payload)._doc;
+    return payload;
   }
 }
 
@@ -198,3 +196,7 @@ function ajaxRequestWithImage(method, url, data, callback) {
     console.error(err)
   })
 }
+
+
+
+
