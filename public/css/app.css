@@ -12,7 +12,7 @@ body {
 }
 
 .middle-front{
-text-align: center;
+text-alifgn: center;
 }
 
 .individualComment {
@@ -80,12 +80,12 @@ margin-top: 25px;
 }
 
 .topbar-projectindex{
-border-bottom: 2px black solid;
+border-bottom: 2px white solid;
 text-align: center;
 }
 
 .topbar-showproject {
-border-bottom: 2px black solid;
+border-bottom: 2px white solid;
 text-align: center;
 
 }
@@ -104,8 +104,7 @@ border:  3px solid #296B47;
 }
 
 insideAvBox {
-  width: 200px;
-  height: 100px;
+
   text-align: right;
 }
 
