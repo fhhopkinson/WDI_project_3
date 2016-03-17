@@ -94,6 +94,12 @@ insideAvBox {
   border-radius: 100px;
 }
 
+.profilePic img{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+
 #layout {
   background-color: #296B47;
   height: 100vw;

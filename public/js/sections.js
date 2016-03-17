@@ -6,8 +6,18 @@ $( document ).ready(function() {
 
 $(".hubslist").on('click', '.projectItemBox', function(){
   projectShow(this.id);
-
 });
+
+$("#attendeesList").on('click', 'img', function(){
+  otherUserShow(this.id);
+});
+
+$("#avatarBox").on('click', 'img', function(){
+  otherUserShow(this.id);
+});
+
+
+
 $("#mapViewIdx").on('click', function(){
   $('.listView').attr("hidden", true);
   $(".mapView").removeAttr('hidden');
@@ -18,6 +28,28 @@ $("#listViewIdx").on('click', function(){
  $('.mapView').attr("hidden", true);
  $(".listView").removeAttr('hidden');
 });
+
+
+otherUserShow = function(whoseId){
+  ajaxRequest('GET', "http://localhost:3000/api/users/" + whoseId, null, function(data){
+    console.log("this is a otherusersShow data return ajax");
+    console.log(data);
+    /////// Show section
+    $('section').attr("hidden", true);
+    $("#otherUserShow").removeAttr('hidden');
+    //////// Put User Data on Page
+    $("#otherUserName").html("<h1>" + data.name + "</h1>");
+    $("#otherUserPic").html("<img src='" + data.avatar + "' width='200px' height='200px'/>");
+    var i = 0;
+    $("#otherUserProjects").empty();
+    while (i < data.projects.length){
+     $("#otherUserProjects").prepend("<ul>" + data.projects[i].title + "</br>" + data.projects[i].projectDate + "</ul>");
+     i++
+    }
+  });
+}
+
+
 
 viewListProjects = function(){
   $('.mapView').attr("hidden", true);
@@ -60,7 +92,7 @@ projectShow = function(project){
         $("#showTitle").text(project.title);
         $("#showDesc").text(project.desc);
       //////////////////////////////
-      $("#avatarBox").html("<div class='insideAvBox'><img src='" + data.user.avatar + "' /></div><div class='insideAvBoxFurther'>" + data.user.name + "</div></div>");
+      $("#avatarBox").html("<div class='insideAvBox'><img src='" + data.user.avatar + "' id='" + data.user._id + "' /></div><div class='insideAvBoxFurther'>" + data.user.name + "</div></div>");
       projectVenue = project.addresslineOne + " " + project.addresslineTwo + " " + project.postcode;
       console.log("Project will be held on: <b>" + prettyProjectDate + "</b>The project venue is " + projectVenue);
       $("#showAddress").html( "Project will be held on: <b>" + prettyProjectDate + "</b><br></br> At Venue: </br>"  + project.addresslineOne + "<br>" + project.addresslineTwo + "<br>" + project.postcode);
@@ -68,7 +100,7 @@ projectShow = function(project){
     var attendees = data.project.attendees;
     $("#attendeesList").empty();
     while (i < attendees.length){
-       $("#attendeesList").append("<li class='avatar'>" + "<img src='" + attendees[i].avatar +  "'/>" + attendees[i].name + "</li>");
+       $("#attendeesList").append("<li class='avatar'>" + "<img src='" + attendees[i].avatar +  "' id='" + attendees[i]._id + "' />" + attendees[i].name + "</li>");
        i++
       }
 

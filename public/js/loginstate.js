@@ -119,6 +119,10 @@ function showUserPage() {
       $('#userProjects').empty().append("<div class='pure-u-1-5 userProjectTiles' id='" + project._id + "' ><p>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p> Attendees: " + project.attendees.length + "</p></div>");
     });
   })
+
+  if (user.postcode == undefined){
+    user.postcode = "mums house"
+    }
   console.log(user.postcode);
   whereDoILivePostcodeToLATLNG(user.postcode); // find lat & lng of where postcode is
 }
