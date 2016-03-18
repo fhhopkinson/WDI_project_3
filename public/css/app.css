@@ -13,7 +13,21 @@ body {
   color: #296B47;
 }
 
-.pure-button-primary {
+#center {
+  text-align: center;
+}
+.middle-front{
+text-alifgn: center;
+}
+
+.individualComment {
+  border: 1px white solid;
+  background-color: #f2f2f2;
+  margin-bottom: 8px
+}
+
+
+.pure-button-primary{
   border-radius: 3px;
   background: #296B47;
   box-shadow: 3px 4px 0px 0px #1F2F16;

@@ -16,7 +16,7 @@ $("#avatarBox").on('click', 'img', function(){
 
 
 otherUserShow = function(whoseId){
-  ajaxRequest('GET', "http://localhost:3000/api/users/" + whoseId, null, function(data){
+  ajaxRequest('GET', "/api/users/" + whoseId, null, function(data){
 
     /////// Show section
     $('section').attr("hidden", true);
@@ -55,7 +55,7 @@ generateMap = function(){
 
 function getProjects(){
   event.preventDefault();
-  ajaxRequest('GET', "http://localhost:3000/api/projects", null, function(data){
+  ajaxRequest('GET', "/api/projects", null, function(data){
    $.each(data.projects, function( index, project ) {
       $(".hubslist").append("<div class='pure-u-1-3 projectItemBox' style='background-image: url(" + project.image + ");' id='" + project._id + "' ><h3>"+ project.title + "</h3></div>");
      });
@@ -65,7 +65,7 @@ function getProjects(){
 
 projectShow = function(project){
   event.preventDefault();
-  ajaxRequest('GET', "http://localhost:3000/api/projects/" + project, null, function(data){
+  ajaxRequest('GET', "/api/projects/" + project, null, function(data){
     //////////////////////////////////
     $('section').attr("hidden", true);
     $("#projectShow").removeAttr('hidden');

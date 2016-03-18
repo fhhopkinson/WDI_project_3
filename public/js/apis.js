@@ -54,7 +54,7 @@ whereDoILivePostcodeToLATLNG = function(postcode){
 }
 
  populateMap = function(whichmap){ // tell populatemap whichmap
-   ajaxRequest('GET', "http://localhost:3000/api/projects/", null, function(data){
+   ajaxRequest('GET', "/api/projects/", null, function(data){
 
      projects = data.projects;
      projects.forEach(function(project, idx){
