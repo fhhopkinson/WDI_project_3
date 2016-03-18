@@ -82,6 +82,20 @@ form#submitNewHub legend {
   font-size: 1.5em
 }
 
+form#updateUserForm legend {
+  text-align: center;
+  padding: .3em 0;
+  border-bottom: none;
+  font-size: 1.5em
+}
+
+section#hubs h1 {
+  text-align: center;
+  padding: .3em 0;
+  border-bottom: none;
+  font-size: 1.5em
+}
+
 /*FRONT PAGE*/
 
 .middle-front {
@@ -410,4 +424,10 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
   margin-top: 10px;
   letter-spacing: normal;
 }
+
+/*fieldset {
+  background-color: red;
+  margin-left: 100px;
+  text-align: center;
+}*/
 
