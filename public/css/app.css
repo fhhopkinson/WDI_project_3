@@ -369,6 +369,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
   position: relative;
   color: #F1FFFA;
   border-radius: 5px;
+  display: inline-block;
 }
 
 .pTop {
@@ -414,4 +415,3 @@ userProjectsX-otheruser {
   margin-top: 10px;
   letter-spacing: normal;
 }
-
