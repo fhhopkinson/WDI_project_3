@@ -1,6 +1,7 @@
-@font-face{
+/*GLOBAL BODY SETTINGS*/
+@font-face {
   font-family: 'MyWebFont';
-  src: url("../fonts/DISCO.ttf") format("truetype");
+  src: url("../fonts/CarnasExtraLightItalic.otf") format("truetype");
 }
 
 * {
@@ -12,18 +13,7 @@ body {
   color: #296B47;
 }
 
-.middle-front{
-text-alifgn: center;
-}
-
-.individualComment {
-  border: 1px white solid;
-  background-color: #f2f2f2;
-  margin-bottom: 8px
-}
-
-
-.pure-button-primary{
+.pure-button-primary {
   border-radius: 3px;
   background: #296B47;
   box-shadow: 3px 4px 0px 0px #1F2F16;
@@ -32,6 +22,78 @@ text-alifgn: center;
 .pure-button-primary:hover {
   box-shadow: none;
 }
+
+#login-email, #login-password {
+  width: 30%;
+}
+
+#login {
+  text-align: center;
+}
+
+/*REGISTER PAGE*/
+
+section#register {
+  font-size: 20px;
+  color: #296B47;
+  margin-top: 35px;
+}
+
+.pure-form legend {
+    display: block;
+    width: 100%;
+    padding: .3em 0;
+    margin-bottom: 3em;
+    color: #296B47;
+    border-bottom: 2px solid #296B47;
+}
+
+.pure-form-aligned .pure-controls {
+    margin: 4.5em 0 1em;
+}
+
+
+button.pure-button.pure-button-primary.register{
+  margin-left: 40px;
+}
+
+/*CURRENT USER SHOW*/
+
+#usersName.pure-u-8-24 {
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+#usersName.pure-u-8-24 h1 {
+    font-size: 2.5em;
+    margin: 1.5em 0;
+}
+
+section#currentUserShow h3 {
+  text-align: center;
+  font-size: 1.5em
+}
+
+/*NEW HUB*/
+form#submitNewHub legend {
+  text-align: center;
+  padding: .3em 0;
+  border-bottom: none;
+  font-size: 1.5em
+}
+
+/*FRONT PAGE*/
+
+.middle-front {
+text-align: center;
+}
+
+.individualComment {
+  border: 1px white solid;
+  background-color: #f2f2f2;
+  margin-bottom: 8px
+}
+
 
 .middleProjectShow {
   margin-top: 40px;
@@ -352,3 +414,4 @@ userProjectsX-otheruser {
   margin-top: 10px;
   letter-spacing: normal;
 }
+

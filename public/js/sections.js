@@ -1,6 +1,5 @@
 $( document ).ready(function() {
 
-
 $(".hubslist").on('click', '.projectItemBox', function(){
   projectShow(this.id);
 });
@@ -90,7 +89,7 @@ projectShow = function(project){
         }
 
       projectVenue = project.addresslineOne + " " + project.addresslineTwo + " " + project.postcode;
-  
+
       $("#showAddress").html( "Project will be held on: <b>" + project.projectDate + "</b><br></br> At Venue: </br>"  + project.addresslineOne + "<br>" + project.addresslineTwo + "<br>" + project.postcode);
     var i = 0;
     var attendees = data.project.attendees;
