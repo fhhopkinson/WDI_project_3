@@ -1,11 +1,4 @@
 $( document ).ready(function() {
-<<<<<<< HEAD
-    console.log( "Sections file loaded" );
-
-=======
-
-// $('.userProjectTiles').on('click', console.log("hello");)
->>>>>>> adf24106706488ca1b15da20f4f15a7667020056
 
 $(".hubslist").on('click', '.projectItemBox', function(){
   projectShow(this.id);

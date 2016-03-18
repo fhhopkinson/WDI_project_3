@@ -13,7 +13,7 @@ googleMap =  new google.maps.Map(map, {
   zoom: 16,
   disableDefaultUI: true,
   center: {lat: parseFloat(lat),  lng: parseFloat(lng)},
-  style: stylesGreenHub
+  styles: stylesGreenHub
   });
 }
 
@@ -23,7 +23,7 @@ googleMap =  new google.maps.Map(map, {
   zoom: 14,
   disableDefaultUI: true,
   center: {lat: parseFloat(lat),  lng: parseFloat(lng)},
-  style: stylesGreenHub
+  styles: stylesGreenHub
   });
  populateMap(userProfileMap);
 }

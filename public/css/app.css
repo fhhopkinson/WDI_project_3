@@ -57,6 +57,31 @@ button.pure-button.pure-button-primary.register{
   margin-left: 40px;
 }
 
+/*CURRENT USER SHOW*/
+
+#usersName.pure-u-8-24 {
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+#usersName.pure-u-8-24 h1 {
+    font-size: 2.5em;
+    margin: 1.5em 0;
+}
+
+section#currentUserShow h3 {
+  text-align: center;
+  font-size: 1.5em
+}
+
+/*NEW HUB*/
+form#submitNewHub legend {
+  text-align: center;
+  padding: .3em 0;
+  border-bottom: none;
+  font-size: 1.5em
+}
+
 /*FRONT PAGE*/
 
 .middle-front {
