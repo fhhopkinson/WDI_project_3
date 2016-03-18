@@ -1,21 +1,14 @@
 var mongoose = require('mongoose');
 var User = require('../models/user')
 var Project = require('../models/project')
-mongoose.connect('mongodb://localhost/green-app');
-
-function drop(){
-  mongoose.connect('mongodb://localhost/green-app', function() {
-    User.collection.drop();
-    Project.collection.drop();
-  });
-}
-drop();
+var mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/green-app';
+mongoose.connect(mongoURI);
 
 var User = require('../models/user');
 var Project = require('../models/project');
 
-
-
+User.collection.drop();
+Project.collection.drop();
 
 var user2 = new User({
  name: "Henry Tallyho",
