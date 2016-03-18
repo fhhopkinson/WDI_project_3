@@ -25,10 +25,12 @@ otherUserShow = function(whoseId){
     $("#otherUserPic").html("<img src='" + data.avatar + "' width='200px' height='200px'/>");
     var i = 0;
     $("#otherUserProjects").empty();
-    while (i < data.projects.length){
-     $("#otherUserProjects").prepend("<p><ul>" + data.projects[i].title + "</br>" + data.projects[i].projectDate + "</ul></p>");
-     i++
-    }
+    console.log("==== CURRENT ==== USER == PROJECTs");
+    console.log("USER PROJECTS PRE LOOP: ", data.projects);
+    (data.projects).forEach(function(project) {
+      console.log("PROJECT TITLE FOR USER: ", project);
+      $('#userProjectsX-otheruser').append("<div class='userProjectTiles' id='" + project._id + "'><p class='pTop'>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p class='pbottom'> Attendees: " + project.attendees.length + "</p></div>");
+    });
   });
 }
 

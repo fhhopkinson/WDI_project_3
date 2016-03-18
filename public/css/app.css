@@ -332,6 +332,10 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
   background-repeat: no-repeat;
   z-index: -1;
 }
+userProjectsX-otheruser {
+  letter-spacing: normal;
+
+}
 
 #userProjectsX {
   margin-top: 10px;
