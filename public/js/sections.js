@@ -1,6 +1,5 @@
 $( document ).ready(function() {
 
-// $('.userProjectTiles').on('click', console.log("hello");)
 
 $(".hubslist").on('click', '.projectItemBox', function(){
   projectShow(this.id);
@@ -15,8 +14,11 @@ $("#avatarBox").on('click', 'img', function(){
 });
 
 
+
+
 otherUserShow = function(whoseId){
   ajaxRequest('GET', "http://localhost:3000/api/users/" + whoseId, null, function(data){
+
     /////// Show section
     $('section').attr("hidden", true);
     $("#otherUserShow").removeAttr('hidden');
@@ -25,10 +27,9 @@ otherUserShow = function(whoseId){
     $("#otherUserPic").html("<img src='" + data.avatar + "' width='200px' height='200px'/>");
     var i = 0;
     $("#otherUserProjects").empty();
-    while (i < data.projects.length){
-     $("#otherUserProjects").prepend("<p><ul>" + data.projects[i].title + "</br>" + data.projects[i].projectDate + "</ul></p>");
-     i++
-    }
+    (data.projects).forEach(function(project) {
+      $('#userProjectsX-otheruser').append("<div class='userProjectTiles' id='" + project._id + "'><p class='pTop'>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p class='pbottom'> Attendees: " + project.attendees.length + "</p></div>");
+    });
   });
 }
 
@@ -70,11 +71,14 @@ projectShow = function(project){
     $('section').attr("hidden", true);
     $("#projectShow").removeAttr('hidden');
       var project = data.project
-      console.log("fred hopkinson");
+
         $("#showImage").html("<img src='" + project.image + "'</img>");
         $("#showTitle").text(project.title);
         $("#showDesc").text(project.desc);
       //////////////////////////////
+
+      $("#avatarBox").html("<div class='insideAvBox'><img src='" + data.user.avatar + "' id='" + data.user._id + "' />" + "<br>" + data.user.name + "</div>");
+
       if (data.user.avatar == undefined){
         data.user.avatar = "/images/female-placeholder-profile-img.png"
         }
@@ -84,9 +88,9 @@ projectShow = function(project){
         if (data.user._id == undefined){
           data.user._id = "notloggedin"
         }
-      $("#avatarBox").html("<div class='insideAvBox'><img src='" + data.user.avatar + "' id='" + data.user._id + "' /></div><div class='insideAvBoxFurther'>" + data.user.name + "</div></div>");
-      projectVenue = project.addresslineOne + " " + project.addresslineTwo + " " + project.postcode;
 
+      projectVenue = project.addresslineOne + " " + project.addresslineTwo + " " + project.postcode;
+  
       $("#showAddress").html( "Project will be held on: <b>" + project.projectDate + "</b><br></br> At Venue: </br>"  + project.addresslineOne + "<br>" + project.addresslineTwo + "<br>" + project.postcode);
     var i = 0;
     var attendees = data.project.attendees;
