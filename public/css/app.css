@@ -1,6 +1,6 @@
 @font-face{
   font-family: 'MyWebFont';
-  src: url("../fonts/DISCO.ttf") format("truetype");
+  src: url("../fonts/CarnasExtraLightItalic.otf") format("truetype");
 }
 
 * {
@@ -348,3 +348,6 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
   margin-top: 10px;
   letter-spacing: normal;
 }
+
+
+/*input, textarea, select, button {font-family: 'MyWebFont' !important;}*/
