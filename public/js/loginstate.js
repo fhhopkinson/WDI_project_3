@@ -166,9 +166,9 @@ function showUserPage() {
     $('#profilePic').empty().append('<img src="' + user.avatar + '">')
     $('#usersName').empty().append('<h1>' + user.name + '</h1>')
 
-    console.log("USER PROJECTS PRE LOOP: ", user.projects);
+
     (user.projects).forEach(function(project) {
-      console.log("PROJECT TITLE FOR USER: ", project);
+
       $('#userProjectsX').append("<div class='userProjectTiles' id='" + project._id + "'><p class='pTop'>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p class='pbottom'> Attendees: " + project.attendees.length + "</p></div>");
     });
   })
