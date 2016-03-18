@@ -1,4 +1,5 @@
 var User = require('../models/user');
+var s3Config = require('../config/s3');
 
 function usersIndex(req, res) {
   User.find(function(err, users) {
@@ -36,7 +37,7 @@ function usersDelete(req, res){
 function usersUpdate(req, res) {
 
   if(req.file) {
-    req.body.user.avatar = s3Config.endpoint + s3Config.bucket + '/' + req.file.key;
+    req.body.avatar = s3Config.endpoint + s3Config.bucket + '/' + req.file.key;
   }
 
   User.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, user) {

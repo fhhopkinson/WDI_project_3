@@ -13,7 +13,21 @@ body {
   color: #296B47;
 }
 
-.pure-button-primary {
+#center {
+  text-align: center;
+}
+.middle-front{
+text-alifgn: center;
+}
+
+.individualComment {
+  border: 1px white solid;
+  background-color: #f2f2f2;
+  margin-bottom: 8px
+}
+
+
+.pure-button-primary{
   border-radius: 3px;
   background: #296B47;
   box-shadow: 3px 4px 0px 0px #1F2F16;
@@ -383,6 +397,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
   position: relative;
   color: #F1FFFA;
   border-radius: 5px;
+  display: inline-block;
 }
 
 .pTop {
@@ -419,15 +434,12 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
   background-repeat: no-repeat;
   z-index: -1;
 }
+userProjectsX-otheruser {
+  letter-spacing: normal;
+
+}
 
 #userProjectsX {
   margin-top: 10px;
   letter-spacing: normal;
 }
-
-/*fieldset {
-  background-color: red;
-  margin-left: 100px;
-  text-align: center;
-}*/
-

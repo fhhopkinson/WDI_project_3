@@ -13,23 +13,11 @@ $("#avatarBox").on('click', 'img', function(){
 });
 
 
-/*
-$("#mapViewIdx").on('click', function(){
-  $('.listView').attr("hidden", true);
-  $(".mapView").removeAttr('hidden');
-  $('#front').removeAttr('hidden');
-  generateMap();
-});
-$("#listViewIdx").on('click', function(){
- $('.mapView').attr("hidden", true);
- $(".listView").removeAttr('hidden');
-});*/
 
 
 otherUserShow = function(whoseId){
-  ajaxRequest('GET', "http://localhost:3000/api/users/" + whoseId, null, function(data){
-    console.log("this is a otherusersShow data return ajax");
-    console.log(data);
+  ajaxRequest('GET', "/api/users/" + whoseId, null, function(data){
+
     /////// Show section
     $('section').attr("hidden", true);
     $("#otherUserShow").removeAttr('hidden');
@@ -38,10 +26,9 @@ otherUserShow = function(whoseId){
     $("#otherUserPic").html("<img src='" + data.avatar + "' width='200px' height='200px'/>");
     var i = 0;
     $("#otherUserProjects").empty();
-    while (i < data.projects.length){
-     $("#otherUserProjects").prepend("<p><ul>" + data.projects[i].title + "</br>" + data.projects[i].projectDate + "</ul></p>");
-     i++
-    }
+    (data.projects).forEach(function(project) {
+      $('#userProjectsX-otheruser').append("<div class='userProjectTiles' id='" + project._id + "'><p class='pTop'>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p class='pbottom'> Attendees: " + project.attendees.length + "</p></div>");
+    });
   });
 }
 
@@ -68,7 +55,7 @@ generateMap = function(){
 
 function getProjects(){
   event.preventDefault();
-  ajaxRequest('GET', "http://localhost:3000/api/projects", null, function(data){
+  ajaxRequest('GET', "/api/projects", null, function(data){
    $.each(data.projects, function( index, project ) {
       $(".hubslist").append("<div class='pure-u-1-3 projectItemBox' style='background-image: url(" + project.image + ");' id='" + project._id + "' ><h3>"+ project.title + "</h3></div>");
      });
@@ -78,15 +65,12 @@ function getProjects(){
 
 projectShow = function(project){
   event.preventDefault();
-  ajaxRequest('GET', "http://localhost:3000/api/projects/" + project, null, function(data){
+  ajaxRequest('GET', "/api/projects/" + project, null, function(data){
     //////////////////////////////////
     $('section').attr("hidden", true);
     $("#projectShow").removeAttr('hidden');
       var project = data.project
-      console.log("===============================");
-      console.log(data.project.addresslineOne + data.project.addresslineTwo 
-        + data.project.postcode);
-      console.log("===============================");
+
         $("#showImage").html("<img src='" + project.image + "'</img>");
         $("#showTitle").text(project.title);
         $("#showDesc").text(project.desc);
@@ -105,7 +89,7 @@ projectShow = function(project){
         }
 
       projectVenue = project.addresslineOne + " " + project.addresslineTwo + " " + project.postcode;
-      console.log("Project will be held on: <b>" + project.projectDate + "</b>The project venue is " + projectVenue);
+
       $("#showAddress").html( "Project will be held on: <b>" + project.projectDate + "</b><br></br> At Venue: </br>"  + project.addresslineOne + "<br>" + project.addresslineTwo + "<br>" + project.postcode);
     var i = 0;
     var attendees = data.project.attendees;
@@ -119,7 +103,6 @@ projectShow = function(project){
      $.each(project.comments, function( index, comment ) {
        $(commentsList).append("<div class='pure-g'><div class='pure-u-4-24'><img src='" + comment.commenterAvatar + "' width='40px' height='40px' /></div>" + "<div class='pure-u-20-24 individualComment'>" + comment.commenter + "</br>" + comment.comment + "</div></div>")
      });
-     console.log(projectVenue);
      initSmallMap(project.lat,project.lng);
      placesCardFetch(projectVenue,project.lat,project.lng);
      // build comments PUT form

@@ -32,7 +32,7 @@ function submitForm(){
   event.preventDefault();
   var form    = this;
   var method  = $(this).attr('method');
-  var url     = "http://localhost:3000/api" + $(this).attr('action');
+  var url     = "/api" + $(this).attr('action');
   var data    = $(this).serialize();
   form.reset();
   ajaxRequest(method, url, data, authenticationSuccessful);
@@ -42,7 +42,7 @@ function updateUserForm(){
   event.preventDefault();
   var form    = this;
   var method  = $(this).attr('method');
-  var url     = "http://localhost:3000/api/users/" + getUser()._id;
+  var url     = "/api/users/" + getUser()._id;
   var data    = new FormData(this);
   form.reset();
   ajaxRequestWithImage(method, url, data, authenticationSuccessful);
@@ -60,7 +60,7 @@ function addComment() {
   event.preventDefault();
   var form    = this;
   var method  = $(this).attr('method');
-  var url     = "http://localhost:3000/api" + $(this).attr('action');
+  var url     = "/api" + $(this).attr('action');
   var data    = $(this).serialize();
   currentProjectId = $(this).attr('action').split("/")[2];
   ajaxRequest(method, url, data, function() {
@@ -72,7 +72,7 @@ function submitNewHub(){
   event.preventDefault();
   var form    = this;
   var method  = $(this).attr('method');
-  var urll     = "http://localhost:3000/api" + $(this).attr('action');
+  var urll     = "/api" + $(this).attr('action');
   var data    = new FormData(this);
   form.reset();
 
@@ -98,7 +98,7 @@ function newForm(){
   event.preventDefault();
   var form    = this;
   var method  = $(this).attr('method');
-  var url     = "http://localhost:3000/api" + $(this).attr('action');
+  var url     = "/api" + $(this).attr('action');
   var data    = new FormData(this);
   form.reset();
   ajaxRequestWithImage(method, url, data);
@@ -155,7 +155,7 @@ function showPage() {
 function showUserPage() {
   event.preventDefault();
   $('#userProjectsX').html(' ')
-  ajaxRequest2('GET', "http://localhost:3000/api/users/" + getUser()._id, null, function(user){
+  ajaxRequest2('GET', "/api/users/" + getUser()._id, null, function(user){
     $('section').attr("hidden", true);
     $("#currentUserShow").removeAttr('hidden');
       // does profile avatar image exist?
@@ -163,13 +163,12 @@ function showUserPage() {
       user.avatar = "/images/female-placeholder-profile-img.png"
       }
 
-    $('#profilePic').empty().append('<img src="' + user.avatar + '">')
-    $('#usersName').empty().append('<h1>' + user.name + '</h1>')
+    $('#profilePic').empty().append('<img src="' + user.avatar + '">');
+    $('#usersName').empty().append('<h1>' + user.name + '</h1>');
 
-    console.log("USER PROJECTS PRE LOOP: ", user.projects);
 
     (user.projects).forEach(function(project) {
-      console.log("PROJECT TITLE FOR USER: ", project);
+
       $('#userProjectsX').append("<div class='userProjectTiles' id='" + project._id + "'><p class='pTop'>"+ project.title + "</p><img class='projectImages' src='" + project.image + "'/><p class='pbottom'> Attendees: " + project.attendees.length + "</p></div>");
     });
   })
@@ -259,7 +258,7 @@ function ajaxRequestWithImage(method, url, data, callback) {
 
 
 function gallery() {
-  ajaxRequest2('GET', "http://localhost:3000/api/projects", null, function(data) {
+  ajaxRequest2('GET', "/api/projects", null, function(data) {
     var projects = data.gallery
     var pictures = [];
     $(data.projects).each(function(index, project) {

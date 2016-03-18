@@ -2,7 +2,7 @@ $( document ).ready(function() {
  
 
   $( ".eventAttendingYes" ).click(function() {
-   attendingAjaxRoute(this.id); // i.e. projectId + currentuserid
+   attendingAjaxRoute(this.id); 
   });
 
   attendingAjaxRoute = function(projectId){

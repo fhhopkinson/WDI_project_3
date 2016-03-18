@@ -1,34 +1,14 @@
 var mongoose = require('mongoose');
 var User = require('../models/user')
 var Project = require('../models/project')
-mongoose.connect('mongodb://localhost/green-app');
-
-function drop(){
-  mongoose.connect('mongodb://localhost/green-app', function() {
-    User.collection.drop();
-    Project.collection.drop();
-  });
-}
-drop();
+var mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/green-app';
+mongoose.connect(mongoURI);
 
 var User = require('../models/user');
 var Project = require('../models/project');
 
-
-var user1 = new User({
-  name: "Enrico Rainsome",
-  username:"admin",
-  email: "admin@admin.com",
-  avatar: "http://www.eonline.com/eol_images/Entire_Site/2014913/rs_600x600-141013090723-600-jared-leto-tree-hugging-instagram.ls.101314.jpg",
-  postcode: "E1 5ED",
-  password: "qw",
-  passwordConfirmation: "qw"
-
-},function(err, user){
-  if(err) console.error(err);
-  else console.log(user);
-});
-user1.save();
+User.collection.drop();
+Project.collection.drop();
 
 var user2 = new User({
  name: "Henry Tallyho",
@@ -172,7 +152,7 @@ var project1 = new Project({
   desc: "The revolutionary system is based on a new cloud technology platform that uses sensor data, climate forecast information, & modelling to actively control, maintain, and monitor, water infrastructure.",
   image: "https://s-media-cache-ak0.pinimg.com/236x/03/e9/b9/03e9b99784b7abe86b6a40b52b986346.jpg",
   gallery: ["http://www.blackinsurancenews.com/wp-content/uploads/2015/04/rainwater-harvesting.jpg", "http://www.energydigital.com/public/uploads/large/large_article_im3031_london-olympics-2012.jpg"],
-  attendees: [user1._id,user3._id,user4._id,user5._id,user6 ._id]
+  attendees: [user3._id,user4._id,user5._id,user6 ._id]
 });
 project1.save(function(err, users){
   if(err) console.error(err);
@@ -190,7 +170,7 @@ var project2 = new Project({
  desc: "Spiny pals is a meeting where we will discuss ways in which our community can help slow the decline of the hedgehog pupulation",
  image: "http://cdn.images.express.co.uk/img/dynamic/128/590x/hedgehog-garden-RSPCA-573919.jpg",
  gallery: ["http://barfblog.com/wp-content/uploads/2015/11/hedgehog.jpg"],
- attendees: [user1._id,user2._id,user4._id,user5._id]
+ attendees: [user2._id,user4._id,user5._id]
 });
 
 var project3 = new Project({
@@ -205,7 +185,7 @@ var project3 = new Project({
   desc: "Rainwater Harvesting Barrel Building Workshop. Although it takes 12 years to get pay back from them economically, they are the right thing to do environmentally, says Waterwise managing director Jacob Tompkins.",
   image: "https://c1.staticflickr.com/9/8060/8222886048_9e6df4ecab_b.jpg",
   gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg"],
-  attendees: [user1._id,user2._id,user3._id,user4._id,]
+  attendees: [user2._id,user3._id,user4._id,]
 });
 
 var project4 = new Project({
@@ -235,7 +215,7 @@ var project5 = new Project({
  desc: "Housed in the homes of real BlueBarrel customers, our workshops begin with an indoor educational session on rainwater harvesting, and then transition outside to build a BlueBarrel System between 8 and 12 barrels in size. Each participant has a hand in construction, gaining the skills and confidence to go home and build their own system.",
  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzK7bfHpGbda1GmTVNsRc0YXq4eud_oJLwdDvL6L16wf8G5_d2xQ",
  gallery: ["http://texaslandscapemagazine.com/wp-content/uploads/2015/03/Rainwater-Collection.jpg", "http://farm2.static.flickr.com/1049/4603516198_a4299a0f9f.jpg"],
- attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
+ attendees: [user2._id,user3._id,user4._id,user5._id]
 });
 
 var project6 = new Project({
@@ -250,7 +230,7 @@ var project6 = new Project({
  desc: "Old and environmentally damaging industries often lobby effectively for less stringent regulations and are slow to adopt new and cleaner technologies. This paper explains the lobbying success of these industries in terms of the strategic role of investment as a credible commitment device. It is demonstrated that if governments are predisposed to special interest groups, underinvestment in new technology enables firms to lobby more effectively. Such industries are shown to be better placed to extract policy concessions, despite contributing less to the government in political donations. The analysis therefore suggests that political considerations may provide a significant incentive for firms to reject environmentally beneficial investments, even when these lower production costs.",
  image: "http://cdn.instructables.com/F8A/9DNT/FWX11M0H/F8A9DNTFWX11M0H.RECT2100.jpg",
  gallery: ["http://www.smithsofthedean.co.uk/rainsavers/Images/water-butts/Water%20Butts/recycled-210-water-butt4.JPG"],
- attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
+ attendees: [user2._id,user3._id,user4._id,user5._id]
 });
 
 var project7 = new Project({
@@ -265,7 +245,7 @@ var project7 = new Project({
  desc: "There is a pile of scrap metal and broken sofas and things that are polluting the river system and it is the aim of this project to clean this up and clean the water to and ensure that there will be no more problems like this.",
  image: "https://upload.wikimedia.org/wikipedia/commons/5/53/Scrapyard_challenge_vw_beetle.jpg",
  gallery: ["http://previews.123rf.com/images/ljupco/ljupco0606/ljupco060600111/430569-Scrapheap-in-Skopje-Stock-Photo.jpg", "http://c7.alamy.com/comp/AB5H91/rubbish-dump-pile-landfill-waste-produce-products-man-made-AB5H91.jpg"],
- attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
+ attendees: [user2._id,user3._id,user4._id,user5._id]
 });
 
 var project8 = new Project({
@@ -280,7 +260,7 @@ var project8 = new Project({
  desc: "Volunteers have been at the heart of our work at FRP for 25 years and we still couldn’t operate without the contribution that they make today. We set out to provide volunteering opportunities that are rewarding for those who help us to achieve our aims. By volunteering for FRP you can: gain work experience and learn new skills; meet other members of the local community; and earn a sense of achievement, from contributing to a practical project with environmental and social aim",
  image: "http://gallery.nen.gov.uk/assets/0908/0000/0373/scrap_heap.jpg",
  gallery: ["http://previews.123rf.com/images/ljupco/ljupco0606/ljupco060600111/430569-Scrapheap-in-Skopje-Stock-Photo.jpg", "http://c7.alamy.com/comp/AB5H91/rubbish-dump-pile-landfill-waste-produce-products-man-made-AB5H91.jpg"],
- attendees: [user1._id,user2._id,user3._id,user4._id,user5._id]
+ attendees: [user2._id,user3._id,user4._id,user5._id]
 });
 
 var project9 = new Project({
@@ -310,8 +290,24 @@ var project10 = new Project({
  desc: "There is a lot of litter in the park nearby adn I would like some help clearing it up as a clean park would benefit the community in two ways: Firstly, it would make the park nicer, secondly, it would help recycle and that would help save the environment",
  image: "http://cdn.nycitynewsservice.com/blogs.dir/9/files/2011/12/dirty-parks-DN.jpg",
  gallery: ["http://www.thetimes.co.uk/tto/multimedia/archive/00185/Hyde_Park_Litter_185437a.jpg","http://static01.nyt.com/images/2013/09/09/nyregion/RIVERSIDE/RIVERSIDE-master675.jpg"],
- attendees: [user1._id,user2._id,user6._id]
+ attendees: [user2._id,user6._id]
  });
+
+var user1 = new User({
+  name: "Enrico Rainsome",
+  username:"admin",
+  email: "admin@admin.com",
+  projects: [project9._id],
+  avatar: "http://www.eonline.com/eol_images/Entire_Site/2014913/rs_600x600-141013090723-600-jared-leto-tree-hugging-instagram.ls.101314.jpg",
+  postcode: "E1 5ED",
+  password: "qw",
+  passwordConfirmation: "qw"
+
+},function(err, user){
+  if(err) console.error(err);
+  else console.log(user);
+});
+user1.save();
 
 var projectowner1 = new User({
   name: "Peter Grimes",
@@ -343,7 +339,7 @@ projectowner2.save(function(err, user){
 
 var projectowner3 = new User({
   name: "Charlie Brown",
-  projects: [project3._id,project8._id,project9._id,project10._id],
+  projects: [project3._id,project8._id,project10._id],
   email: "project_owner3@gmail.com",
   postcode: "S2 3SD",
   avatar:"https://www.morganstanley.com/assets/images/people/tiles/karlene-quigley-large.jpg",
