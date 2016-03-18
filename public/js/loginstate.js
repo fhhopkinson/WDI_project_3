@@ -163,8 +163,8 @@ function showUserPage() {
       user.avatar = "/images/female-placeholder-profile-img.png"
       }
 
-    $('#profilePic').empty().append('<img src="' + user.avatar + '">')
-    $('#usersName').empty().append('<h1>' + user.name + '</h1>')
+    $('#profilePic').empty().append('<img src="' + user.avatar + '">');
+    $('#usersName').empty().append('<h1>' + user.name + '</h1>');
 
 
     (user.projects).forEach(function(project) {
