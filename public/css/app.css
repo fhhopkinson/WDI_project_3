@@ -107,10 +107,21 @@ border:  3px solid #296B47;
 
 }
 
-insideAvBox {
-
-  text-align: right;
+.individualComment{
+  text-align: center;
+  background: transparent;
+  border: 2px solid #296B47;
+  border-radius: 8px;
 }
+
+.insideAvBox {
+  text-align: center;
+}
+
+.insideAvBox img{
+  text-align: justify;
+}
+
 
 #avatarBox img{
   width: 80px;
