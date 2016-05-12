@@ -1,10 +1,6 @@
 # WDI_project_3
 Greenhub
 
-# WDI_project3
-
-greenHub
-
 greenHub is a place where those who care for their neighbourhood, their community, their country, their world, have the opportunity to create projects to
 
 The navigation of the site as a user:
