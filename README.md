@@ -25,7 +25,7 @@ How it was designed:
 
 The planning process was fundamental to the construction of the site as it determined the number of pages and the wireframes described what each page would look like. Furthermore, it schedule what to do when in order that it was completed on time allowing merely a morning for bug fixing and tinkering on the last day.
 
-    working in a team for the first time we understood how the agile processes in development were crucial as working in pairs adn keeping everybody informed as to the progress of the individuals progress on each part of the tasks and sprints that we had orgainised.
+Working in a team for the first time we understood how the agile processes in development were crucial as working in pairs adn keeping everybody informed as to the progress of the individuals progress on each part of the tasks and sprints that we had organised.
 
 The Design.
 
