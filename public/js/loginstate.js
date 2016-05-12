@@ -72,7 +72,7 @@ function submitNewHub(){
   event.preventDefault();
   var form    = this;
   var method  = $(this).attr('method');
-  var urll     = "/api" + $(this).attr('action');
+  var url     = "/api" + $(this).attr('action');
   var data    = new FormData(this);
   form.reset();
 
